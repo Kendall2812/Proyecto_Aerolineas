@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Aero_Negocio;
 
 namespace Pagina_Principal
 {
@@ -22,6 +16,34 @@ namespace Pagina_Principal
 
         }
 
-        
+        public void verificarUser()
+        {
+            bool tipo_user;
+            String usuario = txtNombre.Text;
+            String clave = txtPassword.Text;
+            if (usuario.Equals("") && clave.Equals(""))
+            {
+                MessageBox.Show("No pueden quedar espacios vacios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Negocio consultar = new Negocio();
+                tipo_user = consultar.encriptar_clave(usuario, clave);
+                if (tipo_user == true)
+                {
+                    //vetana administrado
+                }
+                else
+                {
+                    //vetana usuario
+                }
+            }
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            verificarUser();
+        }
     }
 }

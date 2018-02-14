@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pagina Principal", "Pagina Principal\Pagina Principal.csproj", "{83569FF7-3060-4AFB-8A6B-C1BC5D548982}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aero_Negocio", "Aero_Negocio\Aero_Negocio.csproj", "{EE40EFCF-CBCE-47F1-A01E-B8DC14C39C25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data_Base", "Data_Base\Data_Base.csproj", "{4AA4B886-EEA4-49B8-9CD9-5565ED8BEA5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{83569FF7-3060-4AFB-8A6B-C1BC5D548982}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83569FF7-3060-4AFB-8A6B-C1BC5D548982}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83569FF7-3060-4AFB-8A6B-C1BC5D548982}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE40EFCF-CBCE-47F1-A01E-B8DC14C39C25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE40EFCF-CBCE-47F1-A01E-B8DC14C39C25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE40EFCF-CBCE-47F1-A01E-B8DC14C39C25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE40EFCF-CBCE-47F1-A01E-B8DC14C39C25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AA4B886-EEA4-49B8-9CD9-5565ED8BEA5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AA4B886-EEA4-49B8-9CD9-5565ED8BEA5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AA4B886-EEA4-49B8-9CD9-5565ED8BEA5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AA4B886-EEA4-49B8-9CD9-5565ED8BEA5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
