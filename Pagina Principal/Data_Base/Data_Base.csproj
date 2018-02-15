@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Npgsql">
-      <HintPath>..\..\..\..\..\Documents\Materias Año 2018\Materias I Cuatrimestre\Programacion III\ProyectoBase\CapaDatos\bin\Debug\Npgsql.dll</HintPath>
+      <HintPath>..\..\..\..\..\Desktop\ProyectoBase\CapaDatos\bin\Debug\Npgsql.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,8 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UserAdmin.cs" />
     <Compile Include="Conexio_BaseDatos.cs" />
+    <Compile Include="UserAdmin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
