@@ -14,17 +14,25 @@ namespace Aero_Negocio
         {
         }
 
-        public bool encriptar_clave(string user, string clave)
+        public string encriptar(int clave)
         {
             //encripta la contraseña
-            bool respuesta;
+            string clave2 = Convert.ToString(clave);
             string resultado = string.Empty;
-            byte[] encryted = System.Text.Encoding.Unicode.GetBytes(clave);
+            byte[] encryted = System.Text.Encoding.Unicode.GetBytes(clave2);
             resultado = Convert.ToBase64String(encryted);
             Console.WriteLine(resultado);
 
+            return resultado;
+        }
+
+        public string encriptar_clave(string user, int clave)
+        {
+            //encripta la contraseña
+            string respuesta;
+            string clave1 = encriptar(clave);
             UserAdmin consultar = new UserAdmin();
-            respuesta = consultar.cosultarUsuario(user, resultado);
+            respuesta = consultar.cosultarUsuario(user, clave1);
 
             return respuesta;
         }

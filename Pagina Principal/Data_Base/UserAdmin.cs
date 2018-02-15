@@ -8,33 +8,29 @@ namespace Data_Base
     {
         static NpgsqlConnection connection;
         static NpgsqlCommand comandos;
-        bool valor;
+        string valor;
         Conexio_BaseDatos conexion1 = new Conexio_BaseDatos();
 
         static void Main(string[] args)
         {
         }
 
-        public bool cosultarUsuario(string usuario, string clave)
+        public string cosultarUsuario(string usuario, string clave)
         {
 
             connection = conexion1.Conexion();
             try
             {
                 connection.Open();
-                comandos = new NpgsqlCommand("SELECT tipo_acceso FROM admin_user where name = '" + usuario + "' and password = '" + clave +"'", connection);
+                comandos = new NpgsqlCommand("SELECT tipo FROM admin_user where cedula = '" + usuario + "' and password = '" + clave +"'", connection);
                 NpgsqlDataReader dr = comandos.ExecuteReader();
                 if (dr.HasRows)
                 {
                     while (dr.Read())
                     {
-                        valor = dr.GetBoolean(0);
+                        valor = dr.GetString(0);
                     }
                     connection.Close();
-                }
-                else
-                {
-                    
                 }
             }
             catch (Exception e)

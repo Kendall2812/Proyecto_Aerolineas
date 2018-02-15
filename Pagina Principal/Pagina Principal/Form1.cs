@@ -14,9 +14,9 @@ namespace Pagina_Principal
 
         public void verificarUser()
         {
-            bool tipo_user;
+            string tipo_user;
             String usuario = txtNombre.Text;
-            String clave = txtPassword.Text;
+            int clave = Convert.ToInt32(txtPassword.Text);
             if (usuario.Equals("") && clave.Equals(""))
             {
                 MessageBox.Show("No pueden quedar espacios vacios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -25,18 +25,21 @@ namespace Pagina_Principal
             {
                 Users consultar = new Users();
                 tipo_user = consultar.encriptar_clave(usuario, clave);
-                if (tipo_user == true)
+                if (tipo_user.Equals("T"))
                 {
                     //vetana administrado
                     MessageBox.Show("Entro");
                 }
-                else
+                else if (tipo_user.Equals("U"))
                 {
                     //vetana usuario
                     MessageBox.Show("No Entro");
                 }
+                else
+                {
+                    MessageBox.Show("No se encontro el usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -67,6 +70,16 @@ namespace Pagina_Principal
         private void btnCerrar_MouseLeave(object sender, EventArgs e)
         {
             btnCerrar.ForeColor = Color.SkyBlue;
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }
