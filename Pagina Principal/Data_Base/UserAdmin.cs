@@ -4,35 +4,25 @@ using System.Windows.Forms;
 
 namespace Data_Base
 {
-    public class Base_datos
+    public class UserAdmin
     {
-        static NpgsqlConnection conexion;
+        static NpgsqlConnection connection;
         static NpgsqlCommand comandos;
         bool valor;
+        Conexio_BaseDatos conexion1 = new Conexio_BaseDatos();
 
         static void Main(string[] args)
         {
         }
 
-        public void Conexion()
-        {
-            string servidor = "localhost";
-            int puerto = 5432;
-            string usuario = "postgres";
-            string clave = "postgresql";
-            string baseDatos = "Aeropuertos";//nombre de la base en la que voy a trabajar
-
-            string cadenaConexion = "Server=" + servidor + ";" + "Port=" + puerto + ";" + "User Id=" + usuario + ";" + "Password=" + clave + ";" + "Database=" + baseDatos;
-            conexion = new NpgsqlConnection(cadenaConexion);
-        }
-
         public bool cosultarUsuario(string usuario, string clave)
         {
-            Conexion();
+
+            connection = conexion1.Conexion();
             try
             {
-                conexion.Open();
-                comandos = new NpgsqlCommand("SELECT tipo_acceso FROM admin_user where name = '" + usuario + "' and password = '" + clave +"'", conexion);
+                connection.Open();
+                comandos = new NpgsqlCommand("SELECT tipo_acceso FROM admin_user where name = '" + usuario + "' and password = '" + clave +"'", connection);
                 NpgsqlDataReader dr = comandos.ExecuteReader();
                 if (dr.HasRows)
                 {
@@ -40,6 +30,7 @@ namespace Data_Base
                     {
                         valor = dr.GetBoolean(0);
                     }
+                    connection.Close();
                 }
                 else
                 {

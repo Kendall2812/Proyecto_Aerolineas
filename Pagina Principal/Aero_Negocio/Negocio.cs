@@ -23,7 +23,7 @@ namespace Aero_Negocio
             resultado = Convert.ToBase64String(encryted);
             Console.WriteLine(resultado);
 
-            Base_datos consultar = new Base_datos();
+            UserAdmin consultar = new UserAdmin();
             respuesta = consultar.cosultarUsuario(user, resultado);
 
             return respuesta;
