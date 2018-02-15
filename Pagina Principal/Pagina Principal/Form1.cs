@@ -23,7 +23,7 @@ namespace Pagina_Principal
             }
             else
             {
-                Negocio consultar = new Negocio();
+                Users consultar = new Users();
                 tipo_user = consultar.encriptar_clave(usuario, clave);
                 if (tipo_user == true)
                 {

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Aero_Negocio
 {
-    public class Negocio
+    public class Users
     {
         static void Main(string[] args)
         {
