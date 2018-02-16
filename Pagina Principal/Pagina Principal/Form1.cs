@@ -14,31 +14,43 @@ namespace Pagina_Principal
 
         public void verificarUser()
         {
-            string tipo_user;
-            String usuario = txtNombre.Text;
-            int clave = Convert.ToInt32(txtPassword.Text);
-            if (usuario.Equals("") && clave.Equals(""))
+            try
             {
-                MessageBox.Show("No pueden quedar espacios vacios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                Users consultar = new Users();
-                tipo_user = consultar.encriptar_clave(usuario, clave);
-                if (tipo_user.Equals("T"))
+                string tipo_user;
+                String usuario = txtNombre.Text;
+                int clave = Convert.ToInt32(txtPassword.Text);
+                if (usuario.Equals("") && clave.Equals(""))
                 {
-                    //vetana administrado
-                    MessageBox.Show("Entro");
-                }
-                else if (tipo_user.Equals("U"))
-                {
-                    //vetana usuario
-                    MessageBox.Show("No Entro");
+                    MessageBox.Show("No pueden quedar espacios vacios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show("No se encontro el usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Users consultar = new Users();
+                    tipo_user = consultar.encriptar_clave(usuario, clave);
+                    if (tipo_user.Equals("T"))
+                    {
+                        //vetana administrado
+                        this.Hide();
+                        Window_Admin admin = new Window_Admin();
+                        admin.Show();
+
+                    }
+                    else if (tipo_user.Equals("U"))
+                    {
+                        //vetana usuario
+                        this.Hide();
+                        Form2 ver = new Form2();
+                        ver.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontro el usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No pueden quedar espacios vacios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -80,6 +92,11 @@ namespace Pagina_Principal
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
