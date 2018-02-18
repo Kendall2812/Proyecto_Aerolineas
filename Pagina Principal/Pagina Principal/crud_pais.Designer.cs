@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,14 +37,26 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.btnRegistrar_Pais = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnGuardar2 = new System.Windows.Forms.Button();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.txtNombre2 = new System.Windows.Forms.TextBox();
+            this.txtCodigo2 = new System.Windows.Forms.TextBox();
+            this.t = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboPais = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.btnRegistrar_Pais = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -96,7 +109,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(6, 166);
+            this.label3.Location = new System.Drawing.Point(6, 158);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 20);
             this.label3.TabIndex = 3;
@@ -134,46 +147,11 @@
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(128, 174);
+            this.listView1.Location = new System.Drawing.Point(128, 158);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(250, 136);
+            this.listView1.Size = new System.Drawing.Size(250, 148);
             this.listView1.TabIndex = 7;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(128, 96);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(207, 30);
-            this.txtNombre.TabIndex = 5;
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Location = new System.Drawing.Point(128, 34);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(207, 30);
-            this.txtCodigo.TabIndex = 4;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(724, 312);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Editar País";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(724, 312);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Eliminar País";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // btnRegistrar_Pais
             // 
@@ -190,6 +168,156 @@
             this.btnRegistrar_Pais.Text = "Guardar";
             this.btnRegistrar_Pais.UseVisualStyleBackColor = false;
             this.btnRegistrar_Pais.Click += new System.EventHandler(this.btnRegistrar_Pais_Click);
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(128, 96);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(207, 30);
+            this.txtNombre.TabIndex = 5;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(128, 34);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(207, 30);
+            this.txtCodigo.TabIndex = 4;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.Silver;
+            this.tabPage2.Controls.Add(this.btnEliminar);
+            this.tabPage2.Controls.Add(this.btnGuardar2);
+            this.tabPage2.Controls.Add(this.listView2);
+            this.tabPage2.Controls.Add(this.txtNombre2);
+            this.tabPage2.Controls.Add(this.txtCodigo2);
+            this.tabPage2.Controls.Add(this.t);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.comboPais);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(724, 312);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Editar País";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Yellow;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow;
+            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Location = new System.Drawing.Point(616, 58);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(102, 37);
+            this.btnEliminar.TabIndex = 9;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnGuardar2
+            // 
+            this.btnGuardar2.BackColor = System.Drawing.Color.Yellow;
+            this.btnGuardar2.FlatAppearance.BorderSize = 0;
+            this.btnGuardar2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow;
+            this.btnGuardar2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
+            this.btnGuardar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar2.Location = new System.Drawing.Point(616, 6);
+            this.btnGuardar2.Name = "btnGuardar2";
+            this.btnGuardar2.Size = new System.Drawing.Size(102, 37);
+            this.btnGuardar2.TabIndex = 8;
+            this.btnGuardar2.Text = "Guardar";
+            this.btnGuardar2.UseVisualStyleBackColor = false;
+            this.btnGuardar2.Click += new System.EventHandler(this.btnGuardar2_Click);
+            // 
+            // listView2
+            // 
+            this.listView2.Location = new System.Drawing.Point(348, 153);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(250, 136);
+            this.listView2.TabIndex = 7;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView2_ColumnClick);
+            // 
+            // txtNombre2
+            // 
+            this.txtNombre2.Location = new System.Drawing.Point(348, 87);
+            this.txtNombre2.Name = "txtNombre2";
+            this.txtNombre2.Size = new System.Drawing.Size(193, 30);
+            this.txtNombre2.TabIndex = 6;
+            // 
+            // txtCodigo2
+            // 
+            this.txtCodigo2.BackColor = System.Drawing.Color.White;
+            this.txtCodigo2.Location = new System.Drawing.Point(348, 20);
+            this.txtCodigo2.Name = "txtCodigo2";
+            this.txtCodigo2.ReadOnly = true;
+            this.txtCodigo2.Size = new System.Drawing.Size(193, 30);
+            this.txtCodigo2.TabIndex = 5;
+            // 
+            // t
+            // 
+            this.t.AutoSize = true;
+            this.t.ForeColor = System.Drawing.Color.White;
+            this.t.Location = new System.Drawing.Point(266, 153);
+            this.t.Name = "t";
+            this.t.Size = new System.Drawing.Size(71, 24);
+            this.t.TabIndex = 4;
+            this.t.Text = "Bandera";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(266, 87);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 24);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Nombre";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(266, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 24);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Codigo";
+            // 
+            // comboPais
+            // 
+            this.comboPais.FormattingEnabled = true;
+            this.comboPais.Location = new System.Drawing.Point(10, 47);
+            this.comboPais.Name = "comboPais";
+            this.comboPais.Size = new System.Drawing.Size(176, 32);
+            this.comboPais.TabIndex = 1;
+            this.comboPais.SelectionChangeCommitted += new System.EventHandler(this.comboPais_SelectionChangeCommitted);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(6, 20);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(131, 24);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Seleccionar País";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.Silver;
+            this.tabPage3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(724, 312);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Eliminar País";
             // 
             // crud_pais
             // 
@@ -208,6 +336,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -227,5 +357,16 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button btnRegistrar_Pais;
+        private System.Windows.Forms.ComboBox comboPais;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.TextBox txtNombre2;
+        private System.Windows.Forms.TextBox txtCodigo2;
+        private System.Windows.Forms.Label t;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnGuardar2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

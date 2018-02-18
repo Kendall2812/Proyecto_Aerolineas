@@ -50,7 +50,7 @@ namespace Pagina_Principal
             }
             catch (Exception)
             {
-                MessageBox.Show("No pueden quedar espacios vacios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No pueden quedar espacios vacios..", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
