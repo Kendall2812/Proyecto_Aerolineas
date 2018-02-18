@@ -15,7 +15,7 @@ namespace Data_Base
         {
         }
 
-        public string cosultarUsuario(string usuario, string clave)
+        public string cosultarUsuario(int usuario, string clave)
         {
 
             connection = conexion1.Conexion();
@@ -39,6 +39,23 @@ namespace Data_Base
             }
 
             return valor;
+        }
+
+        public void registro(int cedula, string nombre, string clave, string tipo)
+        {
+            connection = conexion1.Conexion();
+            try
+            {
+                connection.Open();
+                comandos = new NpgsqlCommand("INSERT INTO admin_user (cedula,name,password,tipo) VALUES ('" + cedula + "', '" + nombre + "', '" + clave + "', '" + tipo + "')", connection);
+                comandos.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("Se registro con exito.", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se puedo conectar a la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

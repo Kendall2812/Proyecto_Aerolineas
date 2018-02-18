@@ -41,17 +41,17 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panelPais = new System.Windows.Forms.Panel();
-            this.crudPaises1 = new Pagina_Principal.CrudPaises();
+            this.panelLed2 = new System.Windows.Forms.Panel();
+            this.panelLed3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panelPais.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panelLed3);
+            this.panel1.Controls.Add(this.panelLed2);
             this.panel1.Controls.Add(this.btnVehiculos);
             this.panel1.Controls.Add(this.panelLed);
             this.panel1.Controls.Add(this.btnTarijas_Vuelo);
@@ -62,10 +62,9 @@
             this.panel1.Controls.Add(this.btnLugar);
             this.panel1.Controls.Add(this.btnPais);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(219, 685);
+            this.panel1.Size = new System.Drawing.Size(633, 444);
             this.panel1.TabIndex = 0;
             // 
             // btnVehiculos
@@ -74,7 +73,7 @@
             this.btnVehiculos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVehiculos.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVehiculos.ForeColor = System.Drawing.Color.White;
-            this.btnVehiculos.Location = new System.Drawing.Point(22, 593);
+            this.btnVehiculos.Location = new System.Drawing.Point(205, 290);
             this.btnVehiculos.Name = "btnVehiculos";
             this.btnVehiculos.Size = new System.Drawing.Size(177, 63);
             this.btnVehiculos.TabIndex = 9;
@@ -85,9 +84,9 @@
             // panelLed
             // 
             this.panelLed.BackColor = System.Drawing.Color.Yellow;
-            this.panelLed.Location = new System.Drawing.Point(0, 124);
+            this.panelLed.Location = new System.Drawing.Point(22, 124);
             this.panelLed.Name = "panelLed";
-            this.panelLed.Size = new System.Drawing.Size(10, 63);
+            this.panelLed.Size = new System.Drawing.Size(177, 10);
             this.panelLed.TabIndex = 3;
             // 
             // btnTarijas_Vuelo
@@ -96,7 +95,7 @@
             this.btnTarijas_Vuelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTarijas_Vuelo.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTarijas_Vuelo.ForeColor = System.Drawing.Color.White;
-            this.btnTarijas_Vuelo.Location = new System.Drawing.Point(22, 526);
+            this.btnTarijas_Vuelo.Location = new System.Drawing.Point(22, 290);
             this.btnTarijas_Vuelo.Name = "btnTarijas_Vuelo";
             this.btnTarijas_Vuelo.Size = new System.Drawing.Size(177, 63);
             this.btnTarijas_Vuelo.TabIndex = 8;
@@ -110,7 +109,7 @@
             this.btnTarijas_Hotel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTarijas_Hotel.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTarijas_Hotel.ForeColor = System.Drawing.Color.White;
-            this.btnTarijas_Hotel.Location = new System.Drawing.Point(22, 459);
+            this.btnTarijas_Hotel.Location = new System.Drawing.Point(22, 209);
             this.btnTarijas_Hotel.Name = "btnTarijas_Hotel";
             this.btnTarijas_Hotel.Size = new System.Drawing.Size(177, 63);
             this.btnTarijas_Hotel.TabIndex = 7;
@@ -124,7 +123,7 @@
             this.btnHoteles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHoteles.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHoteles.ForeColor = System.Drawing.Color.White;
-            this.btnHoteles.Location = new System.Drawing.Point(22, 392);
+            this.btnHoteles.Location = new System.Drawing.Point(205, 209);
             this.btnHoteles.Name = "btnHoteles";
             this.btnHoteles.Size = new System.Drawing.Size(177, 63);
             this.btnHoteles.TabIndex = 6;
@@ -138,7 +137,7 @@
             this.btnRutas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRutas.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRutas.ForeColor = System.Drawing.Color.White;
-            this.btnRutas.Location = new System.Drawing.Point(22, 325);
+            this.btnRutas.Location = new System.Drawing.Point(388, 209);
             this.btnRutas.Name = "btnRutas";
             this.btnRutas.Size = new System.Drawing.Size(177, 63);
             this.btnRutas.TabIndex = 5;
@@ -152,7 +151,7 @@
             this.btnAeropuerto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAeropuerto.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAeropuerto.ForeColor = System.Drawing.Color.White;
-            this.btnAeropuerto.Location = new System.Drawing.Point(22, 258);
+            this.btnAeropuerto.Location = new System.Drawing.Point(388, 124);
             this.btnAeropuerto.Name = "btnAeropuerto";
             this.btnAeropuerto.Size = new System.Drawing.Size(177, 63);
             this.btnAeropuerto.TabIndex = 4;
@@ -166,7 +165,7 @@
             this.btnLugar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLugar.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLugar.ForeColor = System.Drawing.Color.White;
-            this.btnLugar.Location = new System.Drawing.Point(22, 191);
+            this.btnLugar.Location = new System.Drawing.Point(205, 124);
             this.btnLugar.Name = "btnLugar";
             this.btnLugar.Size = new System.Drawing.Size(177, 63);
             this.btnLugar.TabIndex = 3;
@@ -192,10 +191,11 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Yellow;
             this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.button9);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(219, 91);
+            this.panel2.Size = new System.Drawing.Size(633, 91);
             this.panel2.TabIndex = 1;
             // 
             // label1
@@ -215,8 +215,8 @@
             this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(1113, 16);
+            this.button9.ForeColor = System.Drawing.Color.Black;
+            this.button9.Location = new System.Drawing.Point(590, 3);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(32, 39);
             this.button9.TabIndex = 2;
@@ -226,55 +226,38 @@
             this.button9.MouseLeave += new System.EventHandler(this.button9_MouseLeave);
             this.button9.MouseHover += new System.EventHandler(this.button9_MouseHover);
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Yellow;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(219, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(938, 10);
-            this.panel3.TabIndex = 3;
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Yellow;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(219, 675);
+            this.panel4.Location = new System.Drawing.Point(0, 460);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(938, 10);
+            this.panel4.Size = new System.Drawing.Size(635, 10);
             this.panel4.TabIndex = 5;
             // 
-            // panelPais
+            // panelLed2
             // 
-            this.panelPais.BackColor = System.Drawing.Color.Transparent;
-            this.panelPais.Controls.Add(this.crudPaises1);
-            this.panelPais.Location = new System.Drawing.Point(286, 124);
-            this.panelPais.Name = "panelPais";
-            this.panelPais.Size = new System.Drawing.Size(797, 532);
-            this.panelPais.TabIndex = 6;
+            this.panelLed2.BackColor = System.Drawing.Color.Yellow;
+            this.panelLed2.Location = new System.Drawing.Point(205, 124);
+            this.panelLed2.Name = "panelLed2";
+            this.panelLed2.Size = new System.Drawing.Size(177, 10);
+            this.panelLed2.TabIndex = 10;
             // 
-            // crudPaises1
+            // panelLed3
             // 
-            this.crudPaises1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.crudPaises1.BackColor = System.Drawing.Color.Transparent;
-            this.crudPaises1.Location = new System.Drawing.Point(0, 0);
-            this.crudPaises1.Margin = new System.Windows.Forms.Padding(12, 16, 12, 16);
-            this.crudPaises1.Name = "crudPaises1";
-            this.crudPaises1.Size = new System.Drawing.Size(790, 460);
-            this.crudPaises1.TabIndex = 0;
+            this.panelLed3.BackColor = System.Drawing.Color.Yellow;
+            this.panelLed3.Location = new System.Drawing.Point(388, 124);
+            this.panelLed3.Name = "panelLed3";
+            this.panelLed3.Size = new System.Drawing.Size(177, 10);
+            this.panelLed3.TabIndex = 11;
             // 
             // Window_Admin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.GrayText;
-            this.ClientSize = new System.Drawing.Size(1157, 685);
+            this.ClientSize = new System.Drawing.Size(635, 470);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.button9);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelPais);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -284,7 +267,6 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panelPais.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -304,9 +286,8 @@
         private System.Windows.Forms.Button btnAeropuerto;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Panel panelLed;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panelPais;
-        private CrudPaises crudPaises1;
+        private System.Windows.Forms.Panel panelLed2;
+        private System.Windows.Forms.Panel panelLed3;
     }
 }

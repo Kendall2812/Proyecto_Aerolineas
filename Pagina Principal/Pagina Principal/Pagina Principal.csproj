@@ -58,12 +58,6 @@
       <DependentUpon>Alojamiento.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CrudPaises.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CrudPaises.Designer.cs">
-      <DependentUpon>CrudPaises.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Window_Admin.cs">
@@ -72,14 +66,17 @@
     <Compile Include="Window_Admin.Designer.cs">
       <DependentUpon>Window_Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="window_registry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="window_registry.Designer.cs">
+      <DependentUpon>window_registry.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Alojamiento.resx">
       <DependentUpon>Alojamiento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CrudPaises.resx">
-      <DependentUpon>CrudPaises.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -93,6 +90,9 @@
     </Compile>
     <EmbeddedResource Include="Window_Admin.resx">
       <DependentUpon>Window_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="window_registry.resx">
+      <DependentUpon>window_registry.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

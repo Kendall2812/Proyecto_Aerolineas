@@ -17,8 +17,8 @@ namespace Pagina_Principal
             try
             {
                 string tipo_user;
-                String usuario = txtNombre.Text;
-                int clave = Convert.ToInt32(txtPassword.Text);
+                int usuario = Convert.ToInt32(txtNombre.Text);
+                string clave = txtPassword.Text;
                 if (usuario.Equals("") && clave.Equals(""))
                 {
                     MessageBox.Show("No pueden quedar espacios vacios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -97,6 +97,22 @@ namespace Pagina_Principal
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRegistro_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            window_registry ventana = new window_registry();
+            ventana.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            toolTip1.AutoPopDelay = 5000;
+            toolTip1.InitialDelay = 1000;
+            toolTip1.ReshowDelay = 500;
+            toolTip1.ShowAlways = true;
+            toolTip1.SetToolTip(this.btnCerrar, "Cerrar aplicación.");
         }
     }
 }

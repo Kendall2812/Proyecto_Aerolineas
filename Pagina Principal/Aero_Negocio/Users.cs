@@ -14,19 +14,19 @@ namespace Aero_Negocio
         {
         }
 
-        public string encriptar(int clave)
+        public string encriptar(string clave)
         {
             //encripta la contraseña
-            string clave2 = Convert.ToString(clave);
+            //string clave2 = Convert.ToString(clave);
             string resultado = string.Empty;
-            byte[] encryted = System.Text.Encoding.Unicode.GetBytes(clave2);
+            byte[] encryted = System.Text.Encoding.Unicode.GetBytes(clave);
             resultado = Convert.ToBase64String(encryted);
             Console.WriteLine(resultado);
 
             return resultado;
         }
 
-        public string encriptar_clave(string user, int clave)
+        public string encriptar_clave(int user, string clave)
         {
             //encripta la contraseña
             string respuesta;
@@ -45,6 +45,13 @@ namespace Aero_Negocio
             resultado2 = System.Text.Encoding.Unicode.GetString(decryted, 0, decryted.ToArray().Length);
             resultado2 = System.Text.Encoding.Unicode.GetString(decryted);
             Console.WriteLine(resultado2);
+        }
+
+        public void registrar(int cedula, string nombre, string clave, string tipo)
+        {
+            string clave2 = encriptar(clave);
+            UserAdmin registro = new UserAdmin();
+            registro.registro(cedula, nombre, clave2, tipo);
         }
     }
 }

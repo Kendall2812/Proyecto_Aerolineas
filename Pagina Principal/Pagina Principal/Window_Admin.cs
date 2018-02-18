@@ -15,17 +15,18 @@ namespace Pagina_Principal
         public Window_Admin()
         {
             InitializeComponent();
-            panelPais.Controls.Add(crudPaises1);
+            panelLed2.Visible = false;
+            panelLed3.Visible = false;
         }
 
         private void button9_MouseHover(object sender, EventArgs e)
         {
-            button9.ForeColor = Color.Aqua;
+            button9.ForeColor = Color.Blue;
         }
 
         private void button9_MouseLeave(object sender, EventArgs e)
         {
-            button9.ForeColor = Color.White;
+            button9.ForeColor = Color.Black;
         }
 
         private void button9_MouseDown(object sender, MouseEventArgs e)
@@ -47,52 +48,74 @@ namespace Pagina_Principal
 
         private void button1_Click(object sender, EventArgs e)
         {
-            panelLed.Height = btnPais.Height;
+            panelLed2.Visible = false;
+            panelLed3.Visible = false;
+            panelLed.Visible = true;
+            panelLed.Width = btnPais.Width;
             panelLed.Top = btnPais.Top;
-            panelPais.Controls.Add(crudPaises1);
-            crudPaises1.BringToFront();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            panelLed.Height = btnLugar.Height;
-            panelLed.Top = btnLugar.Top;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            panelLed.Height = btnAeropuerto.Height;
-            panelLed.Top = btnAeropuerto.Top;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            panelLed.Height = btnRutas.Height;
-            panelLed.Top = btnRutas.Top;
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            panelLed.Height = btnHoteles.Height;
-            panelLed.Top = btnHoteles.Top;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            panelLed.Height = btnTarijas_Hotel.Height;
+            panelLed2.Visible = false;
+            panelLed3.Visible = false;
+            panelLed.Visible = true;
+            panelLed.Width = btnTarijas_Hotel.Width;
             panelLed.Top = btnTarijas_Hotel.Top;
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            panelLed.Height = btnTarijas_Vuelo.Height;
+            panelLed2.Visible = false;
+            panelLed3.Visible = false;
+            panelLed.Visible = true;
+            panelLed.Width = btnTarijas_Vuelo.Width;
             panelLed.Top = btnTarijas_Vuelo.Top;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panelLed.Visible = false;
+            panelLed3.Visible = false;
+            panelLed2.Visible = true;
+            panelLed2.Width = btnLugar.Width;
+            panelLed2.Top = btnLugar.Top;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            panelLed.Visible = false;
+            panelLed3.Visible = false;
+            panelLed2.Visible = true;
+            panelLed2.Width = btnHoteles.Width;
+            panelLed2.Top = btnHoteles.Top;
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            panelLed.Height = btnVehiculos.Height;
-            panelLed.Top = btnVehiculos.Top;
+            panelLed.Visible = false;
+            panelLed3.Visible = false;
+            panelLed2.Visible = true;
+            panelLed2.Width = btnVehiculos.Width;
+            panelLed2.Top = btnVehiculos.Top;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            panelLed.Visible = false;
+            panelLed2.Visible = false; 
+            panelLed3.Visible = true;
+            panelLed3.Width = btnAeropuerto.Width;
+            panelLed3.Top = btnAeropuerto.Top;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            panelLed.Visible = false;
+            panelLed2.Visible = false;
+            panelLed3.Visible = true;
+            panelLed3.Width = btnRutas.Width;
+            panelLed3.Top = btnRutas.Top;
         }
     }
 }
