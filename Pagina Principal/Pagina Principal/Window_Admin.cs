@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Pagina_Principal
@@ -53,6 +47,10 @@ namespace Pagina_Principal
             panelLed.Visible = true;
             panelLed.Width = btnPais.Width;
             panelLed.Top = btnPais.Top;
+
+            this.Hide();
+            crud_pais pais = new crud_pais();
+            pais.Show();
         }
 
         private void button6_Click(object sender, EventArgs e)

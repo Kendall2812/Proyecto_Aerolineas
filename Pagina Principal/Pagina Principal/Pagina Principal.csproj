@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="crud_pais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="crud_pais.Designer.cs">
+      <DependentUpon>crud_pais.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     <Compile Include="window_registry.Designer.cs">
       <DependentUpon>window_registry.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="crud_pais.resx">
+      <DependentUpon>crud_pais.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexio_BaseDatos.cs" />
+    <Compile Include="DB_Pais.cs" />
     <Compile Include="UserAdmin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
