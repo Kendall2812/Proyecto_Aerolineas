@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelLed3 = new System.Windows.Forms.Panel();
+            this.panelLed2 = new System.Windows.Forms.Panel();
             this.btnVehiculos = new System.Windows.Forms.Button();
             this.panelLed = new System.Windows.Forms.Panel();
             this.btnTarijas_Vuelo = new System.Windows.Forms.Button();
@@ -42,8 +44,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panelLed2 = new System.Windows.Forms.Panel();
-            this.panelLed3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +67,22 @@
             this.panel1.Size = new System.Drawing.Size(633, 444);
             this.panel1.TabIndex = 0;
             // 
+            // panelLed3
+            // 
+            this.panelLed3.BackColor = System.Drawing.Color.Yellow;
+            this.panelLed3.Location = new System.Drawing.Point(388, 124);
+            this.panelLed3.Name = "panelLed3";
+            this.panelLed3.Size = new System.Drawing.Size(177, 10);
+            this.panelLed3.TabIndex = 11;
+            // 
+            // panelLed2
+            // 
+            this.panelLed2.BackColor = System.Drawing.Color.Yellow;
+            this.panelLed2.Location = new System.Drawing.Point(205, 124);
+            this.panelLed2.Name = "panelLed2";
+            this.panelLed2.Size = new System.Drawing.Size(177, 10);
+            this.panelLed2.TabIndex = 10;
+            // 
             // btnVehiculos
             // 
             this.btnVehiculos.FlatAppearance.BorderSize = 0;
@@ -80,6 +96,8 @@
             this.btnVehiculos.Text = "Crud Vehículos";
             this.btnVehiculos.UseVisualStyleBackColor = true;
             this.btnVehiculos.Click += new System.EventHandler(this.button8_Click);
+            this.btnVehiculos.MouseLeave += new System.EventHandler(this.btnVehiculos_MouseLeave);
+            this.btnVehiculos.MouseHover += new System.EventHandler(this.btnVehiculos_MouseHover);
             // 
             // panelLed
             // 
@@ -102,6 +120,8 @@
             this.btnTarijas_Vuelo.Text = "Crud Tarifas Vuelos";
             this.btnTarijas_Vuelo.UseVisualStyleBackColor = true;
             this.btnTarijas_Vuelo.Click += new System.EventHandler(this.button7_Click);
+            this.btnTarijas_Vuelo.MouseLeave += new System.EventHandler(this.btnTarijas_Vuelo_MouseLeave);
+            this.btnTarijas_Vuelo.MouseHover += new System.EventHandler(this.btnTarijas_Vuelo_MouseHover);
             // 
             // btnTarijas_Hotel
             // 
@@ -116,6 +136,8 @@
             this.btnTarijas_Hotel.Text = "Crud Tarifas Hoteles";
             this.btnTarijas_Hotel.UseVisualStyleBackColor = true;
             this.btnTarijas_Hotel.Click += new System.EventHandler(this.button6_Click);
+            this.btnTarijas_Hotel.MouseLeave += new System.EventHandler(this.btnTarijas_Hotel_MouseLeave);
+            this.btnTarijas_Hotel.MouseHover += new System.EventHandler(this.btnTarijas_Hotel_MouseHover);
             // 
             // btnHoteles
             // 
@@ -130,6 +152,8 @@
             this.btnHoteles.Text = "Crud Hoteles";
             this.btnHoteles.UseVisualStyleBackColor = true;
             this.btnHoteles.Click += new System.EventHandler(this.button5_Click);
+            this.btnHoteles.MouseLeave += new System.EventHandler(this.btnHoteles_MouseLeave);
+            this.btnHoteles.MouseHover += new System.EventHandler(this.btnHoteles_MouseHover);
             // 
             // btnRutas
             // 
@@ -144,6 +168,8 @@
             this.btnRutas.Text = "Crud Rutas";
             this.btnRutas.UseVisualStyleBackColor = true;
             this.btnRutas.Click += new System.EventHandler(this.button4_Click);
+            this.btnRutas.MouseLeave += new System.EventHandler(this.btnRutas_MouseLeave);
+            this.btnRutas.MouseHover += new System.EventHandler(this.btnRutas_MouseHover);
             // 
             // btnAeropuerto
             // 
@@ -158,6 +184,8 @@
             this.btnAeropuerto.Text = "Crud Aeropuertos";
             this.btnAeropuerto.UseVisualStyleBackColor = true;
             this.btnAeropuerto.Click += new System.EventHandler(this.button3_Click);
+            this.btnAeropuerto.MouseLeave += new System.EventHandler(this.btnAeropuerto_MouseLeave);
+            this.btnAeropuerto.MouseHover += new System.EventHandler(this.btnAeropuerto_MouseHover);
             // 
             // btnLugar
             // 
@@ -172,6 +200,8 @@
             this.btnLugar.Text = "Crud Lugares";
             this.btnLugar.UseVisualStyleBackColor = true;
             this.btnLugar.Click += new System.EventHandler(this.button2_Click);
+            this.btnLugar.MouseLeave += new System.EventHandler(this.btnLugar_MouseLeave);
+            this.btnLugar.MouseHover += new System.EventHandler(this.btnLugar_MouseHover);
             // 
             // btnPais
             // 
@@ -186,6 +216,8 @@
             this.btnPais.Text = "Crud Paises";
             this.btnPais.UseVisualStyleBackColor = true;
             this.btnPais.Click += new System.EventHandler(this.button1_Click);
+            this.btnPais.MouseLeave += new System.EventHandler(this.btnPais_MouseLeave);
+            this.btnPais.MouseHover += new System.EventHandler(this.btnPais_MouseHover);
             // 
             // panel2
             // 
@@ -234,22 +266,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(635, 10);
             this.panel4.TabIndex = 5;
-            // 
-            // panelLed2
-            // 
-            this.panelLed2.BackColor = System.Drawing.Color.Yellow;
-            this.panelLed2.Location = new System.Drawing.Point(205, 124);
-            this.panelLed2.Name = "panelLed2";
-            this.panelLed2.Size = new System.Drawing.Size(177, 10);
-            this.panelLed2.TabIndex = 10;
-            // 
-            // panelLed3
-            // 
-            this.panelLed3.BackColor = System.Drawing.Color.Yellow;
-            this.panelLed3.Location = new System.Drawing.Point(388, 124);
-            this.panelLed3.Name = "panelLed3";
-            this.panelLed3.Size = new System.Drawing.Size(177, 10);
-            this.panelLed3.TabIndex = 11;
             // 
             // Window_Admin
             // 
