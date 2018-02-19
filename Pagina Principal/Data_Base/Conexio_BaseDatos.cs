@@ -11,7 +11,7 @@ namespace Data_Base
             string servidor = "localhost";
             int puerto = 5432;
             string usuario = "postgres";
-            string clave = "postgresql";
+            string clave = "postgres";
             string baseDatos = "Aeropuertos";//nombre de la base en la que voy a trabajar
 
             string cadenaConexion = "Server=" + servidor + ";" + "Port=" + puerto + ";" + "User Id=" + usuario + ";" + "Password=" + clave + ";" + "Database=" + baseDatos;

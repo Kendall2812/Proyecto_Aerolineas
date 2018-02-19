@@ -89,7 +89,7 @@ namespace Data_Base
                 connection.Close();
                 MessageBox.Show("Se modifico con exito.", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 MessageBox.Show("Error no se pudo conectar a la base de datos. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
