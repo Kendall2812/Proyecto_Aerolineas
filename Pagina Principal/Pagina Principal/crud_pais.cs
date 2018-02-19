@@ -49,7 +49,7 @@ namespace Pagina_Principal
         {
             ImageList image = new ImageList();
             image.ImageSize = new Size(50, 50);
-            paths = Directory.GetFiles("C:/Users/Kendall/source/repos/Proyecto_Aerolineas/Banderas");
+            paths = Directory.GetFiles("C:/Banderas");
             try
             {
                 foreach (string path in paths)
@@ -61,20 +61,28 @@ namespace Pagina_Principal
             {
                 MessageBox.Show("Error no se puedo cargar imagenes." + e, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if (valor == false)
+            if (valor == false)//Banderas de los paises
             {
                 listView1.SmallImageList = image;
-                listView1.Items.Add("Costa Rica", 0);
-                listView1.Items.Add("Mexico", 1);
-                listView1.Items.Add("Panama", 2);
+                listView1.Items.Add("Alemania", 0); listView1.Items.Add("Argentina", 1); listView1.Items.Add("Brasil", 2);
+                listView1.Items.Add("Canada", 3); listView1.Items.Add("China", 4); listView1.Items.Add("Colombia", 5);
+                listView1.Items.Add("Costa Rica", 6); listView1.Items.Add("Ecuador", 7); listView1.Items.Add("EEUU", 8);
+                listView1.Items.Add("Francia", 9); listView1.Items.Add("Guatemala", 10); listView1.Items.Add("Honduras", 11);
+                listView1.Items.Add("Italia", 12); listView1.Items.Add("Mexico", 13); listView1.Items.Add("Nicaragua", 14);
+                listView1.Items.Add("Panama", 15); listView1.Items.Add("Peru", 16); listView1.Items.Add("Salvador", 17);
+                listView1.Items.Add("Venezuela", 18);
             }
 
-            if (valor == true)
+            if (valor == true)//Banderas de los paises
             {
                 listView2.SmallImageList = image;
-                listView2.Items.Add("Costa Rica", 0);
-                listView2.Items.Add("Mexico", 1);
-                listView2.Items.Add("Panama", 2);
+                listView2.Items.Add("Alemania", 0); listView2.Items.Add("Argentina", 1); listView2.Items.Add("Brasil", 2);
+                listView2.Items.Add("Canada", 3); listView2.Items.Add("China", 4); listView2.Items.Add("Colombia", 5);
+                listView2.Items.Add("Costa Rica", 6); listView2.Items.Add("Ecuador", 7); listView2.Items.Add("EEUU", 8);
+                listView2.Items.Add("Francia", 9); listView2.Items.Add("Guatemala", 10); listView2.Items.Add("Honduras", 11);
+                listView2.Items.Add("Italia", 12); listView2.Items.Add("Mexico", 13); listView2.Items.Add("Nicaragua", 14);
+                listView2.Items.Add("Panama", 15); listView2.Items.Add("Peru", 16); listView2.Items.Add("Salvador", 17);
+                listView2.Items.Add("Venezuela", 18);
             }
 
         }

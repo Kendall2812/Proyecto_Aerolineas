@@ -36,7 +36,7 @@ namespace Data_Base
             try
             {
                 connection.Open();
-                comandos = new NpgsqlCommand("SELECT nombre FROM paises", connection);
+                comandos = new NpgsqlCommand("SELECT nombre FROM paises ORDER BY nombre ASC;", connection);
                 NpgsqlDataReader dr = comandos.ExecuteReader();
                 if (dr.HasRows)
                 {

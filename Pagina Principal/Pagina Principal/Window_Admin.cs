@@ -42,12 +42,6 @@ namespace Pagina_Principal
 
         private void button1_Click(object sender, EventArgs e)
         {
-            panelLed2.Visible = false;
-            panelLed3.Visible = false;
-            panelLed.Visible = true;
-            panelLed.Width = btnPais.Width;
-            panelLed.Top = btnPais.Top;
-
             this.Hide();
             crud_pais pais = new crud_pais();
             pais.Show();
@@ -55,23 +49,56 @@ namespace Pagina_Principal
 
         private void button6_Click(object sender, EventArgs e)
         {
-            panelLed2.Visible = false;
-            panelLed3.Visible = false;
-            panelLed.Visible = true;
-            panelLed.Width = btnTarijas_Hotel.Width;
-            panelLed.Top = btnTarijas_Hotel.Top;
+
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            panelLed2.Visible = false;
-            panelLed3.Visible = false;
-            panelLed.Visible = true;
-            panelLed.Width = btnTarijas_Vuelo.Width;
-            panelLed.Top = btnTarijas_Vuelo.Top;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            crud_lugares lugar = new crud_lugares();
+            lugar.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPais_MouseHover(object sender, EventArgs e)
+        {
+            panelLed2.Visible = false;
+            panelLed3.Visible = false;
+            panelLed.Visible = true;
+            panelLed.Width = btnPais.Width;
+            panelLed.Top = btnPais.Top;
+        }
+
+        private void btnPais_MouseLeave(object sender, EventArgs e)
+        {
+            panelLed.Visible = false;
+        }
+
+        private void btnLugar_MouseHover(object sender, EventArgs e)
         {
             panelLed.Visible = false;
             panelLed3.Visible = false;
@@ -80,7 +107,40 @@ namespace Pagina_Principal
             panelLed2.Top = btnLugar.Top;
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnLugar_MouseLeave(object sender, EventArgs e)
+        {
+            panelLed2.Visible = false;
+        }
+
+        private void btnAeropuerto_MouseHover(object sender, EventArgs e)
+        {
+            panelLed.Visible = false;
+            panelLed2.Visible = false;
+            panelLed3.Visible = true;
+            panelLed3.Width = btnAeropuerto.Width;
+            panelLed3.Top = btnAeropuerto.Top;
+        }
+
+        private void btnAeropuerto_MouseLeave(object sender, EventArgs e)
+        {
+            panelLed3.Visible = false;
+        }
+
+        private void btnTarijas_Hotel_MouseHover(object sender, EventArgs e)
+        {
+            panelLed2.Visible = false;
+            panelLed3.Visible = false;
+            panelLed.Visible = true;
+            panelLed.Width = btnTarijas_Hotel.Width;
+            panelLed.Top = btnTarijas_Hotel.Top;
+        }
+
+        private void btnTarijas_Hotel_MouseLeave(object sender, EventArgs e)
+        {
+            panelLed.Visible = false;
+        }
+
+        private void btnHoteles_MouseHover(object sender, EventArgs e)
         {
             panelLed.Visible = false;
             panelLed3.Visible = false;
@@ -89,7 +149,40 @@ namespace Pagina_Principal
             panelLed2.Top = btnHoteles.Top;
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void btnHoteles_MouseLeave(object sender, EventArgs e)
+        {
+            panelLed2.Visible = false;
+        }
+
+        private void btnRutas_MouseHover(object sender, EventArgs e)
+        {
+            panelLed.Visible = false;
+            panelLed2.Visible = false;
+            panelLed3.Visible = true;
+            panelLed3.Width = btnRutas.Width;
+            panelLed3.Top = btnRutas.Top;
+        }
+
+        private void btnRutas_MouseLeave(object sender, EventArgs e)
+        {
+            panelLed3.Visible = false;
+        }
+
+        private void btnTarijas_Vuelo_MouseHover(object sender, EventArgs e)
+        {
+            panelLed2.Visible = false;
+            panelLed3.Visible = false;
+            panelLed.Visible = true;
+            panelLed.Width = btnTarijas_Vuelo.Width;
+            panelLed.Top = btnTarijas_Vuelo.Top;
+        }
+
+        private void btnTarijas_Vuelo_MouseLeave(object sender, EventArgs e)
+        {
+            panelLed.Visible = false;
+        }
+
+        private void btnVehiculos_MouseHover(object sender, EventArgs e)
         {
             panelLed.Visible = false;
             panelLed3.Visible = false;
@@ -98,22 +191,9 @@ namespace Pagina_Principal
             panelLed2.Top = btnVehiculos.Top;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnVehiculos_MouseLeave(object sender, EventArgs e)
         {
-            panelLed.Visible = false;
-            panelLed2.Visible = false; 
-            panelLed3.Visible = true;
-            panelLed3.Width = btnAeropuerto.Width;
-            panelLed3.Top = btnAeropuerto.Top;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            panelLed.Visible = false;
             panelLed2.Visible = false;
-            panelLed3.Visible = true;
-            panelLed3.Width = btnRutas.Width;
-            panelLed3.Top = btnRutas.Top;
         }
     }
 }

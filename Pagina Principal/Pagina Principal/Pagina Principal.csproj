@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="crud_lugares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="crud_lugares.Designer.cs">
+      <DependentUpon>crud_lugares.cs</DependentUpon>
+    </Compile>
     <Compile Include="crud_pais.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <Compile Include="window_registry.Designer.cs">
       <DependentUpon>window_registry.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="crud_lugares.resx">
+      <DependentUpon>crud_lugares.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="crud_pais.resx">
       <DependentUpon>crud_pais.cs</DependentUpon>
     </EmbeddedResource>
