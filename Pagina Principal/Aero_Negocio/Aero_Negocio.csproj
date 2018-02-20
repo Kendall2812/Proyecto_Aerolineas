@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Lugares.cs" />
     <Compile Include="paises.cs" />
+    <Compile Include="Rutas.cs" />
     <Compile Include="Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

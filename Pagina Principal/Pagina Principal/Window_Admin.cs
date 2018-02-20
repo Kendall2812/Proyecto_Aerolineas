@@ -76,12 +76,14 @@ namespace Pagina_Principal
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            crud_Rutas aeropuertos = new crud_Rutas();
+            aeropuertos.Show();
         }
 
         private void btnPais_MouseHover(object sender, EventArgs e)
@@ -95,7 +97,7 @@ namespace Pagina_Principal
 
         private void btnPais_MouseLeave(object sender, EventArgs e)
         {
-            panelLed.Visible = false;
+            panelLed.Visible = true;
         }
 
         private void btnLugar_MouseHover(object sender, EventArgs e)
@@ -109,7 +111,7 @@ namespace Pagina_Principal
 
         private void btnLugar_MouseLeave(object sender, EventArgs e)
         {
-            panelLed2.Visible = false;
+            panelLed2.Visible = true;
         }
 
         private void btnAeropuerto_MouseHover(object sender, EventArgs e)
@@ -123,7 +125,7 @@ namespace Pagina_Principal
 
         private void btnAeropuerto_MouseLeave(object sender, EventArgs e)
         {
-            panelLed3.Visible = false;
+            panelLed3.Visible = true;
         }
 
         private void btnTarijas_Hotel_MouseHover(object sender, EventArgs e)
@@ -137,7 +139,7 @@ namespace Pagina_Principal
 
         private void btnTarijas_Hotel_MouseLeave(object sender, EventArgs e)
         {
-            panelLed.Visible = false;
+            panelLed.Visible = true;
         }
 
         private void btnHoteles_MouseHover(object sender, EventArgs e)
@@ -151,7 +153,7 @@ namespace Pagina_Principal
 
         private void btnHoteles_MouseLeave(object sender, EventArgs e)
         {
-            panelLed2.Visible = false;
+            panelLed2.Visible = true;
         }
 
         private void btnRutas_MouseHover(object sender, EventArgs e)
@@ -165,7 +167,7 @@ namespace Pagina_Principal
 
         private void btnRutas_MouseLeave(object sender, EventArgs e)
         {
-            panelLed3.Visible = false;
+            panelLed3.Visible = true;
         }
 
         private void btnTarijas_Vuelo_MouseHover(object sender, EventArgs e)
@@ -179,7 +181,7 @@ namespace Pagina_Principal
 
         private void btnTarijas_Vuelo_MouseLeave(object sender, EventArgs e)
         {
-            panelLed.Visible = false;
+            panelLed.Visible = true;
         }
 
         private void btnVehiculos_MouseHover(object sender, EventArgs e)
@@ -193,7 +195,7 @@ namespace Pagina_Principal
 
         private void btnVehiculos_MouseLeave(object sender, EventArgs e)
         {
-            panelLed2.Visible = false;
+            panelLed2.Visible = true;
         }
     }
 }
