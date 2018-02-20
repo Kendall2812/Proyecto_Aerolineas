@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Data_Base;
 
 namespace Pagina_Principal
 {
     public partial class Form2 : Form
     {
+        
         public Form2()
         {
             InitializeComponent();
@@ -21,5 +23,11 @@ namespace Pagina_Principal
         {
             contextMenuStrip1.Show(numericUpDown1, 1, numericUpDown1.Height);
         }
-    }  
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            Alojamientos c = new Alojamientos();
+            c.autoCompletar(textBox1);
+        }
+    }
 }

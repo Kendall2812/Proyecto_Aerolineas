@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alojamientos.cs" />
     <Compile Include="Conexio_BaseDatos.cs" />
     <Compile Include="DB_Lugar.cs" />
     <Compile Include="DB_Pais.cs" />
