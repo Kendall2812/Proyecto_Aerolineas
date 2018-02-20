@@ -22,7 +22,7 @@ namespace Data_Base
             try
             {
                 connection.Open();
-                comandos = new NpgsqlCommand("SELECT tipo FROM admin_user where cedula = '" + usuario + "' and password = '" + clave +"'", connection);
+                comandos = new NpgsqlCommand("SELECT tipo FROM admin_user where cedula = '" + usuario + "' and password = '" + clave + "'", connection);
                 NpgsqlDataReader dr = comandos.ExecuteReader();
                 if (dr.HasRows)
                 {

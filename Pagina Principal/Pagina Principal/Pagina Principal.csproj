@@ -61,6 +61,12 @@
     <Compile Include="crud_pais.Designer.cs">
       <DependentUpon>crud_pais.cs</DependentUpon>
     </Compile>
+    <Compile Include="crud_Rutas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="crud_Rutas.Designer.cs">
+      <DependentUpon>crud_Rutas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="crud_pais.resx">
       <DependentUpon>crud_pais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crud_Rutas.resx">
+      <DependentUpon>crud_Rutas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

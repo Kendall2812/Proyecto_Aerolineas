@@ -57,10 +57,15 @@ namespace Pagina_Principal
                 {
                     MessageBox.Show("El país de Destino debe ser digente del de Origen.", "Adventencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+                else
+                {
+                    Rutas guardarRuta = new Rutas();
+                    guardarRuta.insertarRuta(codigo, paisOrigen, paisDestino, duracion);
+                }
             }
             catch (Exception)
             {
-
+                MessageBox.Show("El codigo de la ruta debe ser numerico y no debe quedar en espacios blancos.", "Adventencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
