@@ -66,7 +66,9 @@ namespace Pagina_Principal
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            crud_Hoteles hotel = new crud_Hoteles();
+            hotel.Show();
         }
 
         private void button8_Click(object sender, EventArgs e)
