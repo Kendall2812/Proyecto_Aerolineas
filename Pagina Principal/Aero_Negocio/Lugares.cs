@@ -24,9 +24,9 @@ namespace Aero_Negocio
             return nombre;
         }
 
-        public List<object> cargarDatos1(string lugar)
+        public List<object> cargarDatos1(Int32 codigolugar)
         {
-            datos = lugar1.cargarDatos(lugar);
+            datos = lugar1.cargarDatos(codigolugar);
             return datos;
         }
 

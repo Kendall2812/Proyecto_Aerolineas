@@ -37,6 +37,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,12 +50,12 @@
   <ItemGroup>
     <Compile Include="Alojamientos.cs" />
     <Compile Include="Conexio_BaseDatos.cs" />
-    <Compile Include="DB_Aeropuertos.cs" />
     <Compile Include="DB_Hoteles.cs" />
     <Compile Include="DB_Lugar.cs" />
     <Compile Include="DB_Pais.cs" />
     <Compile Include="DB_Rutas.cs" />
     <Compile Include="DB_Tarifas_Hoteles.cs" />
+    <Compile Include="DB_Tarifas_Vuelos.cs" />
     <Compile Include="UserAdmin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

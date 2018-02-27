@@ -15,6 +15,7 @@ namespace Pagina_Principal
         paises cargarBox = new paises();
         List<object> paises2 = new List<object>();
         List<object> Infopaises = new List<object>();
+        List<object> Codigospaises = new List<object>();
         bool valor = false;
         paises guardar = new paises();
 
@@ -127,13 +128,19 @@ namespace Pagina_Principal
 
         public void cargarCombo()
         {
+            Codigospaises.Clear();
             comboPais.Items.Clear();
             paises2 = cargarBox.listaPaises();
             comboPais.Items.Add("Seleccionar");
             comboPais.SelectedItem = "Seleccionar";
-            for (int i = 0; i < paises2.Count; i++)
+            for (int i = 1; i < paises2.Count; i = i + 2)
             {
                 comboPais.Items.Add(paises2[i]);
+            }
+
+            for (int x = 0; x < paises2.Count; x++)
+            {
+                Codigospaises.Add(paises2[x]);
             }
             paises2.Clear();
         }
@@ -151,13 +158,16 @@ namespace Pagina_Principal
             }
             else
             {
+                int items = Codigospaises.IndexOf(paisSelect);
+                int codigo = Convert.ToInt32(Codigospaises[items - 1]);
+
                 ImageList image = new ImageList();
                 txtCodigo2.Text = "";
                 txtNombre2.Text = "";
                 image.Images.Clear();
                 listView2.Items.Clear();
                 Infopaises.Clear();
-                Infopaises = cargarBox.infoPais(paisSelect);
+                Infopaises = cargarBox.infoPais(codigo);
 
                 txtCodigo2.Text = Infopaises[0].ToString();
                 txtNombre2.Text = Infopaises[1].ToString();

@@ -36,13 +36,14 @@ namespace Data_Base
             try
             {
                 connection.Open();
-                comandos = new NpgsqlCommand("SELECT nombre FROM paises ORDER BY nombre ASC;", connection);
+                comandos = new NpgsqlCommand("SELECT codigo,nombre FROM paises ORDER BY nombre ASC;", connection);
                 NpgsqlDataReader dr = comandos.ExecuteReader();
                 if (dr.HasRows)
                 {
                     while (dr.Read())
                     {
-                        paises2.Add(dr.GetString(0));
+                        paises2.Add(dr.GetInt32(0));
+                        paises2.Add(dr.GetString(1));
                     }
                 }
                 connection.Close();
@@ -54,12 +55,12 @@ namespace Data_Base
             return paises2;
         }
 
-        public List<object> informPais(string pais)
+        public List<object> informPais(int codigopais)
         {
             try
             {
                 connection.Open();
-                comandos = new NpgsqlCommand("SELECT codigo, nombre, bandera FROM paises WHERE nombre = '" + pais + "'", connection);
+                comandos = new NpgsqlCommand("SELECT codigo, nombre, bandera FROM paises WHERE codigo = '" + codigopais + "'", connection);
                 NpgsqlDataReader dr = comandos.ExecuteReader();
                 if (dr.HasRows)
                 {

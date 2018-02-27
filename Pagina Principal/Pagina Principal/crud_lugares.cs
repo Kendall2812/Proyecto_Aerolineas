@@ -10,6 +10,7 @@ namespace Pagina_Principal
         Lugares lugar = new Lugares();
         List<object> lugares = new List<object>();
         List<object> datosLugar = new List<object>();
+        List<object> codigosLugar = new List<object>();
 
         public crud_lugares()
         {
@@ -59,13 +60,19 @@ namespace Pagina_Principal
 
         public void cargarCombo()
         {
+            codigosLugar.Clear();
             combo1Lugar.Items.Clear();
             lugares = lugar.lugares1();
             combo1Lugar.Items.Add("Seleccionar");
             combo1Lugar.SelectedItem = "Seleccionar";
-            for (int i = 0; i < lugares.Count; i++)
+            for (int i = 1; i < lugares.Count; i=i+2)
             {
                 combo1Lugar.Items.Add(lugares[i]);
+            }
+
+            for (int x = 0; x < lugares.Count; x++)
+            {
+                codigosLugar.Add(lugares[x]);
             }
             lugares.Clear();
         }
@@ -83,10 +90,13 @@ namespace Pagina_Principal
             }
             else
             {
+                int items = codigosLugar.IndexOf(lugarSelect);
+                int codigo = Convert.ToInt32(codigosLugar[items - 1]);
+
                 txtCodigo2.Text = "";
                 txtNombre2.Text = "";
                 datosLugar.Clear();
-                datosLugar = lugar.cargarDatos1(lugarSelect);
+                datosLugar = lugar.cargarDatos1(codigo);
 
                 txtCodigo2.Text = datosLugar[0].ToString();
                 txtNombre2.Text = datosLugar[1].ToString();
