@@ -39,13 +39,14 @@ namespace Data_Base
             try
             {
                 connection.Open();
-                comandos = new NpgsqlCommand("SELECT nombre FROM lugares ORDER BY nombre ASC", connection);
+                comandos = new NpgsqlCommand("SELECT codigo,nombre FROM lugares ORDER BY nombre ASC", connection);
                 NpgsqlDataReader dr = comandos.ExecuteReader();
                 if (dr.HasRows)
                 {
                     while (dr.Read())
                     {
-                        places.Add(dr.GetString(0));
+                        places.Add(dr.GetInt32(0));
+                        places.Add(dr.GetString(1));
                     }
                 }
             }
@@ -56,13 +57,13 @@ namespace Data_Base
             return places;
         }
 
-        public List<object> cargarDatos(string lugar)
+        public List<object> cargarDatos(int codigolugar)
         {
             connection = conexion1.Conexion();
             try
             {
                 connection.Open();
-                comandos = new NpgsqlCommand("SELECT codigo, nombre FROM lugares WHERE nombre = '" + lugar + "'", connection);
+                comandos = new NpgsqlCommand("SELECT codigo, nombre FROM lugares WHERE codigo = '" + codigolugar + "'", connection);
                 NpgsqlDataReader dr = comandos.ExecuteReader();
                 if (dr.HasRows)
                 {

@@ -49,12 +49,16 @@ namespace Pagina_Principal
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            crud_Tarifas_Hoteles tarifas = new crud_Tarifas_Hoteles();
+            tarifas.Show();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            crud_Tarifas_Vuelos tarifasVuelos = new crud_Tarifas_Vuelos();
+            tarifasVuelos.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)

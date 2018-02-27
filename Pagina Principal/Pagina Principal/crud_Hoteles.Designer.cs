@@ -33,6 +33,8 @@
             this.btnRegresar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.comboPrecioHabitacion = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.Imagenhotel = new System.Windows.Forms.PictureBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.FotoHotel = new System.Windows.Forms.Button();
@@ -48,6 +50,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.comboTarifaHotel1 = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -66,7 +71,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnLimpiar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -121,12 +125,15 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 42);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(822, 487);
+            this.tabControl1.Size = new System.Drawing.Size(822, 562);
             this.tabControl1.TabIndex = 2;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Silver;
+            this.tabPage1.Controls.Add(this.comboPrecioHabitacion);
+            this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.Imagenhotel);
             this.tabPage1.Controls.Add(this.btnGuardar);
             this.tabPage1.Controls.Add(this.FotoHotel);
@@ -144,14 +151,31 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 33);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(814, 450);
+            this.tabPage1.Size = new System.Drawing.Size(814, 525);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Registrar Hoteles";
+            // 
+            // comboPrecioHabitacion
+            // 
+            this.comboPrecioHabitacion.FormattingEnabled = true;
+            this.comboPrecioHabitacion.Location = new System.Drawing.Point(106, 310);
+            this.comboPrecioHabitacion.Name = "comboPrecioHabitacion";
+            this.comboPrecioHabitacion.Size = new System.Drawing.Size(189, 32);
+            this.comboPrecioHabitacion.TabIndex = 15;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 313);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(94, 24);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "Tarifa Hotel";
             // 
             // Imagenhotel
             // 
             this.Imagenhotel.BackColor = System.Drawing.Color.LightGray;
-            this.Imagenhotel.Location = new System.Drawing.Point(460, 236);
+            this.Imagenhotel.Location = new System.Drawing.Point(460, 259);
             this.Imagenhotel.Name = "Imagenhotel";
             this.Imagenhotel.Size = new System.Drawing.Size(348, 208);
             this.Imagenhotel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -165,7 +189,7 @@
             this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow;
             this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(10, 368);
+            this.btnGuardar.Location = new System.Drawing.Point(6, 454);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(102, 37);
             this.btnGuardar.TabIndex = 12;
@@ -195,7 +219,7 @@
             // comboPais3
             // 
             this.comboPais3.FormattingEnabled = true;
-            this.comboPais3.Location = new System.Drawing.Point(81, 215);
+            this.comboPais3.Location = new System.Drawing.Point(106, 210);
             this.comboPais3.Name = "comboPais3";
             this.comboPais3.Size = new System.Drawing.Size(189, 32);
             this.comboPais3.TabIndex = 9;
@@ -209,14 +233,15 @@
             // 
             // txtNombre3
             // 
-            this.txtNombre3.Location = new System.Drawing.Point(81, 121);
+            this.txtNombre3.Location = new System.Drawing.Point(106, 121);
             this.txtNombre3.Name = "txtNombre3";
             this.txtNombre3.Size = new System.Drawing.Size(189, 30);
             this.txtNombre3.TabIndex = 7;
             // 
             // txtCodigo3
             // 
-            this.txtCodigo3.Location = new System.Drawing.Point(81, 30);
+            this.txtCodigo3.BackColor = System.Drawing.Color.White;
+            this.txtCodigo3.Location = new System.Drawing.Point(106, 30);
             this.txtCodigo3.Name = "txtCodigo3";
             this.txtCodigo3.Size = new System.Drawing.Size(189, 30);
             this.txtCodigo3.TabIndex = 6;
@@ -278,6 +303,8 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Silver;
+            this.tabPage2.Controls.Add(this.comboTarifaHotel1);
+            this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.btnLimpiar);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.comboBox1);
@@ -299,9 +326,41 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(814, 450);
+            this.tabPage2.Size = new System.Drawing.Size(814, 525);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Editar o Eliminar Hoteles";
+            // 
+            // comboTarifaHotel1
+            // 
+            this.comboTarifaHotel1.FormattingEnabled = true;
+            this.comboTarifaHotel1.Location = new System.Drawing.Point(102, 365);
+            this.comboTarifaHotel1.Name = "comboTarifaHotel1";
+            this.comboTarifaHotel1.Size = new System.Drawing.Size(189, 32);
+            this.comboTarifaHotel1.TabIndex = 34;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(2, 366);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(94, 24);
+            this.label15.TabIndex = 33;
+            this.label15.Text = "Tarifa Hotel";
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.Yellow;
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow;
+            this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Location = new System.Drawing.Point(129, 482);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(102, 37);
+            this.btnLimpiar.TabIndex = 32;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // label13
             // 
@@ -328,16 +387,18 @@
             this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow;
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Location = new System.Drawing.Point(240, 389);
+            this.btnEliminar.Location = new System.Drawing.Point(252, 482);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(102, 37);
             this.btnEliminar.TabIndex = 29;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(460, 236);
+            this.pictureBox2.BackColor = System.Drawing.Color.LightGray;
+            this.pictureBox2.Location = new System.Drawing.Point(460, 267);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(348, 208);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -351,7 +412,7 @@
             this.btnGuardar2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow;
             this.btnGuardar2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
             this.btnGuardar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar2.Location = new System.Drawing.Point(6, 389);
+            this.btnGuardar2.Location = new System.Drawing.Point(6, 482);
             this.btnGuardar2.Name = "btnGuardar2";
             this.btnGuardar2.Size = new System.Drawing.Size(102, 37);
             this.btnGuardar2.TabIndex = 26;
@@ -381,7 +442,7 @@
             // comboPais2
             // 
             this.comboPais2.FormattingEnabled = true;
-            this.comboPais2.Location = new System.Drawing.Point(81, 291);
+            this.comboPais2.Location = new System.Drawing.Point(102, 284);
             this.comboPais2.Name = "comboPais2";
             this.comboPais2.Size = new System.Drawing.Size(189, 32);
             this.comboPais2.TabIndex = 23;
@@ -395,15 +456,17 @@
             // 
             // txtNombre2
             // 
-            this.txtNombre2.Location = new System.Drawing.Point(81, 205);
+            this.txtNombre2.Location = new System.Drawing.Point(102, 205);
             this.txtNombre2.Name = "txtNombre2";
             this.txtNombre2.Size = new System.Drawing.Size(189, 30);
             this.txtNombre2.TabIndex = 21;
             // 
             // txtCodigo2
             // 
-            this.txtCodigo2.Location = new System.Drawing.Point(81, 126);
+            this.txtCodigo2.BackColor = System.Drawing.Color.White;
+            this.txtCodigo2.Location = new System.Drawing.Point(102, 126);
             this.txtCodigo2.Name = "txtCodigo2";
+            this.txtCodigo2.ReadOnly = true;
             this.txtCodigo2.Size = new System.Drawing.Size(189, 30);
             this.txtCodigo2.TabIndex = 20;
             // 
@@ -437,7 +500,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 290);
+            this.label10.Location = new System.Drawing.Point(6, 288);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(43, 24);
             this.label10.TabIndex = 16;
@@ -446,7 +509,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 211);
+            this.label11.Location = new System.Drawing.Point(3, 210);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(69, 24);
             this.label11.TabIndex = 15;
@@ -465,27 +528,12 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.Yellow;
-            this.btnLimpiar.FlatAppearance.BorderSize = 0;
-            this.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow;
-            this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Location = new System.Drawing.Point(123, 389);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(102, 37);
-            this.btnLimpiar.TabIndex = 32;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
             // crud_Hoteles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GrayText;
-            this.ClientSize = new System.Drawing.Size(846, 541);
+            this.ClientSize = new System.Drawing.Size(846, 616);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -547,5 +595,9 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox Imagenhotel;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.ComboBox comboPrecioHabitacion;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox comboTarifaHotel1;
+        private System.Windows.Forms.Label label15;
     }
 }

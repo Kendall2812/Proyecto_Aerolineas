@@ -10,19 +10,19 @@ namespace Aero_Negocio
         List<object> nombreHotel = new List<object>();
         List<object> datosHotel = new List<object>();
 
-        public void insertarHotel(int codigo, string hotel, string pais, string lugar, int cantiHabita, string imageHotel)
+        public void insertarHotel(int codigo, string hotel, string pais, string lugar, int cantiHabita, string imageHotel, Int32 codigoTarifa)
         {
-            hotel2.agregarHoteles(codigo, hotel, pais, lugar, cantiHabita, imageHotel);
+            hotel2.agregarHoteles(codigo, hotel, pais, lugar, cantiHabita, imageHotel, codigoTarifa);
         }
 
-        public void modificarHotal(int codigo2, string hotel3, string pais2, string lugar2, int cantiHabita2, string imageHotel2)
+        public void modificarHotal(int codigo2, string hotel3, string pais2, string lugar2, int cantiHabita2, string imageHotel2, int codigoTarifa)
         {
-            hotel2.editarHoteles(codigo2, hotel3, pais2, lugar2, cantiHabita2, imageHotel2);
+            hotel2.editarHoteles(codigo2, hotel3, pais2, lugar2, cantiHabita2, imageHotel2, codigoTarifa);
         }
 
         public void eliminarHotel(int codigo)
         {
-            
+            hotel2.eliminarHotel(codigo);
         }
 
         public List<object> cargarDatos(int codigoHotel)

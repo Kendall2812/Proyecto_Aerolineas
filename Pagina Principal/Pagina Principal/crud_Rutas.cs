@@ -39,7 +39,7 @@ namespace Pagina_Principal
             comboPaisDestino.Items.Add("Seleccionar");
             comboPaisDestino.SelectedItem = "Seleccionar";
 
-            for (int i = 0; i < paises.Count; i++)
+            for (int i = 1; i < paises.Count; i=i+2)
             {
                 comboPaisOrigen.Items.Add(paises[i]);
                 comboPaisDestino.Items.Add(paises[i]);
@@ -145,7 +145,7 @@ namespace Pagina_Principal
             comboPaisDestino2.Items.Add("Seleccionar");
             comboPaisDestino2.SelectedItem = "Seleccionar";
 
-            for (int i = 0; i < paises2.Count; i++)
+            for (int i = 1; i < paises2.Count; i=i+2)
             {
                 comboPaisOrigen2.Items.Add(paises2[i]);
                 comboPaisDestino2.Items.Add(paises2[i]);
@@ -155,6 +155,7 @@ namespace Pagina_Principal
 
         public void mostrarDataGried()
         {
+            //cargar la informacion del dataGridView a los texBox ycomboBox para que la informacion se pueda editar o eliminar
             Int32 numero = dataGridView1Datos.GetCellCount(DataGridViewElementStates.Selected);
             if (numero == 4)
             {
@@ -172,7 +173,7 @@ namespace Pagina_Principal
             }
             else
             {
-                MessageBox.Show("Debe estar toda la fila selecciona para poder modificar.");
+                MessageBox.Show("Debe estar toda la fila selecciona para poder modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

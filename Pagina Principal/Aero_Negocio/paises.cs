@@ -21,9 +21,9 @@ namespace Aero_Negocio
             return nombres;
         }
 
-        public List<object> infoPais(string pais)
+        public List<object> infoPais(int codigopais)
         {
-            infopais = guardar.informPais(pais);
+            infopais = guardar.informPais(codigopais);
             return infopais;
         }
 

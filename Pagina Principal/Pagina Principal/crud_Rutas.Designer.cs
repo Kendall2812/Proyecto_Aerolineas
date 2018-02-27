@@ -231,9 +231,12 @@
             // 
             // dataGridView1Datos
             // 
+            this.dataGridView1Datos.AllowUserToAddRows = false;
+            this.dataGridView1Datos.AllowUserToDeleteRows = false;
             this.dataGridView1Datos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1Datos.Location = new System.Drawing.Point(6, 220);
             this.dataGridView1Datos.Name = "dataGridView1Datos";
+            this.dataGridView1Datos.ReadOnly = true;
             this.dataGridView1Datos.RowTemplate.Height = 24;
             this.dataGridView1Datos.Size = new System.Drawing.Size(851, 250);
             this.dataGridView1Datos.TabIndex = 0;

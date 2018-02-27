@@ -47,6 +47,8 @@
     <Compile Include="Lugares.cs" />
     <Compile Include="paises.cs" />
     <Compile Include="Rutas.cs" />
+    <Compile Include="Tarifas_Hoteles.cs" />
+    <Compile Include="Tarifa_Vuelos.cs" />
     <Compile Include="Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

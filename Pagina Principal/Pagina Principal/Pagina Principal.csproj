@@ -73,6 +73,18 @@
     <Compile Include="crud_Rutas.Designer.cs">
       <DependentUpon>crud_Rutas.cs</DependentUpon>
     </Compile>
+    <Compile Include="crud_Tarifas_Hoteles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="crud_Tarifas_Hoteles.Designer.cs">
+      <DependentUpon>crud_Tarifas_Hoteles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="crud_Tarifas_Vuelos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="crud_Tarifas_Vuelos.Designer.cs">
+      <DependentUpon>crud_Tarifas_Vuelos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +123,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="crud_Rutas.resx">
       <DependentUpon>crud_Rutas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crud_Tarifas_Hoteles.resx">
+      <DependentUpon>crud_Tarifas_Hoteles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crud_Tarifas_Vuelos.resx">
+      <DependentUpon>crud_Tarifas_Vuelos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
