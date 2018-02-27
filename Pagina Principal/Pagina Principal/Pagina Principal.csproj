@@ -49,6 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="crud_aeropuertos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="crud_aeropuertos.Designer.cs">
+      <DependentUpon>crud_aeropuertos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="crud_Hoteles.cs" />
+    <Compile Include="crud_Hoteles.Designer.cs">
+      <DependentUpon>crud_Hoteles.cs</DependentUpon>
+    </Compile>
     <Compile Include="crud_lugares.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +77,10 @@
     <Compile Include="crud_Rutas.Designer.cs">
       <DependentUpon>crud_Rutas.cs</DependentUpon>
     </Compile>
+    <Compile Include="crud_Tarifas_Hoteles.cs" />
+    <Compile Include="crud_Tarifas_Hoteles.Designer.cs">
+      <DependentUpon>crud_Tarifas_Hoteles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +96,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reservasYcompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reservasYcompras.Designer.cs">
+      <DependentUpon>reservasYcompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="seccion_vuelos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seccion_vuelos.Designer.cs">
+      <DependentUpon>seccion_vuelos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Window_Admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +120,12 @@
     <Compile Include="window_registry.Designer.cs">
       <DependentUpon>window_registry.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="crud_aeropuertos.resx">
+      <DependentUpon>crud_aeropuertos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crud_Hoteles.resx">
+      <DependentUpon>crud_Hoteles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="crud_lugares.resx">
       <DependentUpon>crud_lugares.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="crud_Rutas.resx">
       <DependentUpon>crud_Rutas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crud_Tarifas_Hoteles.resx">
+      <DependentUpon>crud_Tarifas_Hoteles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -119,6 +154,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="reservasYcompras.resx">
+      <DependentUpon>reservasYcompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seccion_vuelos.resx">
+      <DependentUpon>seccion_vuelos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Window_Admin.resx">
       <DependentUpon>Window_Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,6 +191,9 @@
       <Project>{4aa4b886-eea4-49b8-9cd9-5565ed8bea5b}</Project>
       <Name>Data_Base</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camara.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

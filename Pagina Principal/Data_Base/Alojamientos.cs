@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using Data_Base;
 using Npgsql;
+using System.Data;
 
 namespace Data_Base
 {
@@ -40,12 +41,12 @@ namespace Data_Base
         public void autoCompletar(TextBox cajaTexto)
         {
             try
-            {
-                cmd = new NpgsqlCommand("Select nombre from aeropuertos", conexion);               
+            {//WHERE pais='" + cajaTexto + "'OR lugar = '" + cajaTexto + "'OR nombre = '" + cajaTexto +  "'"
+                cmd = new NpgsqlCommand("SELECT * FROM hoteles ", conexion);
                 NpgsqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    cajaTexto.AutoCompleteCustomSource.Add(dr["nombre"].ToString());
+                    cajaTexto.AutoCompleteCustomSource.Add(dr["*"].ToString());
                 }
                 dr.Close();
 
@@ -55,6 +56,10 @@ namespace Data_Base
                 MessageBox.Show("No se pudo autocompletar el TextBox: " + ex.ToString());
             }
         }
+
+
+        
     }
+    
 }
 

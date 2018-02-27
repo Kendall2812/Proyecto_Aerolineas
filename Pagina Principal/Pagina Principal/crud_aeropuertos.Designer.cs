@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.localidad = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.iata = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.co = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,34 +40,39 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codigo,
-            this.nombre,
-            this.localidad,
-            this.iata});
+            this.co,
+            this.no,
+            this.lo,
+            this.ia});
             this.dataGridView1.Location = new System.Drawing.Point(58, 51);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(473, 256);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.TabIndex = 1;
+            //this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
+            //this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             // 
-            // codigo
+            // co
             // 
-            this.codigo.HeaderText = "Codigo";
-            this.codigo.Name = "codigo";
+            this.co.HeaderText = "Codigo";
+            this.co.Name = "co";
             // 
-            // nombre
+            // no
             // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
+            this.no.HeaderText = "Nombre";
+            this.no.Name = "no";
             // 
-            // localidad
+            // lo
             // 
-            this.localidad.HeaderText = "Localidad";
-            this.localidad.Name = "localidad";
+            this.lo.HeaderText = "Localizacion";
+            this.lo.Name = "lo";
+            this.lo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.lo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // iata
+            // ia
             // 
-            this.iata.HeaderText = "IATA";
-            this.iata.Name = "iata";
+            this.ia.HeaderText = "IATA";
+            this.ia.Name = "ia";
             // 
             // crud_aeropuertos
             // 
@@ -77,6 +82,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "crud_aeropuertos";
             this.Text = "crud_aeropuertos";
+            this.Load += new System.EventHandler(this.crud_aeropuertos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -84,10 +90,10 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewComboBoxColumn localidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iata;
+        private System.Windows.Forms.DataGridViewTextBoxColumn co;
+        private System.Windows.Forms.DataGridViewTextBoxColumn no;
+        private System.Windows.Forms.DataGridViewComboBoxColumn lo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ia;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }
