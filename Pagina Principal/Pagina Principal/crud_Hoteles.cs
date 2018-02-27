@@ -42,7 +42,7 @@ namespace Pagina_Principal
                 Int32 codigoTarifa = Convert.ToInt32(comboPrecioHabitacion.Text);
                 int catiHabitacion = Convert.ToInt32(numericUp3.Value.ToString());
 
-                if (nombre.Equals("") || pais.Equals("") || lugar.Equals("") || lugar.Equals("Seleccionar") || catiHabitacion.Equals(0) || direccion.Equals("") || codigoTarifa == 0)
+                if (nombre.Equals("") || pais.Equals("Seleccionar") || pais.Equals("") || lugar.Equals("") || lugar.Equals("Seleccionar") || catiHabitacion.Equals(0) || direccion.Equals("") || codigoTarifa == 0)
                 {
                     MessageBox.Show("Ningun espacio puede quedar vacio. Las cantidad de las habitaciones tiene que ser direntes de 0. Debe seleccionar una imagen. País y Lugar no pueden quedar con seleccionar." , "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
