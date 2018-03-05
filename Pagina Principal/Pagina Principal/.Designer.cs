@@ -28,13 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.optPrecioMenorPais = new System.Windows.Forms.RadioButton();
+            this.optPrecioMayorPais = new System.Windows.Forms.RadioButton();
+            this.btnReservar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panelPersonas = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.spinerMenores = new System.Windows.Forms.NumericUpDown();
+            this.spinnerAdultos = new System.Windows.Forms.NumericUpDown();
+            this.labelCantidadDias = new System.Windows.Forms.Label();
+            this.spinnerHab = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataTLlegada = new System.Windows.Forms.DateTimePicker();
             this.dateTPSalida = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.lblDias = new System.Windows.Forms.Label();
@@ -42,24 +53,30 @@
             this.lbldestino = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.adultosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.niñosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
+            this.panelPersonas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spinerMenores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinnerAdultos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinnerHab)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.YellowGreen;
-            this.panel1.Controls.Add(this.numericUpDown2);
-            this.panel1.Controls.Add(this.numericUpDown1);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.listView1);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.optPrecioMenorPais);
+            this.panel1.Controls.Add(this.optPrecioMayorPais);
+            this.panel1.Controls.Add(this.btnReservar);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.panelPersonas);
+            this.panel1.Controls.Add(this.labelCantidadDias);
+            this.panel1.Controls.Add(this.spinnerHab);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.dataTLlegada);
             this.panel1.Controls.Add(this.dateTPSalida);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.lblDias);
@@ -67,25 +84,148 @@
             this.panel1.Controls.Add(this.lbldestino);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(-4, 12);
+            this.panel1.Location = new System.Drawing.Point(-4, -4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(613, 436);
+            this.panel1.Size = new System.Drawing.Size(654, 522);
             this.panel1.TabIndex = 0;
             // 
-            // numericUpDown2
+            // dataGridView1
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(402, 165);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(48, 20);
-            this.numericUpDown2.TabIndex = 12;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(27, 345);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(447, 150);
+            this.dataGridView1.TabIndex = 58;
             // 
-            // numericUpDown1
+            // listView1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(312, 165);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(48, 20);
-            this.numericUpDown1.TabIndex = 11;
-            this.numericUpDown1.Click += new System.EventHandler(this.numericUpDown1_Click);
+            this.listView1.Location = new System.Drawing.Point(27, 275);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(492, 63);
+            this.listView1.TabIndex = 57;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(500, 67);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(140, 23);
+            this.button3.TabIndex = 56;
+            this.button3.Text = "Mis Reservas";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(500, 16);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(140, 23);
+            this.button2.TabIndex = 55;
+            this.button2.Text = "Cerrar Sesion";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // optPrecioMenorPais
+            // 
+            this.optPrecioMenorPais.AutoSize = true;
+            this.optPrecioMenorPais.Location = new System.Drawing.Point(146, 252);
+            this.optPrecioMenorPais.Name = "optPrecioMenorPais";
+            this.optPrecioMenorPais.Size = new System.Drawing.Size(88, 17);
+            this.optPrecioMenorPais.TabIndex = 54;
+            this.optPrecioMenorPais.TabStop = true;
+            this.optPrecioMenorPais.Text = "Precio Menor";
+            this.optPrecioMenorPais.UseVisualStyleBackColor = true;
+            // 
+            // optPrecioMayorPais
+            // 
+            this.optPrecioMayorPais.AutoSize = true;
+            this.optPrecioMayorPais.Location = new System.Drawing.Point(53, 252);
+            this.optPrecioMayorPais.Name = "optPrecioMayorPais";
+            this.optPrecioMayorPais.Size = new System.Drawing.Size(87, 17);
+            this.optPrecioMayorPais.TabIndex = 53;
+            this.optPrecioMayorPais.TabStop = true;
+            this.optPrecioMayorPais.Text = "Precio Mayor";
+            this.optPrecioMayorPais.UseVisualStyleBackColor = true;
+            // 
+            // btnReservar
+            // 
+            this.btnReservar.Location = new System.Drawing.Point(525, 345);
+            this.btnReservar.Name = "btnReservar";
+            this.btnReservar.Size = new System.Drawing.Size(75, 23);
+            this.btnReservar.TabIndex = 52;
+            this.btnReservar.Text = "Reservar";
+            this.btnReservar.UseVisualStyleBackColor = true;
+            this.btnReservar.Click += new System.EventHandler(this.btnReservar_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(406, 132);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 13);
+            this.label3.TabIndex = 51;
+            this.label3.Text = "Personas:";
+            // 
+            // panelPersonas
+            // 
+            this.panelPersonas.Controls.Add(this.label23);
+            this.panelPersonas.Controls.Add(this.label21);
+            this.panelPersonas.Controls.Add(this.spinerMenores);
+            this.panelPersonas.Controls.Add(this.spinnerAdultos);
+            this.panelPersonas.Location = new System.Drawing.Point(406, 148);
+            this.panelPersonas.Name = "panelPersonas";
+            this.panelPersonas.Size = new System.Drawing.Size(113, 60);
+            this.panelPersonas.TabIndex = 50;
+            this.panelPersonas.Visible = false;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(3, 37);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(45, 13);
+            this.label23.TabIndex = 42;
+            this.label23.Text = "Adultos:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(3, 10);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(37, 13);
+            this.label21.TabIndex = 46;
+            this.label21.Text = "Niños:";
+            // 
+            // spinerMenores
+            // 
+            this.spinerMenores.Location = new System.Drawing.Point(60, 8);
+            this.spinerMenores.Name = "spinerMenores";
+            this.spinerMenores.Size = new System.Drawing.Size(37, 20);
+            this.spinerMenores.TabIndex = 44;
+            this.spinerMenores.ValueChanged += new System.EventHandler(this.spinerMenores_ValueChanged);
+            // 
+            // spinnerAdultos
+            // 
+            this.spinnerAdultos.Location = new System.Drawing.Point(60, 37);
+            this.spinnerAdultos.Name = "spinnerAdultos";
+            this.spinnerAdultos.Size = new System.Drawing.Size(37, 20);
+            this.spinnerAdultos.TabIndex = 45;
+            this.spinnerAdultos.ValueChanged += new System.EventHandler(this.spinnerAdultos_ValueChanged);
+            // 
+            // labelCantidadDias
+            // 
+            this.labelCantidadDias.AutoSize = true;
+            this.labelCantidadDias.Location = new System.Drawing.Point(450, 189);
+            this.labelCantidadDias.Name = "labelCantidadDias";
+            this.labelCantidadDias.Size = new System.Drawing.Size(0, 13);
+            this.labelCantidadDias.TabIndex = 49;
+            // 
+            // spinnerHab
+            // 
+            this.spinnerHab.Location = new System.Drawing.Point(300, 161);
+            this.spinnerHab.Name = "spinnerHab";
+            this.spinnerHab.Size = new System.Drawing.Size(48, 20);
+            this.spinnerHab.TabIndex = 11;
+            this.spinnerHab.ValueChanged += new System.EventHandler(this.spinnerHab_ValueChanged);
+            this.spinnerHab.Click += new System.EventHandler(this.numericUpDown1_Click);
             // 
             // button1
             // 
@@ -99,21 +239,14 @@
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // dataTLlegada
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(48, 238);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(471, 195);
-            this.dataGridView1.TabIndex = 9;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(156, 161);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(101, 20);
-            this.dateTimePicker1.TabIndex = 7;
+            this.dataTLlegada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dataTLlegada.Location = new System.Drawing.Point(156, 161);
+            this.dataTLlegada.Name = "dataTLlegada";
+            this.dataTLlegada.Size = new System.Drawing.Size(101, 20);
+            this.dataTLlegada.TabIndex = 7;
+            this.dataTLlegada.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // dateTPSalida
             // 
@@ -137,9 +270,9 @@
             this.lblDias.AutoSize = true;
             this.lblDias.Location = new System.Drawing.Point(153, 132);
             this.lblDias.Name = "lblDias";
-            this.lblDias.Size = new System.Drawing.Size(35, 13);
+            this.lblDias.Size = new System.Drawing.Size(31, 13);
             this.lblDias.TabIndex = 4;
-            this.lblDias.Text = "label3";
+            this.lblDias.Text = "        ";
             // 
             // label2
             // 
@@ -179,42 +312,23 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "BUSCA TU ALOJAMIENTO";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.adultosToolStripMenuItem,
-            this.niñosToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(116, 48);
-            // 
-            // adultosToolStripMenuItem
-            // 
-            this.adultosToolStripMenuItem.Name = "adultosToolStripMenuItem";
-            this.adultosToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
-            this.adultosToolStripMenuItem.Text = "Adultos";
-            // 
-            // niñosToolStripMenuItem
-            // 
-            this.niñosToolStripMenuItem.Name = "niñosToolStripMenuItem";
-            this.niñosToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
-            this.niñosToolStripMenuItem.Text = "Niños";
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 445);
+            this.ClientSize = new System.Drawing.Size(648, 518);
             this.Controls.Add(this.panel1);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.panelPersonas.ResumeLayout(false);
+            this.panelPersonas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spinerMenores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinnerAdultos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinnerHab)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -222,7 +336,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dataTLlegada;
         private System.Windows.Forms.DateTimePicker dateTPSalida;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblDias;
@@ -231,11 +345,20 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NumericUpDown spinnerHab;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panelPersonas;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.NumericUpDown spinerMenores;
+        private System.Windows.Forms.NumericUpDown spinnerAdultos;
+        private System.Windows.Forms.Label labelCantidadDias;
+        private System.Windows.Forms.Button btnReservar;
+        private System.Windows.Forms.RadioButton optPrecioMenorPais;
+        private System.Windows.Forms.RadioButton optPrecioMayorPais;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem adultosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem niñosToolStripMenuItem;
     }
 }
