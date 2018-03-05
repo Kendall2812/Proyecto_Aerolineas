@@ -77,7 +77,9 @@ namespace Pagina_Principal
 
         private void button8_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            crud_Vehiculos carro = new crud_Vehiculos();
+            carro.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
