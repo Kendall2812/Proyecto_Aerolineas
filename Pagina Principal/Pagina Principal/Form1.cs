@@ -8,6 +8,7 @@ namespace Pagina_Principal
     public partial class Form1 : Form
     {
         string nombre;
+        int usuario;
         public Form1()
         {
             InitializeComponent();
@@ -18,7 +19,7 @@ namespace Pagina_Principal
             try
             {
                 string tipo_user;
-                int usuario = Convert.ToInt32(txtNombre.Text);
+                usuario = Convert.ToInt32(txtNombre.Text);
                 string clave = txtPassword.Text;
                 if (usuario.Equals("") && clave.Equals(""))
                 {
@@ -39,6 +40,7 @@ namespace Pagina_Principal
                     else if (tipo_user.Equals("U"))
                     {
                         //vetana usuario
+                        ExtraerNombre();
                         this.Hide();
                         Form2 ver = new Form2(usuario, nombre);
                         ver.Show();
@@ -114,6 +116,13 @@ namespace Pagina_Principal
             toolTip1.ReshowDelay = 500;
             toolTip1.ShowAlways = true;
             toolTip1.SetToolTip(this.btnCerrar, "Cerrar aplicación.");
+           
+        }
+        public void ExtraerNombre()
+        {
+            alojamiento alo = new alojamiento();
+            nombre= alo.TraerInfo("SELECT name FROM admin_user WHERE cedula = '" +usuario +"'");
         }
     }
+    
 }
