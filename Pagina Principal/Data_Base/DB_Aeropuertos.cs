@@ -13,6 +13,7 @@ namespace Data_Base
         static NpgsqlConnection connection;
         static NpgsqlCommand comandos;
         Conexio_BaseDatos conexion1 = new Conexio_BaseDatos();
+
         public void agregarAeropuerto(Int32 codigo, string nombre,string locali, string iata)
         {
             connection = conexion1.Conexion();
@@ -42,9 +43,7 @@ namespace Data_Base
                 while (reader.Read())
                 {
                     combo.Items.Add(reader.GetString(0));
-                                   
                 }
-
             }
             finally
             {

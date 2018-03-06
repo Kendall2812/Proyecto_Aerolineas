@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnReportes = new System.Windows.Forms.Button();
             this.panelLed3 = new System.Windows.Forms.Panel();
             this.panelLed2 = new System.Windows.Forms.Panel();
             this.btnVehiculos = new System.Windows.Forms.Button();
@@ -50,6 +51,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnReportes);
             this.panel1.Controls.Add(this.panelLed3);
             this.panel1.Controls.Add(this.panelLed2);
             this.panel1.Controls.Add(this.btnVehiculos);
@@ -66,6 +68,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(633, 444);
             this.panel1.TabIndex = 0;
+            // 
+            // btnReportes
+            // 
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.ForeColor = System.Drawing.Color.White;
+            this.btnReportes.Location = new System.Drawing.Point(388, 290);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(177, 63);
+            this.btnReportes.TabIndex = 12;
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
+            this.btnReportes.MouseLeave += new System.EventHandler(this.btnReportes_MouseLeave);
+            this.btnReportes.MouseHover += new System.EventHandler(this.btnReportes_MouseHover);
             // 
             // panelLed3
             // 
@@ -305,5 +323,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panelLed2;
         private System.Windows.Forms.Panel panelLed3;
+        private System.Windows.Forms.Button btnReportes;
     }
 }

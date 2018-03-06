@@ -96,6 +96,13 @@ namespace Pagina_Principal
             aeropuertos.Show();
         }
 
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Reportes_Admin reportes = new Reportes_Admin();
+            reportes.Show();
+        }
+
         private void btnPais_MouseHover(object sender, EventArgs e)
         {
             panelLed2.Visible = false;
@@ -222,6 +229,22 @@ namespace Pagina_Principal
             panelLed2.Visible = true;
             panelLed.Visible = false;
             panelLed3.Visible = false;
+        }
+
+        private void btnReportes_MouseHover(object sender, EventArgs e)
+        {
+            panelLed.Visible = false;
+            panelLed2.Visible = false;
+            panelLed3.Visible = true;
+            panelLed3.Width = btnReportes.Width;
+            panelLed3.Top = btnReportes.Top;
+        }
+
+        private void btnReportes_MouseLeave(object sender, EventArgs e)
+        {
+            panelLed3.Visible = true;
+            panelLed.Visible = false;
+            panelLed2.Visible = false;
         }
     }
 }

@@ -26,8 +26,8 @@ namespace Pagina_Principal
             //dataGridView1.CellClick += DataGridView1_CellClick1;
             dataGridView1.CellValueChanged -= new DataGridViewCellEventHandler(dataGridView1_CellValueChanged);
             lo.Items.Clear();
-            //aero.MostrarDatosCombo(lo);     
-            
+            aero.MostrarDatosCombo(lo);
+
         }
 
         void dataGridView1_MouseClick(object Sender, MouseEventArgs e)
