@@ -26,8 +26,8 @@ namespace Pagina_Principal
             //dataGridView1.CellClick += DataGridView1_CellClick1;
             dataGridView1.CellValueChanged -= new DataGridViewCellEventHandler(dataGridView1_CellValueChanged);
             lo.Items.Clear();
-            aero.MostrarDatosCombo(lo);     
-            
+            aero.MostrarDatosCombo(lo);
+
         }
 
         void dataGridView1_MouseClick(object Sender, MouseEventArgs e)
@@ -91,7 +91,6 @@ namespace Pagina_Principal
                     //aero.MostrarDatosTabla(dataGridView1,combo);
                     break;
                 case "MODIFICAR":
-                   
                     if (MessageBox.Show("Desea modificar la Información de " + dataGridView1.CurrentRow.Cells[1].Value.ToString(), "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                     {
                         eventoMouse = "modi";
@@ -185,7 +184,6 @@ namespace Pagina_Principal
                 string iata = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 aero.ModificarAeropuerto(idViejo, nuevoCodi, nombre, locali, iata);
                 dataGridView1.Rows.Clear();
-
                 //cargar tabla falta
             }
             catch (Exception e)
@@ -196,8 +194,8 @@ namespace Pagina_Principal
 
         private void crud_aeropuertos_Load(object sender, EventArgs e)
         {
-            //ComboBox combo = sender as ComboBox;
-            aero.MostrarDatosTabla(dataGridView1);
+            ComboBox combo = sender as ComboBox;
+            aero.MostrarDatosTabla(dataGridView1, combo);
             
         }
 

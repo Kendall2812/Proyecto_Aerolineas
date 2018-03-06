@@ -16,8 +16,7 @@ namespace Pagina_Principal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new crud_aeropuertos()); //Form1()Form2(207500700, "jeniffer")
-
+            Application.Run(new Form1()); //Form1()
         }
     }
 }

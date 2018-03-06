@@ -13,6 +13,7 @@ namespace Data_Base
         static NpgsqlConnection connection;
         static NpgsqlCommand comandos;
         Conexio_BaseDatos conexion1 = new Conexio_BaseDatos();
+
         public void agregarAeropuerto(Int32 codigo, string nombre,string locali, string iata)
         {
             connection = conexion1.Conexion();
@@ -42,9 +43,7 @@ namespace Data_Base
                 while (reader.Read())
                 {
                     combo.Items.Add(reader.GetString(0));
-                                 
                 }
-
             }
             finally
             {
@@ -53,7 +52,7 @@ namespace Data_Base
                 connection.Close();
             }
         }
-        public void MostrarDatosTabla(DataGridView data)
+        public void MostrarDatosTabla(DataGridView data, ComboBox combo)
         {
            
             connection = conexion1.Conexion();
@@ -65,7 +64,7 @@ namespace Data_Base
             {
                 while (reader.Read())
                 {
-                    data.Rows.Add(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3));                  
+                    data.Rows.Add(reader.GetInt32(0), reader.GetString(1), null, reader.GetString(3));                  
                 }
 
             }

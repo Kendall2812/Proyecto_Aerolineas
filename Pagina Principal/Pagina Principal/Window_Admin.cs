@@ -77,12 +77,16 @@ namespace Pagina_Principal
 
         private void button8_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            crud_Vehiculos carro = new crud_Vehiculos();
+            carro.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            crud_aeropuertos aeropuertos = new crud_aeropuertos();
+            aeropuertos.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -90,6 +94,13 @@ namespace Pagina_Principal
             this.Hide();
             crud_Rutas aeropuertos = new crud_Rutas();
             aeropuertos.Show();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Reportes_Admin reportes = new Reportes_Admin();
+            reportes.Show();
         }
 
         private void btnPais_MouseHover(object sender, EventArgs e)
@@ -104,6 +115,8 @@ namespace Pagina_Principal
         private void btnPais_MouseLeave(object sender, EventArgs e)
         {
             panelLed.Visible = true;
+            panelLed2.Visible = false;
+            panelLed3.Visible = false;
         }
 
         private void btnLugar_MouseHover(object sender, EventArgs e)
@@ -118,6 +131,8 @@ namespace Pagina_Principal
         private void btnLugar_MouseLeave(object sender, EventArgs e)
         {
             panelLed2.Visible = true;
+            panelLed.Visible = false;
+            panelLed3.Visible = false;
         }
 
         private void btnAeropuerto_MouseHover(object sender, EventArgs e)
@@ -132,6 +147,8 @@ namespace Pagina_Principal
         private void btnAeropuerto_MouseLeave(object sender, EventArgs e)
         {
             panelLed3.Visible = true;
+            panelLed.Visible = false;
+            panelLed2.Visible = false;
         }
 
         private void btnTarijas_Hotel_MouseHover(object sender, EventArgs e)
@@ -146,6 +163,8 @@ namespace Pagina_Principal
         private void btnTarijas_Hotel_MouseLeave(object sender, EventArgs e)
         {
             panelLed.Visible = true;
+            panelLed2.Visible = false;
+            panelLed3.Visible = false;
         }
 
         private void btnHoteles_MouseHover(object sender, EventArgs e)
@@ -160,6 +179,8 @@ namespace Pagina_Principal
         private void btnHoteles_MouseLeave(object sender, EventArgs e)
         {
             panelLed2.Visible = true;
+            panelLed.Visible = false;
+            panelLed3.Visible = false;
         }
 
         private void btnRutas_MouseHover(object sender, EventArgs e)
@@ -174,6 +195,8 @@ namespace Pagina_Principal
         private void btnRutas_MouseLeave(object sender, EventArgs e)
         {
             panelLed3.Visible = true;
+            panelLed.Visible = false;
+            panelLed2.Visible = false;
         }
 
         private void btnTarijas_Vuelo_MouseHover(object sender, EventArgs e)
@@ -188,6 +211,8 @@ namespace Pagina_Principal
         private void btnTarijas_Vuelo_MouseLeave(object sender, EventArgs e)
         {
             panelLed.Visible = true;
+            panelLed2.Visible = false;
+            panelLed3.Visible = false;
         }
 
         private void btnVehiculos_MouseHover(object sender, EventArgs e)
@@ -202,6 +227,24 @@ namespace Pagina_Principal
         private void btnVehiculos_MouseLeave(object sender, EventArgs e)
         {
             panelLed2.Visible = true;
+            panelLed.Visible = false;
+            panelLed3.Visible = false;
+        }
+
+        private void btnReportes_MouseHover(object sender, EventArgs e)
+        {
+            panelLed.Visible = false;
+            panelLed2.Visible = false;
+            panelLed3.Visible = true;
+            panelLed3.Width = btnReportes.Width;
+            panelLed3.Top = btnReportes.Top;
+        }
+
+        private void btnReportes_MouseLeave(object sender, EventArgs e)
+        {
+            panelLed3.Visible = true;
+            panelLed.Visible = false;
+            panelLed2.Visible = false;
         }
     }
 }
