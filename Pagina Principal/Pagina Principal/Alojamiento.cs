@@ -90,9 +90,6 @@ namespace Pagina_Principal
 
                 Close();
             }
-
-
-
         }
         public void Reservar()
         {
@@ -101,11 +98,11 @@ namespace Pagina_Principal
             DateTime salida = DateTime.Parse(dateTPSalida.Text);
             try
             {
-                alo.InsertarReserva("INSERT INTO reservas(cedula,niños,adultos, id_hotel,total_hotel,nombre, fecha_inicio,fecha_final,fin_paisdestino,nombrehotel)" +
-                    " VALUES( '" + cedu + "', '" + cntMenores + "', '" + cntAdultos + "', '" + codigo + "', '" + (spinnerHab.Value * precio) + "', '" + nombreuser + "', '" + salida + "', '" + llegada + "', '" + pais+ "', '" + nombre + "' )");
-                MessageBox.Show("Se ha registrado la reserva Exitosamente!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                alo.InsertarReserva("INSERT INTO reservas (cedula, niños, adultos, id_hotel, total_hotel, nombre, fecha_inicio, fecha_final, fin_paisdestino, nombre_hotel) " +
+                    "VALUES ( '" + cedu + "', '" + cntMenores + "', '" + cntAdultos + "', '" + codigo + "', '" + (spinnerHab.Value * precio) + "', '" + nombreuser + "', '" + dateTPSalida.Value + "', '" + dataTLlegada.Value + "', '" + pais + "', '" + nombre + "' )");
+                MessageBox.Show("Se ha registrado la reserva!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            //kdks INSERT INTO clientes(nombre,domicilio,ciudad,codigoprovincia)VALUES('Gomez Ines','San Martin 666','Santa Fe',2);
+           
             catch (Exception error)
             {
                 MessageBox.Show(error.Message);
@@ -159,7 +156,6 @@ namespace Pagina_Principal
             }
             else
             {
-
                 spinerMenores.Value = cntMenores - 1;
             }
         }
@@ -167,7 +163,6 @@ namespace Pagina_Principal
         private void optPrecioMenorPais_CheckedChanged(object sender, EventArgs e)
         {
             this.dataGridView1.Sort(this.dataGridView1.Columns["PRECIO"], ListSortDirection.Descending);
-
         }
 
         private void optPrecioMayorPais_CheckedChanged(object sender, EventArgs e)
@@ -211,7 +206,6 @@ namespace Pagina_Principal
             {
                 spinnerAdultos.Value = cntAdultos - 1;
             }
-
         }
 
 

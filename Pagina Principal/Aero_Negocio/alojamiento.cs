@@ -15,7 +15,7 @@ namespace Aero_Negocio
         Alojamientos alo = new Alojamientos();
         static NpgsqlConnection connection;
         Conexio_BaseDatos conexion1 = new Conexio_BaseDatos();
-        NpgsqlCommand cmd;
+       
         public String[] infoHotels(String datos)
         {
             //infoHotel = alo.buscarEnBase(datos);
@@ -57,7 +57,7 @@ namespace Aero_Negocio
             {
                 connection = conexion1.Conexion();
                 connection.Open();
-                cmd = new NpgsqlCommand(sql, connection);
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();
             }
@@ -67,5 +67,6 @@ namespace Aero_Negocio
             }
         }
     }
-   
+    
+
 }
