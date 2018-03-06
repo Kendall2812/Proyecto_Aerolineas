@@ -89,7 +89,6 @@ namespace Data_Base
                 MessageBox.Show("No se pudo conectar." + e, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return cargarDatos;
-            //, tarijas_vuelos.codigo_ruta as codigo_ruta
         }
 
         public bool cosultarCodigoRuta(Int32 codigoRuta)

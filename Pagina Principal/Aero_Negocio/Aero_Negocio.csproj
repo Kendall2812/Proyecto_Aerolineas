@@ -56,6 +56,7 @@
     <Compile Include="Tarifa_Vuelos.cs" />
     <Compile Include="Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vehiculo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
