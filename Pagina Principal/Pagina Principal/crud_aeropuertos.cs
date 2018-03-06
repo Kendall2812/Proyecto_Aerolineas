@@ -76,10 +76,8 @@ namespace Pagina_Principal
             switch (e.ClickedItem.Name.ToString())
             {
                 case "AGREGAR":
-                    //dataGridView1.
-                   
+
                     dataGridView1.Rows.Clear();
-               
                     aero.MostrarDatosCombo(lo);
                     eventoMouse = "Agre";
                     //dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].ReadOnly = false;
@@ -193,91 +191,11 @@ namespace Pagina_Principal
         }
 
         private void crud_aeropuertos_Load(object sender, EventArgs e)
-        {
-            ComboBox combo = sender as ComboBox;
-            aero.MostrarDatosTabla(dataGridView1, combo);
+        {           
+            aero.MostrarDatosTabla(dataGridView1);
             
         }
-
-        //private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
-        //{
-        //    ComboBox combo = e.Control as ComboBox;
-        //    combo.SelectedItem = "";
-        //}
-
-        public void cargarCombo(object sender)
-        {
-        
-        }
-
-
-        //void combo_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //   
-        //    //dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["lo"].Value.ToString()
-        //    locali = combo.SelectedItem.ToString();
-        //    MessageBox.Show(codigo + nombre + locali + iata);
-        //}
-
-        //private void dataGridView1_EditingControlShowing_1(object sender, DataGridViewEditingControlShowingEventArgs e)
-        //{
-        //    if (dataGridView1.CurrentCell.ColumnIndex == 3 && e.Control is ComboBox)
-        //    {
-        //        ComboBox combo = e.Control as ComboBox;
-        //        if (combo != null)
-        //        {
-        //            combo.SelectedIndexChanged -= new EventHandler(combo_SelectedIndexChanged);
-        //            combo.SelectedIndexChanged += new EventHandler(combo_SelectedIndexChanged);
-        //        }
-        //    }
-        //}
-        
-        //private void dataGridView1_Enter(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
-        //{
-        //    if (e.KeyData == Keys.Enter)
-        //    {
-        //        //int col = dataGridView1.CurrentCell.ColumnIndex;
-        //        //int row = dataGridView1.CurrentCell.RowIndex;
-        //        //if (col < dataGridView1.ColumnCount - 1)
-        //        //{
-        //        //    col++;
-        //        //}
-        //        //else
-        //        //{
-        //        //    col = 0;
-        //        //    row++;
-        //        //}
-        //        //if (row == dataGridView1.RowCount)
-        //        //{
-        //        //    dataGridView1.Rows.Add();
-        //        //    dataGridView1.CurrentCell = dataGridView1[col, row];
-        //        //    e.Handled = true;
-        //        //}
-
-
-        //    }
-        //}
-        //public void CargarGrid()
-        //{
-
-        //    Conexio_BaseDatos conex = new Conexio_BaseDatos();
-        //    conex.Conexion();
-        //    DataSet dataSet = new DataSet();
-        //    NpgsqlDataAdapter adapter = new NpgsqlDataAdapter("SELECT id, nombre,localidad,iata FROM aeropuertos",conexion);
-        //    adapter.Fill(dataSet, "aeropuertos");
-        //    dataGridView1.DataSource = dataSet.Tables[0];
-        //    //dtgEstudiantes.Columns[0].HeaderCell.Value = "CÉDULA";
-        //    //dtgEstudiantes.Columns[1].HeaderCell.Value = "NOMBRE";
-        //    //dtgEstudiantes.Columns[2].HeaderCell.Value = "CÉDULA";
-        //    //dtgEstudiantes.Columns[3].HeaderCell.Value = "COMENTARIO";
-        //    conexion.Close();
-
-        //}
+       
     }
 }
 
