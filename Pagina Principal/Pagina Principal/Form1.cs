@@ -7,11 +7,12 @@ namespace Pagina_Principal
 {
     public partial class Form1 : Form
     {
+        string nombre;
         public Form1()
         {
             InitializeComponent();
         }
-
+        
         public void verificarUser()
         {
             try
@@ -39,7 +40,7 @@ namespace Pagina_Principal
                     {
                         //vetana usuario
                         this.Hide();
-                        Form2 ver = new Form2();
+                        Form2 ver = new Form2(usuario, nombre);
                         ver.Show();
                     }
                     else

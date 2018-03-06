@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Data_Base;
 using Npgsql;
 using System.Data;
+using System.Drawing;
 
 namespace Data_Base
 {
@@ -15,6 +16,10 @@ namespace Data_Base
     {
         NpgsqlCommand cmd;
         NpgsqlConnection conexion;
+        static NpgsqlConnection connection;
+        static NpgsqlCommand comandos;
+        Conexio_BaseDatos conexion1 = new Conexio_BaseDatos();
+        String [] infomacion= new String[] { };
 
         public Alojamientos()
         {
@@ -41,12 +46,12 @@ namespace Data_Base
         public void autoCompletar(TextBox cajaTexto)
         {
             try
-            {//WHERE pais='" + cajaTexto + "'OR lugar = '" + cajaTexto + "'OR nombre = '" + cajaTexto +  "'"
-                cmd = new NpgsqlCommand("SELECT * FROM hoteles ", conexion);
+            {
+                cmd = new NpgsqlCommand("SELECT nombre, pais, lugar FROM hoteles ", conexion);
                 NpgsqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    cajaTexto.AutoCompleteCustomSource.Add(dr["*"].ToString());
+                    cajaTexto.AutoCompleteCustomSource.Add(dr["nombre"].ToString() + "," + dr["pais"].ToString() + "," + dr["lugar"].ToString());
                 }
                 dr.Close();
 
@@ -58,8 +63,47 @@ namespace Data_Base
         }
 
 
-        
+        public void cargarDatos(string dato, DataGridView dataGridView1)
+        {
+            try
+            {
+                connection = conexion1.Conexion();
+                connection.Open();
+                comandos = new NpgsqlCommand("SELECT h.codigo, h.nombre, h.pais, h.lugar, h.foto, t.precio FROM hoteles AS h " +
+                    "JOIN tarifas_hoteles AS t ON h.codigotarifahotel= t.codigo", connection);
+                NpgsqlDataReader dr = comandos.ExecuteReader();
+              
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        if (dato.Equals(dr.GetString(1)))
+                        {
+                            Image img = Image.FromFile(@dr.GetString(4));
+                            //THEN AD ROW DATA           
+                            Object[] row = new Object[] { dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetString(3), dr.GetString(5), img };
+                            dataGridView1.Rows.Add(row);
+                        }else if (dato.Equals(dr.GetString(2)) || dato.Equals(dr.GetString(3)))
+                        {
+                            Image img = Image.FromFile(@dr.GetString(4));
+                            //THEN AD ROW DATA           
+                            Object[] row = new Object[] { dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetString(3), dr.GetString(5), img };
+                            dataGridView1.Rows.Add(row);
+                        }
+             
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error no se pudo conectar a la base de datos. " + e, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+          
+        }
     }
-    
+
 }
+    
+
 

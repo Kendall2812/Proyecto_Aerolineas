@@ -12,7 +12,7 @@ namespace Pagina_Principal
 {
     public partial class reservasYcompras : Form
     {
-        public reservasYcompras()
+        public reservasYcompras(int cedula)
         {
             InitializeComponent();
         }

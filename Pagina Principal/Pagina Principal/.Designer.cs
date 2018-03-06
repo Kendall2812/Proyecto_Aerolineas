@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.optPrecioMenorPais = new System.Windows.Forms.RadioButton();
@@ -53,7 +53,9 @@
             this.lbldestino = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.rbtLugar = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelPersonas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinerMenores)).BeginInit();
@@ -64,8 +66,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.YellowGreen;
+            this.panel1.Controls.Add(this.rbtLugar);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.listView1);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.optPrecioMenorPais);
@@ -86,33 +89,41 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(-4, -4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(654, 522);
+            this.panel1.Size = new System.Drawing.Size(736, 563);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Location = new System.Drawing.Point(601, 187);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(114, 99);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 59;
+            this.pictureBox1.TabStop = false;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 345);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 301);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(447, 150);
+            this.dataGridView1.RowTemplate.Height = 100;
+            this.dataGridView1.Size = new System.Drawing.Size(636, 247);
             this.dataGridView1.TabIndex = 58;
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(27, 275);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(492, 63);
-            this.listView1.TabIndex = 57;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(500, 67);
+            this.button3.Location = new System.Drawing.Point(500, 45);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(140, 23);
             this.button3.TabIndex = 56;
             this.button3.Text = "Mis Reservas";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -122,32 +133,35 @@
             this.button2.TabIndex = 55;
             this.button2.Text = "Cerrar Sesion";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // optPrecioMenorPais
             // 
             this.optPrecioMenorPais.AutoSize = true;
-            this.optPrecioMenorPais.Location = new System.Drawing.Point(146, 252);
+            this.optPrecioMenorPais.Location = new System.Drawing.Point(141, 269);
             this.optPrecioMenorPais.Name = "optPrecioMenorPais";
             this.optPrecioMenorPais.Size = new System.Drawing.Size(88, 17);
             this.optPrecioMenorPais.TabIndex = 54;
             this.optPrecioMenorPais.TabStop = true;
             this.optPrecioMenorPais.Text = "Precio Menor";
             this.optPrecioMenorPais.UseVisualStyleBackColor = true;
+            this.optPrecioMenorPais.CheckedChanged += new System.EventHandler(this.optPrecioMenorPais_CheckedChanged);
             // 
             // optPrecioMayorPais
             // 
             this.optPrecioMayorPais.AutoSize = true;
-            this.optPrecioMayorPais.Location = new System.Drawing.Point(53, 252);
+            this.optPrecioMayorPais.Location = new System.Drawing.Point(48, 269);
             this.optPrecioMayorPais.Name = "optPrecioMayorPais";
             this.optPrecioMayorPais.Size = new System.Drawing.Size(87, 17);
             this.optPrecioMayorPais.TabIndex = 53;
             this.optPrecioMayorPais.TabStop = true;
             this.optPrecioMayorPais.Text = "Precio Mayor";
             this.optPrecioMayorPais.UseVisualStyleBackColor = true;
+            this.optPrecioMayorPais.CheckedChanged += new System.EventHandler(this.optPrecioMayorPais_CheckedChanged);
             // 
             // btnReservar
             // 
-            this.btnReservar.Location = new System.Drawing.Point(525, 345);
+            this.btnReservar.Location = new System.Drawing.Point(658, 372);
             this.btnReservar.Name = "btnReservar";
             this.btnReservar.Size = new System.Drawing.Size(75, 23);
             this.btnReservar.TabIndex = 52;
@@ -238,6 +252,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataTLlegada
             // 
@@ -312,17 +327,30 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "BUSCA TU ALOJAMIENTO";
             // 
+            // rbtLugar
+            // 
+            this.rbtLugar.AutoSize = true;
+            this.rbtLugar.Location = new System.Drawing.Point(244, 269);
+            this.rbtLugar.Name = "rbtLugar";
+            this.rbtLugar.Size = new System.Drawing.Size(52, 17);
+            this.rbtLugar.TabIndex = 60;
+            this.rbtLugar.TabStop = true;
+            this.rbtLugar.Text = "Lugar";
+            this.rbtLugar.UseVisualStyleBackColor = true;
+            this.rbtLugar.CheckedChanged += new System.EventHandler(this.rbtLugar_CheckedChanged);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 518);
+            this.ClientSize = new System.Drawing.Size(732, 556);
             this.Controls.Add(this.panel1);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelPersonas.ResumeLayout(false);
             this.panelPersonas.PerformLayout();
@@ -358,7 +386,8 @@
         private System.Windows.Forms.RadioButton optPrecioMayorPais;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RadioButton rbtLugar;
     }
 }

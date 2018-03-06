@@ -73,6 +73,8 @@ namespace Pagina_Principal
                 System.IO.StreamReader sr = new
                 System.IO.StreamReader(openFileDialog1.FileName);
                 direccion = openFileDialog1.FileName;
+                ///cambio
+                
                 sr.Close();
             }
         }

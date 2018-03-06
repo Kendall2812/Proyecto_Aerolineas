@@ -42,7 +42,7 @@ namespace Data_Base
                 while (reader.Read())
                 {
                     combo.Items.Add(reader.GetString(0));
-                                   
+                                 
                 }
 
             }
@@ -53,7 +53,7 @@ namespace Data_Base
                 connection.Close();
             }
         }
-        public void MostrarDatosTabla(DataGridView data, ComboBox combo)
+        public void MostrarDatosTabla(DataGridView data)
         {
            
             connection = conexion1.Conexion();
@@ -65,7 +65,7 @@ namespace Data_Base
             {
                 while (reader.Read())
                 {
-                    data.Rows.Add(reader.GetInt32(0), reader.GetString(1), null, reader.GetString(3));                  
+                    data.Rows.Add(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3));                  
                 }
 
             }
