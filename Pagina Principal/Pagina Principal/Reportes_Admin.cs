@@ -12,42 +12,17 @@ namespace Pagina_Principal
 {
     public partial class Reportes_Admin : Form
     {
-        List<string> series = new List<string>();
+        List<string> nombresHoteles = new List<string>();
         List<int> puntos = new List<int>();
 
         public Reportes_Admin()
         {
             InitializeComponent();
-            cargarNombres();
         }
 
-        public void cargarNombres()
+        public void reporte1()
         {
-
-        }
-
-        public void lista()
-        {
-
-            string nombre = Convert.ToString(textBox1.Text);
-            series.Add(nombre);
-            int edad = Convert.ToInt32(textBox2.Text);
-            puntos.Add(edad);
-        }
-
-        public void grafica()
-        {
-            Grafico1.Palette = ChartColorPalette.SemiTransparent;
-            Grafico1.Titles.Add("Edades");
-            for (int x = 0; x < series.Count; x++)
-            {
-                //titulos
-                Series serie = Grafico1.Series.Add(series[x]);
-                //cantidades
-                serie.Label = puntos[x].ToString();
-
-                serie.Points.Add(puntos[x]);
-            }
+            //nombresHoteles =  
             ////Los vectores con los datos
             //string[] series = { "Eduardo", "Jorge", "Jason", "Andres" };
             //int[] puntos = { 50, 10, 70 , 100};
@@ -75,19 +50,12 @@ namespace Pagina_Principal
             regresar.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            grafica();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            lista();
-        }
-
-        private void comboNombreHoteles_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-
+            if (tabControl1.SelectedIndex == 1)
+            {
+                reporte1();
+            }
         }
     }
 }
