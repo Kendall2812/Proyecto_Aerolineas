@@ -39,14 +39,12 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.FotoHotel = new System.Windows.Forms.Button();
             this.comboLugar3 = new System.Windows.Forms.ComboBox();
-            this.comboPais3 = new System.Windows.Forms.ComboBox();
             this.numericUp3 = new System.Windows.Forms.NumericUpDown();
             this.txtNombre3 = new System.Windows.Forms.TextBox();
             this.txtCodigo3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -60,14 +58,12 @@
             this.btnGuardar2 = new System.Windows.Forms.Button();
             this.FotoHotel2 = new System.Windows.Forms.Button();
             this.comboLugar2 = new System.Windows.Forms.ComboBox();
-            this.comboPais2 = new System.Windows.Forms.ComboBox();
             this.numericUp2 = new System.Windows.Forms.NumericUpDown();
             this.txtNombre2 = new System.Windows.Forms.TextBox();
             this.txtCodigo2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -138,14 +134,12 @@
             this.tabPage1.Controls.Add(this.btnGuardar);
             this.tabPage1.Controls.Add(this.FotoHotel);
             this.tabPage1.Controls.Add(this.comboLugar3);
-            this.tabPage1.Controls.Add(this.comboPais3);
             this.tabPage1.Controls.Add(this.numericUp3);
             this.tabPage1.Controls.Add(this.txtNombre3);
             this.tabPage1.Controls.Add(this.txtCodigo3);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 33);
@@ -158,7 +152,7 @@
             // comboPrecioHabitacion
             // 
             this.comboPrecioHabitacion.FormattingEnabled = true;
-            this.comboPrecioHabitacion.Location = new System.Drawing.Point(106, 310);
+            this.comboPrecioHabitacion.Location = new System.Drawing.Point(106, 215);
             this.comboPrecioHabitacion.Name = "comboPrecioHabitacion";
             this.comboPrecioHabitacion.Size = new System.Drawing.Size(189, 32);
             this.comboPrecioHabitacion.TabIndex = 15;
@@ -166,7 +160,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 313);
+            this.label14.Location = new System.Drawing.Point(6, 218);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(94, 24);
             this.label14.TabIndex = 14;
@@ -215,14 +209,6 @@
             this.comboLugar3.Name = "comboLugar3";
             this.comboLugar3.Size = new System.Drawing.Size(179, 32);
             this.comboLugar3.TabIndex = 10;
-            // 
-            // comboPais3
-            // 
-            this.comboPais3.FormattingEnabled = true;
-            this.comboPais3.Location = new System.Drawing.Point(106, 210);
-            this.comboPais3.Name = "comboPais3";
-            this.comboPais3.Size = new System.Drawing.Size(189, 32);
-            this.comboPais3.TabIndex = 9;
             // 
             // numericUp3
             // 
@@ -273,15 +259,6 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Localidad Hotel";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 218);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 24);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "País";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -313,14 +290,12 @@
             this.tabPage2.Controls.Add(this.btnGuardar2);
             this.tabPage2.Controls.Add(this.FotoHotel2);
             this.tabPage2.Controls.Add(this.comboLugar2);
-            this.tabPage2.Controls.Add(this.comboPais2);
             this.tabPage2.Controls.Add(this.numericUp2);
             this.tabPage2.Controls.Add(this.txtNombre2);
             this.tabPage2.Controls.Add(this.txtCodigo2);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
@@ -333,7 +308,7 @@
             // comboTarifaHotel1
             // 
             this.comboTarifaHotel1.FormattingEnabled = true;
-            this.comboTarifaHotel1.Location = new System.Drawing.Point(102, 365);
+            this.comboTarifaHotel1.Location = new System.Drawing.Point(106, 282);
             this.comboTarifaHotel1.Name = "comboTarifaHotel1";
             this.comboTarifaHotel1.Size = new System.Drawing.Size(189, 32);
             this.comboTarifaHotel1.TabIndex = 34;
@@ -341,7 +316,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(2, 366);
+            this.label15.Location = new System.Drawing.Point(6, 283);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(94, 24);
             this.label15.TabIndex = 33;
@@ -439,14 +414,6 @@
             this.comboLugar2.Size = new System.Drawing.Size(179, 32);
             this.comboLugar2.TabIndex = 24;
             // 
-            // comboPais2
-            // 
-            this.comboPais2.FormattingEnabled = true;
-            this.comboPais2.Location = new System.Drawing.Point(102, 284);
-            this.comboPais2.Name = "comboPais2";
-            this.comboPais2.Size = new System.Drawing.Size(189, 32);
-            this.comboPais2.TabIndex = 23;
-            // 
             // numericUp2
             // 
             this.numericUp2.Location = new System.Drawing.Point(533, 141);
@@ -456,7 +423,7 @@
             // 
             // txtNombre2
             // 
-            this.txtNombre2.Location = new System.Drawing.Point(102, 205);
+            this.txtNombre2.Location = new System.Drawing.Point(106, 205);
             this.txtNombre2.Name = "txtNombre2";
             this.txtNombre2.Size = new System.Drawing.Size(189, 30);
             this.txtNombre2.TabIndex = 21;
@@ -464,7 +431,7 @@
             // txtCodigo2
             // 
             this.txtCodigo2.BackColor = System.Drawing.Color.White;
-            this.txtCodigo2.Location = new System.Drawing.Point(102, 126);
+            this.txtCodigo2.Location = new System.Drawing.Point(106, 126);
             this.txtCodigo2.Name = "txtCodigo2";
             this.txtCodigo2.ReadOnly = true;
             this.txtCodigo2.Size = new System.Drawing.Size(189, 30);
@@ -496,15 +463,6 @@
             this.label9.Size = new System.Drawing.Size(121, 24);
             this.label9.TabIndex = 17;
             this.label9.Text = "Localidad Hotel";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 288);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(43, 24);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "País";
             // 
             // label11
             // 
@@ -569,26 +527,22 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.ComboBox comboPais3;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnGuardar2;
         private System.Windows.Forms.Button FotoHotel2;
         private System.Windows.Forms.ComboBox comboLugar2;
-        private System.Windows.Forms.ComboBox comboPais2;
         private System.Windows.Forms.NumericUpDown numericUp2;
         private System.Windows.Forms.TextBox txtNombre2;
         private System.Windows.Forms.TextBox txtCodigo2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;

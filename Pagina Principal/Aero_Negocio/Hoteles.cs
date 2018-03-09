@@ -9,15 +9,18 @@ namespace Aero_Negocio
         DB_Hoteles hotel2 = new DB_Hoteles();
         List<object> nombreHotel = new List<object>();
         List<object> datosHotel = new List<object>();
-
-        public void insertarHotel(int codigo, string hotel, string pais, string lugar, int cantiHabita, string imageHotel, Int32 codigoTarifa)
+        //, string pais
+        public void insertarHotel(int codigo, string hotel, string lugar, int cantiHabita, string imageHotel, Int32 codigoTarifa)
         {
-            hotel2.agregarHoteles(codigo, hotel, pais, lugar, cantiHabita, imageHotel, codigoTarifa);
+            hotel2.agregarHoteles(codigo, hotel, lugar, cantiHabita, imageHotel, codigoTarifa);
+            ///, pais
         }
 
-        public void modificarHotal(int codigo2, string hotel3, string pais2, string lugar2, int cantiHabita2, string imageHotel2, int codigoTarifa)
+        //, string pais2
+        public void modificarHotal(int codigo2, string hotel3, string lugar2, int cantiHabita2, string imageHotel2, int codigoTarifa)
         {
-            hotel2.editarHoteles(codigo2, hotel3, pais2, lugar2, cantiHabita2, imageHotel2, codigoTarifa);
+            hotel2.editarHoteles(codigo2, hotel3, lugar2, cantiHabita2, imageHotel2, codigoTarifa);
+            //, pais2
         }
 
         public void eliminarHotel(int codigo)

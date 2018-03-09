@@ -88,7 +88,7 @@ namespace Pagina_Principal
             {
                 Reservar();
 
-                Close();
+                //Close();
             }
         }
         public void Reservar()

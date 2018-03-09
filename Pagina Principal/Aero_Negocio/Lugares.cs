@@ -13,9 +13,9 @@ namespace Aero_Negocio
         List<object> nombre = new List<object>();
         List<object> datos = new List<object>();
 
-        public void insertarLugar(Int32 codigo, string lugar)
+        public void insertarLugar(Int32 codigo, string lugar, Int32 codigoPais)
         {
-            lugar1.agregarLugar(codigo, lugar);
+            lugar1.agregarLugar(codigo, lugar, codigoPais);
         }
 
         public List<object> lugares1()
@@ -30,9 +30,9 @@ namespace Aero_Negocio
             return datos;
         }
 
-        public void modificarInfo(int codigo, string lugar)
+        public void modificarInfo(int codigo, string lugar, Int32 codigoPais)
         {
-            lugar1.infoModificada(codigo, lugar);
+            lugar1.infoModificada(codigo, lugar, codigoPais);
         }
 
         public void eliminar(Int32 codigo2)

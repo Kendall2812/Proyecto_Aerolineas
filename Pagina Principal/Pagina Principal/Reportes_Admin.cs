@@ -7,50 +7,76 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Forms;
+using Aero_Negocio;
 
 namespace Pagina_Principal
 {
     public partial class Reportes_Admin : Form
     {
-        List<string> series = new List<string>();
-        List<int> puntos = new List<int>();
+        Reportes reports = new Reportes();
+        List<object> nombresHoteles = new List<object>();//Contiene todos los nombres de los hoteles
+        List<int> hotelRepetido = new List<int>();//contiene las veces que han reservado el hotel
+        List<object> Hoteles = new List<object>();
 
         public Reportes_Admin()
         {
             InitializeComponent();
-            cargarNombres();
+            reporte1();
         }
 
-        public void cargarNombres()
+        public void reporte1()
         {
+            int contador = 0;
+            nombresHoteles = reports.PrimerReporte();
+            for (int x = 0; x < nombresHoteles.Count; x++)
+            {
+                contador = 0;
+                for (int y = 0; y < nombresHoteles.Count; y++)
+                {
+                    if (nombresHoteles[x].Equals(nombresHoteles[y]))
+                    {
+                        contador += 1;
+                    }
+                }
+                hotelRepetido.Add(contador);
+                contador = 0;
+                Hoteles.Add(nombresHoteles[x]);
+                string nombre = Convert.ToString(nombresHoteles[x]);
 
-        }
+                foreach (string c in nombresHoteles.ToList())//este foreach recorre la lista para eliminar el hotel que ya se conto
+                {
+                    if (c.Equals(nombre))
+                    {
+                        nombresHoteles.Remove(nombre);
+                    }
+                }
+            }
 
-        public void lista()
-        {
-
-            string nombre = Convert.ToString(textBox1.Text);
-            series.Add(nombre);
-            int edad = Convert.ToInt32(textBox2.Text);
-            puntos.Add(edad);
-        }
-
-        public void grafica()
-        {
-            Grafico1.Palette = ChartColorPalette.SemiTransparent;
-            Grafico1.Titles.Add("Edades");
-            for (int x = 0; x < series.Count; x++)
+            
+            Grafico1.Palette = ChartColorPalette.Berry;
+            Grafico1.Titles.Add("Cantidad de veces que se a reservado un Hotel").ForeColor = Color.White;
+            Series serie;
+            for (int x = 0; x < Hoteles.Count; x++)
             {
                 //titulos
-                Series serie = Grafico1.Series.Add(series[x]);
+                serie = Grafico1.Series.Add(Convert.ToString(Hoteles[x]));
                 //cantidades
-                serie.Label = puntos[x].ToString();
+                serie.Label = hotelRepetido[x].ToString();
+                //serie.ChartType = new SeriesChartType();
 
-                serie.Points.Add(puntos[x]);
+                serie.LabelForeColor = Color.Red;
+                serie.Points.Add(hotelRepetido[x]);
             }
-            ////Los vectores con los datos
+            hotelRepetido.Clear();
+            Hoteles.Clear();
+            nombresHoteles.Clear();
+            
+
+
+
+            //Los vectores con los datos
             //string[] series = { "Eduardo", "Jorge", "Jason", "Andres" };
-            //int[] puntos = { 50, 10, 70 , 100};
+            //int[] puntos = { 50, 10, 70, 100 };
 
             ////cambiar de color las barras
             //Grafico1.Palette = ChartColorPalette.SeaGreen;
@@ -75,19 +101,12 @@ namespace Pagina_Principal
             regresar.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            grafica();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            lista();
-        }
-
-        private void comboNombreHoteles_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-
+            if (tabControl1.SelectedIndex == 0)
+            {
+               // reporte1();
+            }
         }
     }
 }

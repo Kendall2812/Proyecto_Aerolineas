@@ -195,7 +195,13 @@ namespace Pagina_Principal
             aero.MostrarDatosTabla(dataGridView1);
             
         }
-       
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Window_Admin regresar = new Window_Admin();
+            regresar.Show();
+        }
     }
 }
 
