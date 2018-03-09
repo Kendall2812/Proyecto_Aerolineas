@@ -21,7 +21,7 @@ namespace Data_Base
             try
             {
                 connection.Open();
-                comandos = new NpgsqlCommand("", connection);
+                comandos = new NpgsqlCommand("Select nombre_hotel FROM reservas;", connection);
                 NpgsqlDataReader dr = comandos.ExecuteReader();
                 if (dr.HasRows)
                 {

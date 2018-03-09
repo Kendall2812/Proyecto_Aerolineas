@@ -16,13 +16,13 @@ namespace Data_Base
         List<object> datosPlaces = new List<object>();
         Conexio_BaseDatos conexion1 = new Conexio_BaseDatos();
 
-        public void agregarLugar(Int32 codigo, string lugar)
+        public void agregarLugar(Int32 codigo, string lugar, Int32 codigoPais)
         {
             connection = conexion1.Conexion();
             try
             {
                 connection.Open();
-                comandos = new NpgsqlCommand("INSERT INTO lugares (codigo, nombre) VALUES ('" + codigo + "', '" + lugar + "')", connection);
+                comandos = new NpgsqlCommand("INSERT INTO lugares (codigo, nombre, codigo_pais) VALUES ('" + codigo + "', '" + lugar + "', '" + codigoPais + "')", connection);
                 comandos.ExecuteNonQuery();
                 connection.Close();
                 MessageBox.Show("Se registro con exito.", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -63,7 +63,12 @@ namespace Data_Base
             try
             {
                 connection.Open();
-                comandos = new NpgsqlCommand("SELECT codigo, nombre FROM lugares WHERE codigo = '" + codigolugar + "'", connection);
+                comandos = new NpgsqlCommand("SELECT lugares.codigo as codigo, lugares.nombre as nombre,"
+                       + " paises.nombre as nombre \n"
+                       + " FROM lugares \n"
+                       + " INNER JOIN paises \n"
+                       + " ON lugares.codigo_pais = paises.codigo \n"
+                       + " WHERE lugares.codigo = '" + codigolugar + "'", connection);
                 NpgsqlDataReader dr = comandos.ExecuteReader();
                 if (dr.HasRows)
                 {
@@ -71,6 +76,7 @@ namespace Data_Base
                     {
                         datosPlaces.Add(dr.GetString(0));
                         datosPlaces.Add(dr.GetString(1));
+                        datosPlaces.Add(dr.GetString(2));
                     }
                     connection.Close();
                 }
@@ -82,13 +88,13 @@ namespace Data_Base
             return datosPlaces;
         }
 
-        public void infoModificada(int codigo2, string lugar)
+        public void infoModificada(int codigo2, string lugar, Int32 codigoPais)
         {
             connection = conexion1.Conexion();
             try
             {
                 connection.Open();
-                comandos = new NpgsqlCommand("UPDATE lugares SET nombre = '" + lugar + "' WHERE codigo = '" + codigo2 + "'" , connection);
+                comandos = new NpgsqlCommand("UPDATE lugares SET nombre = '" + lugar + "', codigo_pais = '" + codigoPais + "' WHERE codigo = '" + codigo2 + "'" , connection);
                 comandos.ExecuteNonQuery();
                 connection.Close();
                 MessageBox.Show("Se modifico con exito.", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);

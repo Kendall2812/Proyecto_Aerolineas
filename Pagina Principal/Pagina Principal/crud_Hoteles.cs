@@ -11,10 +11,10 @@ namespace Pagina_Principal
     {
         string direccion = "";
         Hoteles hotel = new Hoteles();
-        paises cargarPais = new paises();
+        //paises cargarPais = new paises();
         Lugares lugares = new Lugares();
         Tarifas_Hoteles tarifas = new Tarifas_Hoteles();
-        List<object> paises = new List<object>();
+        //List<object> paises = new List<object>();
         List<object> lugar = new List<object>();
         List<object> Hoteles1 = new List<object>();
         List<object> InfoHoteles = new List<object>();
@@ -25,7 +25,7 @@ namespace Pagina_Principal
         public crud_Hoteles()
         {
             InitializeComponent();
-            cargarCombox2();
+            //cargarCombox2();
             cargarComboLugar();
             cargarNombreHoteles();
             cargarPrecioHabitacion();
@@ -37,12 +37,13 @@ namespace Pagina_Principal
             {
                 Int32 codigo = Convert.ToInt32(txtCodigo3.Text);
                 string nombre = txtNombre3.Text;
-                string pais = comboPais3.Text;
+                //string pais = comboPais3.Text;
                 string lugar = comboLugar3.Text;
                 Int32 codigoTarifa = Convert.ToInt32(comboPrecioHabitacion.Text);
                 int catiHabitacion = Convert.ToInt32(numericUp3.Value.ToString());
+                /// pais.Equals("Seleccionar") || pais.Equals("")
 
-                if (nombre.Equals("") || pais.Equals("Seleccionar") || pais.Equals("") || lugar.Equals("") || lugar.Equals("Seleccionar") || catiHabitacion.Equals(0) || direccion.Equals("") || codigoTarifa == 0)
+                if (nombre.Equals("") || lugar.Equals("") || lugar.Equals("Seleccionar") || catiHabitacion.Equals(0) || direccion.Equals("") || codigoTarifa == 0)
                 {
                     MessageBox.Show("Ningun espacio puede quedar vacio. Las cantidad de las habitaciones tiene que ser direntes de 0. Debe seleccionar una imagen. País y Lugar no pueden quedar con seleccionar." , "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -51,8 +52,8 @@ namespace Pagina_Principal
                     int items = codigosHabitacion.IndexOf(codigoTarifa);
                     int precioTarifa = Convert.ToInt32(codigosHabitacion[items - 1]);
 
-                    hotel.insertarHotel(codigo,nombre,pais,lugar,catiHabitacion, direccion, precioTarifa);
-                    cargarNombreHoteles();
+                    hotel.insertarHotel(codigo,nombre,lugar,catiHabitacion, direccion, precioTarifa);
+                    cargarNombreHoteles(); ///codigo,nombre,pais,lugar,catiHabitacion, direccion, precioTarifa
                 }
             }
             catch(Exception)
@@ -68,6 +69,7 @@ namespace Pagina_Principal
 
         public void abrirImagen()
         {
+            openFileDialog1.Filter = "Image files (*.jpg,*.gif,*.png,*.tif) | *.jpg;*.gif;*.png;*.tif;";
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 System.IO.StreamReader sr = new
@@ -113,27 +115,27 @@ namespace Pagina_Principal
             precioHabitacion.Clear();
         }
 
-        public void cargarCombox2()
-        {
-            paises.Clear();
-            comboPais3.Items.Clear();
-            comboPais2.Items.Clear();
+        //public void cargarCombox2()
+        //{
+        //    paises.Clear();
+        //    comboPais3.Items.Clear();
+        //    comboPais2.Items.Clear();
 
-            paises = cargarPais.listaPaises();
-            comboPais3.Items.Add("Seleccionar");
-            comboPais3.SelectedItem = "Seleccionar";
+        //    paises = cargarPais.listaPaises();
+        //    comboPais3.Items.Add("Seleccionar");
+        //    comboPais3.SelectedItem = "Seleccionar";
 
-            comboPais2.Items.Add("Seleccionar");
-            comboPais2.SelectedItem = "Seleccionar";
+        //    comboPais2.Items.Add("Seleccionar");
+        //    comboPais2.SelectedItem = "Seleccionar";
 
-            for (int i = 1; i < paises.Count; i=i+2)
-            {
-                comboPais3.Items.Add(paises[i]);
-                comboPais2.Items.Add(paises[i]);
+        //    for (int i = 1; i < paises.Count; i=i+2)
+        //    {
+        //        comboPais3.Items.Add(paises[i]);
+        //        comboPais2.Items.Add(paises[i]);
 
-            }
-            paises.Clear();
-        }
+        //    }
+        //    paises.Clear();
+        //}
 
         public void cargarComboLugar()
         {
@@ -205,38 +207,38 @@ namespace Pagina_Principal
                     txtCodigo2.Text = InfoHoteles[0].ToString();
                     txtNombre2.Text = InfoHoteles[1].ToString();
 
-                    if (comboTarifaHotel1.Items.Contains(InfoHoteles[6].ToString()))
+                    if (comboTarifaHotel1.Items.Contains(InfoHoteles[5].ToString()))
                     {
-                        comboTarifaHotel1.SelectedItem = InfoHoteles[6].ToString();
+                        comboTarifaHotel1.SelectedItem = InfoHoteles[5].ToString();
                     }
                     else
                     {
-                        comboTarifaHotel1.Items.Add(InfoHoteles[6].ToString());
+                        comboTarifaHotel1.Items.Add(InfoHoteles[5].ToString());
                     }
 
-                    if (comboPais2.Items.Contains(InfoHoteles[2].ToString()))
+                    //if (comboPais2.Items.Contains(InfoHoteles[2].ToString()))
+                    //{
+                    //    comboPais2.SelectedItem = InfoHoteles[2].ToString();
+                    //}
+                    //else
+                    //{
+                    //    comboPais2.Items.Add(InfoHoteles[2].ToString());
+                    //}
+
+                    if (comboLugar2.Items.Contains(InfoHoteles[2].ToString()))
                     {
-                        comboPais2.SelectedItem = InfoHoteles[2].ToString();
+                        comboLugar2.SelectedItem = InfoHoteles[2].ToString();
                     }
                     else
                     {
-                        comboPais2.Items.Add(InfoHoteles[2].ToString());
+                        comboLugar2.Items.Add(InfoHoteles[2].ToString());
                     }
 
-                    if (comboLugar2.Items.Contains(InfoHoteles[3].ToString()))
-                    {
-                        comboLugar2.SelectedItem = InfoHoteles[3].ToString();
-                    }
-                    else
-                    {
-                        comboLugar2.Items.Add(InfoHoteles[3].ToString());
-                    }
+                    numericUp2.Value = Convert.ToInt32(InfoHoteles[3]);
 
-                    numericUp2.Value = Convert.ToInt32(InfoHoteles[4]);
+                    pictureBox2.Image = Image.FromFile(Convert.ToString(InfoHoteles[4]));
 
-                    pictureBox2.Image = Image.FromFile(Convert.ToString(InfoHoteles[5]));
-
-                    direccion = InfoHoteles[5].ToString();
+                    direccion = InfoHoteles[4].ToString();
                 }
             }
         }
@@ -252,12 +254,13 @@ namespace Pagina_Principal
             {
                 Int32 codigo = Convert.ToInt32(txtCodigo2.Text);
                 string nombre = txtNombre2.Text;
-                string pais = comboPais2.Text;
+                //string pais = comboPais2.Text;
                 string lugar = comboLugar2.Text;
                 int tarifaHabitacion = Convert.ToInt32(comboTarifaHotel1.Text);
                 int catiHabitacion = Convert.ToInt32(numericUp2.Value.ToString());
 
-                if (nombre.Equals("") || pais.Equals("")|| pais.Equals("Seleccionar") || lugar.Equals("") || lugar.Equals("Seleccionar") || catiHabitacion.Equals(0) || direccion.Equals("") || tarifaHabitacion == 0)
+                //|| pais.Equals("")|| pais.Equals("Seleccionar")
+                if (nombre.Equals("") || lugar.Equals("") || lugar.Equals("Seleccionar") || catiHabitacion.Equals(0) || direccion.Equals("") || tarifaHabitacion == 0)
                 {
                     MessageBox.Show("Ningun espacio puede quedar vacio. Las cantidad de las habitaciones tiene que ser direntes de 0. Debe seleccionar una imagen. País y Lugar no pueden quedar con seleccionar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -266,12 +269,13 @@ namespace Pagina_Principal
                     int items = codigosHabitacion.IndexOf(tarifaHabitacion);
                     int precioTarifa = Convert.ToInt32(codigosHabitacion[items - 1]);
 
-                    hotel.modificarHotal(codigo, nombre, pais, lugar, catiHabitacion, direccion, precioTarifa);
+                    //, pais
+                    hotel.modificarHotal(codigo, nombre, lugar, catiHabitacion, direccion, precioTarifa);
                     cargarNombreHoteles();
 
                     txtCodigo2.Text = "";
                     txtNombre2.Text = "";
-                    comboPais2.SelectedItem = "Seleccionar";
+                    //comboPais2.SelectedItem = "Seleccionar";
                     comboLugar2.SelectedItem = "Seleccionar";
                     comboTarifaHotel1.SelectedItem = "Seleccionar";
                     numericUp2.Value = 0;
@@ -304,7 +308,7 @@ namespace Pagina_Principal
         {
             txtCodigo2.Text = "";
             txtNombre2.Text = "";
-            comboPais2.SelectedItem = "Seleccionar";
+            //comboPais2.SelectedItem = "Seleccionar";
             comboLugar2.SelectedItem = "Seleccionar";
             comboBox1.SelectedItem = "Seleccionar";
             comboTarifaHotel1.SelectedItem = "Seleccionar";
@@ -322,7 +326,7 @@ namespace Pagina_Principal
                 cargarNombreHoteles();
                 txtCodigo2.Text = "";
                 txtNombre2.Text = "";
-                comboPais2.SelectedItem = "Seleccionar";
+                //comboPais2.SelectedItem = "Seleccionar";
                 comboLugar2.SelectedItem = "Seleccionar";
                 comboBox1.SelectedItem = "Seleccionar";
                 comboTarifaHotel1.SelectedItem = "Seleccionar";
@@ -342,7 +346,7 @@ namespace Pagina_Principal
             {
                 txtCodigo2.Text = "";
                 txtNombre2.Text = "";
-                comboPais2.SelectedItem = "Seleccionar";
+                //comboPais2.SelectedItem = "Seleccionar";
                 comboLugar2.SelectedItem = "Seleccionar";
                 comboBox1.SelectedItem = "Seleccionar";
                 comboTarifaHotel1.SelectedItem = "Seleccionar";

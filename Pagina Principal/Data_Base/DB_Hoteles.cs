@@ -15,14 +15,16 @@ namespace Data_Base
         Conexio_BaseDatos conexion1 = new Conexio_BaseDatos();
         List<object> nombreHotel = new List<object>();
         List<object> infoHotel = new List<object>();
-
-        public void agregarHoteles(int codigo, string hotel, string pais, string lugar, int cantiHabita, string imageHotel, Int32 codigoTarifaHabitacion)
+        //, string pais
+        public void agregarHoteles(int codigo, string hotel, string lugar, int cantiHabita, string imageHotel, Int32 codigoTarifaHabitacion)
         {
             connection = conexion1.Conexion();
             try
             {
+                //, pais
                 connection.Open();
-                comandos = new NpgsqlCommand("INSERT INTO hoteles (codigo, nombre, pais, lugar, habitaciones, foto, codigotarifahotel) VALUES ('" + codigo + "', '" + hotel + "', '" + pais + "' ,'" + lugar + "', '" + cantiHabita + "', '" + imageHotel + "', '" + codigoTarifaHabitacion + "')", connection);
+                // '" + pais + "' ,
+                comandos = new NpgsqlCommand("INSERT INTO hoteles (codigo, nombre, lugar, habitaciones, foto, codigotarifahotel) VALUES ('" + codigo + "', '" + hotel + "', '" + lugar + "', '" + cantiHabita + "', '" + imageHotel + "', '" + codigoTarifaHabitacion + "')", connection);
                 comandos.ExecuteNonQuery();
                 connection.Close();
                 MessageBox.Show("Se registro con exito.", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -57,13 +59,15 @@ namespace Data_Base
             return nombreHotel;
         }
 
-        public void editarHoteles(int codigo2, string hotel2, string pais2, string lugar2, int cantiHabita2, string imageHotel2, int codigoTarifa)
+        public void editarHoteles(int codigo2, string hotel2, string lugar2, int cantiHabita2, string imageHotel2, int codigoTarifa)
         {
+            //, string pais2
             connection = conexion1.Conexion();
+            //, pais = '" + pais2 + "'
             try
             {
                 connection.Open();
-                comandos = new NpgsqlCommand("UPDATE hoteles SET codigo = '" + codigo2 + "', nombre = '" + hotel2 + "', pais = '" + pais2 + "', lugar = '" + lugar2 + "', habitaciones = '" + cantiHabita2 + "', foto = '" + imageHotel2 + "', codigotarifahotel = '" + codigoTarifa + "'  WHERE codigo = '" + codigo2 + "'", connection);
+                comandos = new NpgsqlCommand("UPDATE hoteles SET codigo = '" + codigo2 + "', nombre = '" + hotel2 + "', lugar = '" + lugar2 + "', habitaciones = '" + cantiHabita2 + "', foto = '" + imageHotel2 + "', codigotarifahotel = '" + codigoTarifa + "'  WHERE codigo = '" + codigo2 + "'", connection);
                 comandos.ExecuteNonQuery();
                 connection.Close();
                 MessageBox.Show("Se modifico con exito.", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -80,8 +84,8 @@ namespace Data_Base
             try
             {
                 connection.Open();
-                
-                comandos = new NpgsqlCommand("SELECT hoteles.codigo as codigo, hoteles.nombre as nombre, hoteles.pais as pais, hoteles.lugar as lugar, hoteles.habitaciones as habitaciones, hoteles.foto as foto, hoteles.codigotarifahotel as codigotarifahotel," 
+                //, hoteles.pais as pais
+                comandos = new NpgsqlCommand("SELECT hoteles.codigo as codigo, hoteles.nombre as nombre, hoteles.lugar as lugar, hoteles.habitaciones as habitaciones, hoteles.foto as foto, hoteles.codigotarifahotel as codigotarifahotel," 
                            + " tarifas_hoteles.precio as preacio \n"
                            + " FROM hoteles \n"
                            + " INNER JOIN tarifas_hoteles \n"
@@ -94,12 +98,12 @@ namespace Data_Base
                     {
                         infoHotel.Add(dr.GetInt32(0));
                         infoHotel.Add(dr.GetString(1));
+                       // infoHotel.Add(dr.GetString(2));
                         infoHotel.Add(dr.GetString(2));
-                        infoHotel.Add(dr.GetString(3));
-                        infoHotel.Add(dr.GetInt32(4));
-                        infoHotel.Add(dr.GetString(5));
-                        //infoHotel.Add(dr.GetString(6));
-                        infoHotel.Add(dr.GetString(7));
+                        infoHotel.Add(dr.GetInt32(3));
+                        infoHotel.Add(dr.GetString(4));
+                        //infoHotel.Add(dr.GetString(5));
+                        infoHotel.Add(dr.GetString(6));
                     }
                     connection.Close();
                 }
