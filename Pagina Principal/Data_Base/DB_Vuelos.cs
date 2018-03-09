@@ -22,7 +22,7 @@ namespace Data_Base
             {
                 connection = conexion1.Conexion();
                 connection.Open();
-                cmd = new NpgsqlCommand("SELECT concat(aero.nombre,', ', aero.localidad) AS nombre FROM aeropuertos AS aero", connection);
+                cmd = new NpgsqlCommand("SELECT concat(lu.nombre,',',aero.nombre) AS nombre FROM aeropuertos AS aero JOIN lugares AS lu ON aero.localidad = lu.nombre;", connection);
                 dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
