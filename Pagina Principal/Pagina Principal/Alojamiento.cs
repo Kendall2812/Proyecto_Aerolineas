@@ -144,6 +144,11 @@ namespace Pagina_Principal
 
         }
 
+        private void panelPersonas_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void spinerMenores_ValueChanged(object sender, EventArgs e)
         {
             cntPersonas = 0;

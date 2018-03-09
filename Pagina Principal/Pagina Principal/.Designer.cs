@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.rbtLugar = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
@@ -53,7 +54,6 @@
             this.lbldestino = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.rbtLugar = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -65,7 +65,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.YellowGreen;
+            this.panel1.BackColor = System.Drawing.Color.SkyBlue;
             this.panel1.Controls.Add(this.rbtLugar);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.dataGridView1);
@@ -91,6 +91,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(736, 563);
             this.panel1.TabIndex = 0;
+            // 
+            // rbtLugar
+            // 
+            this.rbtLugar.AutoSize = true;
+            this.rbtLugar.Location = new System.Drawing.Point(244, 269);
+            this.rbtLugar.Name = "rbtLugar";
+            this.rbtLugar.Size = new System.Drawing.Size(52, 17);
+            this.rbtLugar.TabIndex = 60;
+            this.rbtLugar.TabStop = true;
+            this.rbtLugar.Text = "Lugar";
+            this.rbtLugar.UseVisualStyleBackColor = true;
+            this.rbtLugar.CheckedChanged += new System.EventHandler(this.rbtLugar_CheckedChanged);
             // 
             // pictureBox1
             // 
@@ -189,6 +201,7 @@
             this.panelPersonas.Size = new System.Drawing.Size(113, 60);
             this.panelPersonas.TabIndex = 50;
             this.panelPersonas.Visible = false;
+            this.panelPersonas.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPersonas_Paint);
             // 
             // label23
             // 
@@ -326,18 +339,6 @@
             this.label1.Size = new System.Drawing.Size(234, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "BUSCA TU ALOJAMIENTO";
-            // 
-            // rbtLugar
-            // 
-            this.rbtLugar.AutoSize = true;
-            this.rbtLugar.Location = new System.Drawing.Point(244, 269);
-            this.rbtLugar.Name = "rbtLugar";
-            this.rbtLugar.Size = new System.Drawing.Size(52, 17);
-            this.rbtLugar.TabIndex = 60;
-            this.rbtLugar.TabStop = true;
-            this.rbtLugar.Text = "Lugar";
-            this.rbtLugar.UseVisualStyleBackColor = true;
-            this.rbtLugar.CheckedChanged += new System.EventHandler(this.rbtLugar_CheckedChanged);
             // 
             // Form2
             // 

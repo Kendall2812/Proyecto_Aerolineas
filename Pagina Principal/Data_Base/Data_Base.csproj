@@ -58,6 +58,7 @@
     <Compile Include="DB_Tarifas_Hoteles.cs" />
     <Compile Include="DB_Tarifas_Vuelos.cs" />
     <Compile Include="DB_Vehiculo.cs" />
+    <Compile Include="DB_Vuelos.cs" />
     <Compile Include="UserAdmin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

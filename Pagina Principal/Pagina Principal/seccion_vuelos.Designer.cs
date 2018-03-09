@@ -1,6 +1,6 @@
 ﻿namespace Pagina_Principal
 {
-    partial class seccion_vuelos
+    partial class Seccion_vuelos
     {
         /// <summary>
         /// Required designer variable.
@@ -48,14 +48,42 @@
             this.labelCantidadDias = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.dtgVuelo = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.paisOri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paisDes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ruta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.escalas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgHotel = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombrehotl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_pais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio_h = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.puntuacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgVehi = new System.Windows.Forms.DataGridView();
+            this.id_vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.capacidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio_ve = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label7 = new System.Windows.Forms.Label();
+            this.habi = new System.Windows.Forms.NumericUpDown();
             this.panelPersonas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinerMenores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinnerAdultos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgVuelo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgHotel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgVehi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.habi)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(252, 12);
+            this.button1.Location = new System.Drawing.Point(343, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(86, 23);
             this.button1.TabIndex = 0;
@@ -64,7 +92,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(344, 12);
+            this.button2.Location = new System.Drawing.Point(451, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(89, 23);
             this.button2.TabIndex = 1;
@@ -74,7 +102,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 57);
+            this.label1.Location = new System.Drawing.Point(28, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 13);
             this.label1.TabIndex = 2;
@@ -83,7 +111,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 99);
+            this.label2.Location = new System.Drawing.Point(29, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 3;
@@ -91,7 +119,9 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(90, 92);
+            this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textBox1.Location = new System.Drawing.Point(76, 44);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(184, 20);
             this.textBox1.TabIndex = 4;
@@ -99,7 +129,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(294, 99);
+            this.label3.Location = new System.Drawing.Point(278, 47);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 5;
@@ -107,7 +137,9 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(346, 96);
+            this.textBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textBox2.Location = new System.Drawing.Point(330, 44);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(198, 20);
             this.textBox2.TabIndex = 6;
@@ -115,7 +147,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(46, 163);
+            this.dateTimePicker1.Location = new System.Drawing.Point(32, 92);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(95, 20);
             this.dateTimePicker1.TabIndex = 7;
@@ -123,7 +155,7 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(147, 163);
+            this.dateTimePicker2.Location = new System.Drawing.Point(133, 92);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(95, 20);
             this.dateTimePicker2.TabIndex = 8;
@@ -131,7 +163,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 147);
+            this.label4.Location = new System.Drawing.Point(29, 76);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 13);
             this.label4.TabIndex = 9;
@@ -140,7 +172,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(144, 147);
+            this.label5.Location = new System.Drawing.Point(130, 76);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 13);
             this.label5.TabIndex = 10;
@@ -149,7 +181,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(330, 157);
+            this.label6.Location = new System.Drawing.Point(281, 70);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 11;
@@ -161,7 +193,7 @@
             this.panelPersonas.Controls.Add(this.label21);
             this.panelPersonas.Controls.Add(this.spinerMenores);
             this.panelPersonas.Controls.Add(this.spinnerAdultos);
-            this.panelPersonas.Location = new System.Drawing.Point(392, 157);
+            this.panelPersonas.Location = new System.Drawing.Point(343, 70);
             this.panelPersonas.Name = "panelPersonas";
             this.panelPersonas.Size = new System.Drawing.Size(113, 60);
             this.panelPersonas.TabIndex = 53;
@@ -179,7 +211,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(3, 10);
+            this.label21.Location = new System.Drawing.Point(3, 7);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(37, 13);
             this.label21.TabIndex = 46;
@@ -189,6 +221,7 @@
             // 
             this.spinerMenores.Location = new System.Drawing.Point(60, 8);
             this.spinerMenores.Name = "spinerMenores";
+            this.spinerMenores.ReadOnly = true;
             this.spinerMenores.Size = new System.Drawing.Size(37, 20);
             this.spinerMenores.TabIndex = 44;
             // 
@@ -196,20 +229,21 @@
             // 
             this.spinnerAdultos.Location = new System.Drawing.Point(60, 37);
             this.spinnerAdultos.Name = "spinnerAdultos";
+            this.spinnerAdultos.ReadOnly = true;
             this.spinnerAdultos.Size = new System.Drawing.Size(37, 20);
             this.spinnerAdultos.TabIndex = 45;
             // 
             // labelCantidadDias
             // 
             this.labelCantidadDias.AutoSize = true;
-            this.labelCantidadDias.Location = new System.Drawing.Point(488, 194);
+            this.labelCantidadDias.Location = new System.Drawing.Point(439, 122);
             this.labelCantidadDias.Name = "labelCantidadDias";
             this.labelCantidadDias.Size = new System.Drawing.Size(0, 13);
             this.labelCantidadDias.TabIndex = 52;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(40, 235);
+            this.button3.Location = new System.Drawing.Point(31, 123);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 54;
@@ -218,18 +252,213 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(504, 12);
+            this.button4.Location = new System.Drawing.Point(931, 12);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 55;
             this.button4.Text = "Regresar";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // seccion_vuelos
+            // dtgVuelo
+            // 
+            this.dtgVuelo.AllowUserToAddRows = false;
+            this.dtgVuelo.AllowUserToDeleteRows = false;
+            this.dtgVuelo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgVuelo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgVuelo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.paisOri,
+            this.paisDes,
+            this.ruta,
+            this.escalas,
+            this.precio,
+            this.duracion});
+            this.dtgVuelo.Location = new System.Drawing.Point(32, 164);
+            this.dtgVuelo.Name = "dtgVuelo";
+            this.dtgVuelo.Size = new System.Drawing.Size(575, 178);
+            this.dtgVuelo.TabIndex = 56;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(619, 348);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(175, 154);
+            this.pictureBox1.TabIndex = 58;
+            this.pictureBox1.TabStop = false;
+            // 
+            // paisOri
+            // 
+            this.paisOri.HeaderText = "PAIS ORIGEN";
+            this.paisOri.Name = "paisOri";
+            // 
+            // paisDes
+            // 
+            this.paisDes.HeaderText = "PAIS DESTINO";
+            this.paisDes.Name = "paisDes";
+            // 
+            // ruta
+            // 
+            this.ruta.HeaderText = "RUTA";
+            this.ruta.Name = "ruta";
+            // 
+            // escalas
+            // 
+            this.escalas.HeaderText = "ESCALAS";
+            this.escalas.Name = "escalas";
+            // 
+            // precio
+            // 
+            this.precio.HeaderText = "PRECIO";
+            this.precio.Name = "precio";
+            // 
+            // duracion
+            // 
+            this.duracion.HeaderText = "DURACION";
+            this.duracion.Name = "duracion";
+            // 
+            // dtgHotel
+            // 
+            this.dtgHotel.AllowUserToAddRows = false;
+            this.dtgHotel.AllowUserToDeleteRows = false;
+            this.dtgHotel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgHotel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgHotel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.nombrehotl,
+            this.nombre_pais,
+            this.lugar,
+            this.precio_h,
+            this.puntuacion});
+            this.dtgHotel.Location = new System.Drawing.Point(31, 348);
+            this.dtgHotel.Name = "dtgHotel";
+            this.dtgHotel.ReadOnly = true;
+            this.dtgHotel.Size = new System.Drawing.Size(576, 198);
+            this.dtgHotel.TabIndex = 60;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "CODIGO";
+            this.id.HeaderText = "CODIGO";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // nombrehotl
+            // 
+            this.nombrehotl.DataPropertyName = "nombrehotl";
+            this.nombrehotl.HeaderText = "NOMBRE";
+            this.nombrehotl.Name = "nombrehotl";
+            this.nombrehotl.ReadOnly = true;
+            // 
+            // nombre_pais
+            // 
+            this.nombre_pais.DataPropertyName = "nombre_pais";
+            this.nombre_pais.HeaderText = "PAIS";
+            this.nombre_pais.Name = "nombre_pais";
+            this.nombre_pais.ReadOnly = true;
+            // 
+            // lugar
+            // 
+            this.lugar.DataPropertyName = "nombre_lugar";
+            this.lugar.HeaderText = "LUGAR";
+            this.lugar.Name = "lugar";
+            this.lugar.ReadOnly = true;
+            // 
+            // precio_h
+            // 
+            this.precio_h.DataPropertyName = "precio";
+            this.precio_h.HeaderText = "PRECIO";
+            this.precio_h.Name = "precio_h";
+            this.precio_h.ReadOnly = true;
+            // 
+            // puntuacion
+            // 
+            this.puntuacion.DataPropertyName = "puntuacion";
+            this.puntuacion.HeaderText = "CALIFICACION";
+            this.puntuacion.Name = "puntuacion";
+            this.puntuacion.ReadOnly = true;
+            // 
+            // dtgVehi
+            // 
+            this.dtgVehi.AllowUserToAddRows = false;
+            this.dtgVehi.AllowUserToDeleteRows = false;
+            this.dtgVehi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgVehi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgVehi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_vehiculo,
+            this.marca,
+            this.modelo,
+            this.capacidad,
+            this.precio_ve});
+            this.dtgVehi.Location = new System.Drawing.Point(619, 164);
+            this.dtgVehi.Name = "dtgVehi";
+            this.dtgVehi.ReadOnly = true;
+            this.dtgVehi.Size = new System.Drawing.Size(387, 150);
+            this.dtgVehi.TabIndex = 61;
+            // 
+            // id_vehiculo
+            // 
+            this.id_vehiculo.DataPropertyName = "id_vehiculo";
+            this.id_vehiculo.HeaderText = "PLACA";
+            this.id_vehiculo.Name = "id_vehiculo";
+            this.id_vehiculo.ReadOnly = true;
+            // 
+            // marca
+            // 
+            this.marca.DataPropertyName = "marca";
+            this.marca.HeaderText = "MARCA";
+            this.marca.Name = "marca";
+            this.marca.ReadOnly = true;
+            // 
+            // modelo
+            // 
+            this.modelo.DataPropertyName = "modelo";
+            this.modelo.HeaderText = "MODELO";
+            this.modelo.Name = "modelo";
+            this.modelo.ReadOnly = true;
+            // 
+            // capacidad
+            // 
+            this.capacidad.DataPropertyName = "capacidad";
+            this.capacidad.HeaderText = "CAPACIDAD";
+            this.capacidad.Name = "capacidad";
+            this.capacidad.ReadOnly = true;
+            // 
+            // precio_ve
+            // 
+            this.precio_ve.DataPropertyName = "precio";
+            this.precio_ve.HeaderText = "PRECIO";
+            this.precio_ve.Name = "precio_ve";
+            this.precio_ve.ReadOnly = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(471, 85);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(69, 13);
+            this.label7.TabIndex = 62;
+            this.label7.Text = "Habitaciones";
+            // 
+            // habi
+            // 
+            this.habi.Location = new System.Drawing.Point(546, 83);
+            this.habi.Name = "habi";
+            this.habi.ReadOnly = true;
+            this.habi.Size = new System.Drawing.Size(41, 20);
+            this.habi.TabIndex = 63;
+            this.habi.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // Seccion_vuelos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 442);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1009, 550);
+            this.Controls.Add(this.habi);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.dtgVehi);
+            this.Controls.Add(this.dtgHotel);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.dtgVuelo);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.panelPersonas);
@@ -246,12 +475,18 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "seccion_vuelos";
+            this.Name = "Seccion_vuelos";
             this.Text = "seccion_vuelos";
+            this.Load += new System.EventHandler(this.seccion_vuelos_Load);
             this.panelPersonas.ResumeLayout(false);
             this.panelPersonas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinerMenores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinnerAdultos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgVuelo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgHotel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgVehi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.habi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,5 +514,28 @@
         private System.Windows.Forms.Label labelCantidadDias;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView dtgVuelo;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paisOri;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paisDes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ruta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn escalas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn duracion;
+        private System.Windows.Forms.DataGridView dtgHotel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombrehotl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_pais;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lugar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio_h;
+        private System.Windows.Forms.DataGridViewTextBoxColumn puntuacion;
+        private System.Windows.Forms.DataGridView dtgVehi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_vehiculo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn capacidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio_ve;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown habi;
     }
 }
