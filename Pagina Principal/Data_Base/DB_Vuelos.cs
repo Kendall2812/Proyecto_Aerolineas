@@ -1,5 +1,6 @@
 ﻿using Npgsql;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -115,40 +116,112 @@ namespace Data_Base
         }
 
 
-        public string escala_Directo(string pais_origen, string pais_destino)
+        public string escala_vuelo_Directo(string pais_origen, string p_destino)
         {
-            string final = null;
-            string paiso = null;
+            string termina = null;
+            string paisorigen = null;
+
+            paisorigen = TraerInfo("SELECT pais_origen FROM rutas WHERE pais_destino = '" + p_destino + "'");
+              
+            if (paisorigen != pais_origen)
+            {
+                termina = paisorigen + ", " + p_destino;
+            }
+            else
+            {
+                termina = "Directo";
+            }      
+            return termina;
+        }
+
+        public string TraerInfo(string sql)
+        {
+            string dato = "";
+            try
+            {
+                connection = conexion1.Conexion();
+                connection.Open();
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, connection);
+                NpgsqlDataReader reader = cmd.ExecuteReader();
+                try
+                {
+                    while (reader.Read())
+                    {
+                        dato = reader.GetString(0);
+                    }
+                }
+                finally
+                {
+                    reader.Close();
+                    cmd.Dispose();
+                    connection.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            return dato;
+        }
+
+
+        public ArrayList Escala_en_paises(string pais_origen, string pais_destino)
+        {
+            string termina = null;
+            string paisorigen = null;
+            ArrayList paises = new ArrayList();
             connection = conexion1.Conexion();
             connection.Open();
-            NpgsqlCommand cmd = new NpgsqlCommand("SELECT pais_origen FROM ruta WHERE pais_destino = '" + pais_destino + "'", ConexionBD.conexion);
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT pais_origen FROM rutas WHERE pais_destino = '" + pais_destino + "'", connection);
             NpgsqlDataReader reader = cmd.ExecuteReader();
             try
             {
                 while (reader.Read())
                 {
-                    paiso = (reader.GetString(0));
+                    paises.Add(reader.GetString(0));
                 }
-
             }
             finally
             {
                 reader.Close();
                 cmd.Dispose();
-                ConexionBD.conexion.Close();
+                connection.Close();
             }
-
-            if (paiso != pais_origen)
+            if (paisorigen != pais_origen)
             {
-                final = paiso + ", " + pais_destino;
+                termina = paisorigen;
             }
             else
             {
-                final = "Vuelo Directo";
+                termina = "Directo";
+            }
+            return paises;
+        }
+
+        public ArrayList escalas_vuelo(string pais_destino)
+        {          
+            ArrayList escalas = new ArrayList();
+            connection = conexion1.Conexion();
+            connection.Open();
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT pais_origen FROM rutas WHERE pais_destino = '" + pais_destino + "'",connection);
+            NpgsqlDataReader reader = cmd.ExecuteReader();
+            try
+            {
+                while (reader.Read())
+                {
+                    escalas.Add(reader.GetString(0) + "," + pais_destino);
+                }
+            }
+            finally
+            {
+                reader.Close();
+                cmd.Dispose();
+                connection.Close();
             }
 
-            return final;
+            return escalas;
         }
+
     }
 
    

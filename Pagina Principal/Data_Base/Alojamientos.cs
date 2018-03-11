@@ -14,53 +14,12 @@ namespace Data_Base
 {
     public class Alojamientos
     {
-        NpgsqlCommand cmd;
+      
         NpgsqlConnection conexion;
         static NpgsqlConnection connection;
         static NpgsqlCommand comandos;
         Conexio_BaseDatos conexion1 = new Conexio_BaseDatos();
         String [] infomacion= new String[] { };
-
-        public Alojamientos()
-        {
-            try
-            {
-                string servidor = "localhost";
-                int puerto = 5432;
-                string usuario = "postgres";
-                string clave = "postgresql";
-                string baseDatos = "Aeropuertos";//nombre de la base en la que voy a trabajar
-
-                string cadenaConexion = "Server=" + servidor + ";" + "Port=" + puerto + ";" + "User Id=" + usuario + ";" + "Password=" + clave + ";" + "Database=" + baseDatos;
-                conexion = new NpgsqlConnection(cadenaConexion);
-                conexion.Open();
-                ///MessageBox.Show("conectado");
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudo conectar: " + ex.ToString());
-            }
-        }
-
-        public void autoCompletar(TextBox cajaTexto)
-        {
-            try
-            {
-                cmd = new NpgsqlCommand("SELECT nombre, pais, lugar FROM hoteles ", conexion);
-                NpgsqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    cajaTexto.AutoCompleteCustomSource.Add(dr["nombre"].ToString() + "," + dr["pais"].ToString() + "," + dr["lugar"].ToString());
-                }
-                dr.Close();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudo autocompletar el TextBox: " + ex.ToString());
-            }
-        }
 
 
         public void cargarDatos(string dato, DataGridView dataGridView1)

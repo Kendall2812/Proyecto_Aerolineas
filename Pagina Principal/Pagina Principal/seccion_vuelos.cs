@@ -1,15 +1,9 @@
-﻿using Npgsql;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Data_Base;
 using System.Collections;
+using Aero_Negocio;
 
 namespace Pagina_Principal
 {
@@ -31,6 +25,7 @@ namespace Pagina_Principal
         {
             InitializeComponent();
             panelPersonas.Visible = true;
+            this.CenterToScreen();
         }
 
         public Seccion_vuelos(int cedula, string nombre)
@@ -105,6 +100,11 @@ namespace Pagina_Principal
             }
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            CargarVuelo();
+        }
+
         private void spinerMenores_ValueChanged(object sender, EventArgs e)
         {
             dtgVehi.Rows.Clear();
@@ -127,8 +127,7 @@ namespace Pagina_Principal
 
         public void CargarVuelo()
         {
-
-
+            dataGridView1.Rows.Clear();
             string ho = hoy.ToString("dd/MM/yyyy");
             string[] pais1 = textBox1.Text.Split(',');
             string[] pais2 = textBox2.Text.Split(',');
@@ -140,7 +139,7 @@ namespace Pagina_Principal
                 }
                 else if (dateTimePicker1.Value.ToString() == dateTimePicker2.Value.ToString())
                 {
-                    MessageBox.Show("Seleccione una Fecha!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Debe seleecionar una Fecha", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else if (Convert.ToDateTime(dateTimePicker1.Value.ToShortDateString()) < Convert.ToDateTime(ho) || Convert.ToDateTime(dateTimePicker2.Value.ToShortDateString()) < Convert.ToDateTime(ho))
                 {
@@ -148,21 +147,18 @@ namespace Pagina_Principal
                 }
                 else
                 {
-
-                    //string paiso = pu.paiso(origen.SelectedItem.ToString());
-                    //string paisd = pu.paisd(destino.SelectedItem.ToString());
-                    //string direcoesca = pu.escala_Directo(paiso, paisd);
-
-
-                    //pais = pu.paisesEscala(paiso, paisd);
-
-                    //escalas = pu.escala(paisd);
-
-                    //precios = pu.precioEscala(paisd);
-
-                    //duracion = pu.duracionEscala(paisd);
-                    //vuelos.Rows.Clear();
-                    //pu.mostrarInfo(vuelos, paiso, paisd, direcoesca, pais, escalas, precios, duracion, cntAdultos + cntMenores, spinnerHab.Value.ToString());
+                    alojamiento a = new alojamiento();
+                    DB_Vuelos v = new DB_Vuelos();
+                    Vuelos vue = new Vuelos();
+                    string paiso = a.TraerInfo("SELECT pais_origen FROM rutas WHERE pais_origen = '" + pais1[0] + "'");
+                    string paisd = a.TraerInfo("SELECT pais_destino FROM rutas WHERE pais_destino = '" + pais2[0] + "'");
+                    string direccionEscala = v.escala_vuelo_Directo(paiso, paisd);
+                    pais = v.Escala_en_paises(paiso, paisd);
+                    escalas = v.escalas_vuelo(paisd);
+                    precios = vue.precioEscala(paisd);
+                    duracion = vue.duracionEscala(paisd);
+                    dataGridView1.Rows.Clear();
+                    vue.mostrarInfo(dataGridView1, paiso, paisd, direccionEscala, pais, escalas, precios, duracion, cntAdultos + cntMenores, Convert.ToInt32(spinnerHab.Value.ToString()));
                 }
             }
             catch (Exception e)
