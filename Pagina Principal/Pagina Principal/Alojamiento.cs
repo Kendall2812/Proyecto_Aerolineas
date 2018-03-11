@@ -32,6 +32,7 @@ namespace Pagina_Principal
         int codigo;
         string nombre, pais, lugar, nombreuser;
         int precio;
+
         public Form2(int cedula, string nombre)
         {
             InitializeComponent();
@@ -54,11 +55,19 @@ namespace Pagina_Principal
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             //CONSTRUCT TEXT COLUMNS
             dataGridView1.ColumnCount = 5;
+
+            dataGridView1.Columns[0].Width = 132;
+            dataGridView1.Columns[1].Width = 133;
+            dataGridView1.Columns[2].Width = 132;
+            dataGridView1.Columns[3].Width = 132;
+            dataGridView1.Columns[4].Width = 132;
+
             dataGridView1.Columns[0].Name = "CODIGO";
             dataGridView1.Columns[1].Name = "NOMBRE";
-            dataGridView1.Columns[2].Name = "PAIS";
-            dataGridView1.Columns[3].Name = "LUGAR";
+            dataGridView1.Columns[2].Name = "LUGAR";
+            dataGridView1.Columns[3].Name = "PAIS";
             dataGridView1.Columns[4].Name = "PRECIO";
+            
 
         }
 
@@ -134,7 +143,7 @@ namespace Pagina_Principal
             cargarListView();
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                row.Height = 100;
+                row.Height = 90;
             }
         }
 
@@ -179,8 +188,8 @@ namespace Pagina_Principal
         {
             codigo = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["CODIGO"].Value.ToString());
             nombre = dataGridView1.SelectedRows[0].Cells["NOMBRE"].Value.ToString();
-            pais = dataGridView1.SelectedRows[0].Cells["PAIS"].Value.ToString();
             lugar = dataGridView1.SelectedRows[0].Cells["LUGAR"].Value.ToString();
+            pais = dataGridView1.SelectedRows[0].Cells["PAIS"].Value.ToString();
             precio = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["PRECIO"].Value.ToString());
            
             alojamiento alo = new alojamiento();
