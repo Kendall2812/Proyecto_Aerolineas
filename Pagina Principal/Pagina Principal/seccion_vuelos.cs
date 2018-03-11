@@ -169,7 +169,7 @@ namespace Pagina_Principal
         public void cargarVehi()
         {
             dtgVehi.Rows.Clear();
-            if (spinnerHab.Value.ToString() != null)
+            if (!spinnerHab.Value.Equals(0) )
             {
                 DB_Vuelos vue = new DB_Vuelos();
                 vehiculos = vue.CargarVehi(cntPersonas, dtgVehi);
