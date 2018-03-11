@@ -10,37 +10,38 @@ using System.Windows.Forms;
 
 namespace Pagina_Principal
 {
-    public partial class reservasYcompras : Form
+    public partial class Menu_User : Form
     {
-        int cedul;
-        string name;
-        public reservasYcompras(int cedula, string nombre)
+        int cedula;
+        string nom;
+        public Menu_User(int cedu, string nombre)
         {
             InitializeComponent();
-            cedul = cedula;
-            name = nombre;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form1 ver = new Form1();
-            ver.Show();
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Menu_User ver = new Menu_User(cedul, name);
-            ver.Show();
+            cedula = cedu;
+            nom = nombre;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Ventana_Calificacion ver = new Ventana_Calificacion();
+            reservasYcompras re = new reservasYcompras(cedula, nom);
+            re.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 ver = new Form2(cedula, nom);
             ver.Show();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Seccion_vuelos ver = new Seccion_vuelos(cedula, nom);
+            ver.Show();
+
         }
     }
 }
