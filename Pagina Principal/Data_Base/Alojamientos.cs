@@ -14,8 +14,7 @@ namespace Data_Base
 {
     public class Alojamientos
     {
-      
-        NpgsqlConnection conexion;
+           
         static NpgsqlConnection connection;
         static NpgsqlCommand comandos;
         Conexio_BaseDatos conexion1 = new Conexio_BaseDatos();

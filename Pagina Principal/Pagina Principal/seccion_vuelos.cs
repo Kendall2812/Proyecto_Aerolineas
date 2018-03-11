@@ -41,11 +41,11 @@ namespace Pagina_Principal
         }
 
 
-       
+
 
         private void spinnerAdultos_ValueChanged(object sender, EventArgs e)
         {
-            dtgVehi.Rows.Clear();
+
             cntPersonas = 0;
             cntAdultos = 0;
             cntAdultos = Convert.ToInt32(spinnerAdultos.Value.ToString());
@@ -53,19 +53,19 @@ namespace Pagina_Principal
             if (cntPersonas <= cntHabi)
             {
                 spinnerAdultos.Enabled = true;
-                cargarVehi();
+
             }
             else
             {
                 spinnerAdultos.Value = cntAdultos - 1;
-                cargarVehi();
+
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
-         
+            cargarVehi();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -75,7 +75,7 @@ namespace Pagina_Principal
 
         private void button2_MouseClick_1(object sender, MouseEventArgs e)
         {
-            
+
         }
 
         private void spinnerHab_ValueChanged(object sender, EventArgs e)
@@ -92,11 +92,11 @@ namespace Pagina_Principal
             {
                 DB_Vuelos vu = new DB_Vuelos();
                 hoteles = vu.datosHoteles(lugar[1], Convert.ToInt32(spinnerHab.Text), lugar[0], dtgHotel);
-                
+
             }
             else
             {
-                dtgHotel.Columns.Clear();
+                dtgHotel.Rows.Clear();
             }
         }
 
@@ -107,7 +107,6 @@ namespace Pagina_Principal
 
         private void spinerMenores_ValueChanged(object sender, EventArgs e)
         {
-            dtgVehi.Rows.Clear();
             cntPersonas = 0;
             cntMenores = 0;
             cntMenores = Convert.ToInt32(spinerMenores.Value.ToString());
@@ -115,13 +114,13 @@ namespace Pagina_Principal
             if (cntPersonas <= cntHabi)
             {
                 spinerMenores.Enabled = true;
-                cargarVehi();
+
             }
             else
             {
-                
+
                 spinerMenores.Value = cntMenores - 1;
-                cargarVehi();
+
             }
         }
 
@@ -170,9 +169,16 @@ namespace Pagina_Principal
         public void cargarVehi()
         {
             dtgVehi.Rows.Clear();
-            DB_Vuelos vue = new DB_Vuelos();
-            vehiculos = vue.CargarVehi(cntPersonas, dtgVehi);
-        }
+            if (spinnerHab.Value.ToString() != null)
+            {
+                DB_Vuelos vue = new DB_Vuelos();
+                vehiculos = vue.CargarVehi(cntPersonas, dtgVehi);
+            }
+            else
+            {
+                dtgVehi.Rows.Clear();
+            }
+        }   
 
     }
 }

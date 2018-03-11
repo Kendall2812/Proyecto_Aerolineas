@@ -86,7 +86,7 @@ namespace Pagina_Principal
      
             if(cantidadDias!= 0 & cntHabi!=0 & cntPersonas!=0)
             {
-                string hotel = textBox1.Text;
+                //string hotel = textBox1.Text;
                 MessageBox.Show("Has reservado un hotel con " + spinnerHab.Value.ToString());
             }
             if (dataGridView1.SelectedRows.Count == 0)
