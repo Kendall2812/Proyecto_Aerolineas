@@ -451,17 +451,17 @@
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "Pais Origen";
+            this.Column1.HeaderText = "Pais Origen Seleccionado";
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Pais Destino";
+            this.Column2.HeaderText = "Pais Destino Seleccionado";
             this.Column2.Name = "Column2";
             // 
             // Column3
             // 
-            this.Column3.HeaderText = "Vuelo";
+            this.Column3.HeaderText = "Tiene Escalas o es Directo";
             this.Column3.Name = "Column3";
             // 
             // Column4
@@ -476,7 +476,7 @@
             // 
             // Column6
             // 
-            this.Column6.HeaderText = "Vuelo";
+            this.Column6.HeaderText = "Tiene Escalas o es Directo";
             this.Column6.Name = "Column6";
             // 
             // Column7
