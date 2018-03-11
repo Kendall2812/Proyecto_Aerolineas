@@ -34,7 +34,7 @@ namespace Data_Base
                 string cadenaConexion = "Server=" + servidor + ";" + "Port=" + puerto + ";" + "User Id=" + usuario + ";" + "Password=" + clave + ";" + "Database=" + baseDatos;
                 conexion = new NpgsqlConnection(cadenaConexion);
                 conexion.Open();
-                MessageBox.Show("conectado");
+                ///MessageBox.Show("conectado");
 
             }
             catch (Exception ex)
@@ -67,30 +67,56 @@ namespace Data_Base
         {
             try
             {
+                dataGridView1.Rows.Clear();
+                //Image img;
                 connection = conexion1.Conexion();
                 connection.Open();
-                comandos = new NpgsqlCommand("SELECT h.codigo, h.nombre, h.pais, h.lugar, h.foto, t.precio FROM hoteles AS h " +
-                    "JOIN tarifas_hoteles AS t ON h.codigotarifahotel= t.codigo", connection);
+                comandos = new NpgsqlCommand("SELECT ho.codigo, ho.nombre, ho.lugar, pa.nombre, ta.precio "  
+                  +" FROM hoteles AS ho JOIN lugares AS lu ON ho.lugar = lu.nombre JOIN paises AS pa ON pa.codigo = lu.codigo_pais JOIN tarifas_hoteles AS ta ON ta.codigo = ho.codigotarifahotel ", connection);
                 NpgsqlDataReader dr = comandos.ExecuteReader();
               
                 if (dr.HasRows)
                 {
                     while (dr.Read())
                     {
-                        if (dato.Equals(dr.GetString(1)))
+                        if (dato.Equals(dr.GetString(1))) //verifica por nombre del hotel
                         {
-                            Image img = Image.FromFile(@dr.GetString(4));
-                            //THEN AD ROW DATA           
-                            Object[] row = new Object[] { dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetString(3), dr.GetString(5), img };
+                            //THEN AD ROW DATA 
+                            Object[] row = new Object[] { dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetString(3), dr.GetString(4) }; ///, dr.GetString(5)
                             dataGridView1.Rows.Add(row);
-                        }else if (dato.Equals(dr.GetString(2)) || dato.Equals(dr.GetString(3)))
-                        {
-                            Image img = Image.FromFile(@dr.GetString(4));
-                            //THEN AD ROW DATA           
-                            Object[] row = new Object[] { dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetString(3), dr.GetString(5), img };
-                            dataGridView1.Rows.Add(row);
+                            break;
                         }
-             
+                        else if (dato.Equals(dr.GetString(2)))//verifica por nombre del lugar 
+                        {
+                            //THEN AD ROW DATA 
+                            Object[] row = new Object[] { dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetString(3), dr.GetString(4) }; ///, dr.GetString(5)
+                            dataGridView1.Rows.Add(row);
+                            break;
+                        }           
+                    }
+                    if (dr.Read() == false)
+                    {
+                        //Busqueda por pais
+                        connection.Close();
+                        connection.Open();
+
+                        comandos = new NpgsqlCommand("SELECT ho.codigo, ho.nombre, ho.lugar, pa.nombre, ta.precio  "
+                             + " FROM hoteles AS ho JOIN lugares AS lu ON ho.lugar = lu.nombre JOIN paises AS pa ON pa.codigo = lu.codigo_pais JOIN tarifas_hoteles AS ta ON ta.codigo = ho.codigotarifahotel \n"
+                             + " WHERE pa.nombre = '" + dato + "'", connection);
+                        NpgsqlDataReader rd = comandos.ExecuteReader();
+                        if (rd.HasRows)
+                        {
+                            while (rd.Read())
+                            {
+                                //THEN AD ROW DATA           
+                                Object[] row = new Object[] { rd.GetInt32(0), rd.GetString(1), rd.GetString(2), rd.GetString(3), rd.GetString(4) };
+                                dataGridView1.Rows.Add(row);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se encotraron resultados de la busqueda. ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                     connection.Close();
                 }

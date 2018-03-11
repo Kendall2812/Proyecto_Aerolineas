@@ -105,8 +105,57 @@ namespace Pagina_Principal
         {
             if (tabControl1.SelectedIndex == 0)
             {
-               // reporte1();
+                BarExample(); //Show bar chart
+                SplineChartExample();//SplineChartExample();
             }
+        }
+
+//////// Prueba de graficos
+        //private void Form1_Load(object sender, EventArgs e)
+        //{
+        //    BarExample(); //Show bar chart
+        //    SplineChartExample();//SplineChartExample();
+        //}
+        public void BarExample()
+        {
+            this.Grafico2.Series.Clear();
+
+            // Data arrays
+            string[] seriesArray = { "Cat", "Dog", "Bird", "Monkey" };
+            int[] pointsArray = { 2, 1, 7, 5 };
+
+            // Set palette
+            this.Grafico2.Palette = ChartColorPalette.Chocolate;
+
+            // Set title
+            this.Grafico2.Titles.Add("Animals");
+
+            // Add series.
+            for (int i = 0; i < seriesArray.Length; i++)
+            {
+                Series series = this.Grafico2.Series.Add(seriesArray[i]);
+                series.Points.Add(pointsArray[i]);
+            }
+        }
+        private void SplineChartExample()
+        {
+            this.Grafico2.Series.Clear();
+
+            this.Grafico2.Titles.Add("Total Income");
+
+            Series series = this.Grafico2.Series.Add("Total Income");
+            series.ChartType = SeriesChartType.Pie;
+            int num = 1000;
+            string mes = "Marzo";
+            series.Points.AddXY(mes, num);
+            series.Points.AddXY("October", 300);
+            series.Points.AddXY("November", 800);
+            series.Points.AddXY("December", 200);
+            series.Points.AddXY("January", 600);
+            Grafico2.Series["Total Income"].IsValueShownAsLabel = true;
+            //series.Points.AddXY("February", 400);
+            // series.Points.AddXY("scc", 700);
+
         }
     }
 }
