@@ -38,6 +38,8 @@
             this.Reservas_Hoteles = new System.Windows.Forms.RadioButton();
             this.Reservas_Vuelos = new System.Windows.Forms.RadioButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnInfoHotel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -112,10 +114,10 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.panel2.Location = new System.Drawing.Point(244, 459);
+            this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel2.Location = new System.Drawing.Point(17, 504);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(980, 213);
+            this.panel2.Size = new System.Drawing.Size(581, 213);
             this.panel2.TabIndex = 8;
             // 
             // btnVehiculo
@@ -127,12 +129,12 @@
             this.btnVehiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
             this.btnVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVehiculo.Location = new System.Drawing.Point(135, 459);
+            this.btnVehiculo.Location = new System.Drawing.Point(17, 460);
             this.btnVehiculo.Margin = new System.Windows.Forms.Padding(4);
             this.btnVehiculo.Name = "btnVehiculo";
-            this.btnVehiculo.Size = new System.Drawing.Size(102, 37);
+            this.btnVehiculo.Size = new System.Drawing.Size(206, 37);
             this.btnVehiculo.TabIndex = 9;
-            this.btnVehiculo.Text = "Vehiculo";
+            this.btnVehiculo.Text = "Informacion Vehiculo";
             this.btnVehiculo.UseVisualStyleBackColor = false;
             this.btnVehiculo.Click += new System.EventHandler(this.btnVehiculo_Click);
             // 
@@ -174,12 +176,39 @@
             this.dataGridView1.Size = new System.Drawing.Size(1064, 258);
             this.dataGridView1.TabIndex = 12;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel3.Location = new System.Drawing.Point(701, 504);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(581, 213);
+            this.panel3.TabIndex = 13;
+            // 
+            // btnInfoHotel
+            // 
+            this.btnInfoHotel.BackColor = System.Drawing.Color.Yellow;
+            this.btnInfoHotel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInfoHotel.FlatAppearance.BorderSize = 0;
+            this.btnInfoHotel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow;
+            this.btnInfoHotel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
+            this.btnInfoHotel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInfoHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfoHotel.Location = new System.Drawing.Point(701, 460);
+            this.btnInfoHotel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInfoHotel.Name = "btnInfoHotel";
+            this.btnInfoHotel.Size = new System.Drawing.Size(184, 37);
+            this.btnInfoHotel.TabIndex = 14;
+            this.btnInfoHotel.Text = "Informacion Hotel";
+            this.btnInfoHotel.UseVisualStyleBackColor = false;
+            // 
             // reservasYcompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1309, 729);
+            this.Controls.Add(this.btnInfoHotel);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Reservas_Vuelos);
             this.Controls.Add(this.Reservas_Hoteles);
@@ -212,5 +241,7 @@
         private System.Windows.Forms.RadioButton Reservas_Hoteles;
         private System.Windows.Forms.RadioButton Reservas_Vuelos;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnInfoHotel;
     }
 }

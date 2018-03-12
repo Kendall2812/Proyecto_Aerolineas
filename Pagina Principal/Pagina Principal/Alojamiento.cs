@@ -30,16 +30,17 @@ namespace Pagina_Principal
         string[] paths = { };
 
         int codigo;
-        string nombre, pais, lugar, nombreuser;
+        string nombre, pais, lugar;
+        string nombreuser;
         int precio;
 
-        public Form2(int cedula, string nombre)
+        public Form2(int cedula, string nombreUsuario)
         {
             InitializeComponent();
             this.CenterToScreen();
             panelPersonas.Visible = true;
             cedu = cedula;
-            nombreuser = nombre;
+            nombreuser = nombreUsuario;
         }
 
         private void numericUpDown1_Click(object sender, EventArgs e)
@@ -120,8 +121,8 @@ namespace Pagina_Principal
                     }
                     else
                     {
-                        alo.InsertarReserva("INSERT INTO reservas (cedula, niños, adultos, id_hotel, total_hotel, nombre, fecha_inicio, fecha_final, fin_paisdestino, nombre_hotel) " +
-                        "VALUES ( '" + cedu + "', '" + cntMenores + "', '" + cntAdultos + "', '" + codigo + "', '" + ((cantiHabitacio * precio)* cantidadDias) + "', '" + nombreuser + "', '" + dateTPSalida.Value + "', '" + dataTLlegada.Value + "', '" + pais + "', '" + nombre + "' )");
+                        alo.InsertarReserva("INSERT INTO reservas (cedula, niños, adultos, id_hotel, total_hotel, nombre, fecha_inicio, fecha_final, fin_pais_destino, nombre_hotel,tipo_accion) " +
+                        "VALUES ( '" + cedu + "', '" + cntMenores + "', '" + cntAdultos + "', '" + codigo + "', '" + ((cantiHabitacio * precio)* cantidadDias) + "', '" + nombreuser + "', '" + dateTPSalida.Value + "', '" + dataTLlegada.Value + "', '" + pais + "', '" + nombre + "', '" + false + "')");
                         MessageBox.Show("Se ha registrado la reserva!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }                   
                 }
@@ -143,8 +144,8 @@ namespace Pagina_Principal
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 login = new Form1();
-            login.Show();
+            Menu_User regresar = new Menu_User(cedu, nombreuser);
+            regresar.Show();
         }
 
         private void spinnerHab_ValueChanged(object sender, EventArgs e)

@@ -40,9 +40,6 @@ namespace Pagina_Principal
             vu.Autocompletar(textBox1, textBox2);
         }
 
-
-
-
         private void spinnerAdultos_ValueChanged(object sender, EventArgs e)
         {
 

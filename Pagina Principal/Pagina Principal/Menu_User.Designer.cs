@@ -35,9 +35,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(79, 131);
+            this.button1.Location = new System.Drawing.Point(105, 161);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 58);
+            this.button1.Size = new System.Drawing.Size(111, 71);
             this.button1.TabIndex = 0;
             this.button1.Text = "MIS RESERVAS";
             this.button1.UseVisualStyleBackColor = true;
@@ -45,9 +46,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(199, 131);
+            this.button2.Location = new System.Drawing.Point(265, 161);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 58);
+            this.button2.Size = new System.Drawing.Size(121, 71);
             this.button2.TabIndex = 1;
             this.button2.Text = "BUSCAR ALOJAMIENTO";
             this.button2.UseVisualStyleBackColor = true;
@@ -55,9 +57,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(337, 131);
+            this.button3.Location = new System.Drawing.Point(449, 161);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 58);
+            this.button3.Size = new System.Drawing.Size(100, 71);
             this.button3.TabIndex = 2;
             this.button3.Text = "BUSCAR VUELO";
             this.button3.UseVisualStyleBackColor = true;
@@ -65,13 +68,15 @@
             // 
             // Menu_User
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 360);
+            this.ClientSize = new System.Drawing.Size(677, 443);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Menu_User";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu_User";
             this.ResumeLayout(false);
 

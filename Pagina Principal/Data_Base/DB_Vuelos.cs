@@ -53,25 +53,25 @@ namespace Data_Base
                 connection = conexion1.Conexion();
                 connection.Open();
                 cmd = new NpgsqlCommand("SELECT ho.codigo, ho.nombre, pa.nombre, lu.nombre, ho.habitaciones, th.precio, (SELECT AVG(pu.puntuacion) FROM calificacion AS pu WHERE pu.id_hotel = ho.codigo)" +
-                    "FROM hoteles AS ho JOIN tarifas_hoteles AS th ON ho.codigotarifahotel = th.codigo JOIN lugares AS lu ON ho.lugar = lu.nombre" +
-                    "JOIN paises AS pa ON pa.codigo = lu.codigo_pais WHERE pa.nombre = "+pais+ " AND ho.habitaciones >="+habi+" AND ho.lugar = "+destino+";", connection);
-                NpgsqlDataReader dre = cmd.ExecuteReader();
-                if (dre.HasRows)
+                    "FROM hoteles AS ho JOIN tarifas_hoteles AS th ON ho.codigotarifahotel = th.codigo JOIN lugares AS lu ON ho.lugar = lu.nombre " +
+                    "JOIN paises AS pa ON pa.codigo = lu.codigo_pais WHERE pa.nombre = "+ pais + " AND ho.habitaciones >="+habi+" AND ho.lugar = "+destino+";", connection);
+                NpgsqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
                 {
-                    while (dre.Read())
+                    while (dr.Read())
                     {
-                        hotel.Add(dre.GetInt32(0));
-                        hotel.Add(dre.GetString(1));
-                        hotel.Add(dre.GetString(2));
-                        hotel.Add(dre.GetString(3));
-                        hotel.Add(dre.GetInt32(4));
-                        hotel.Add(dre.GetInt32(5));
-                        hotel.Add(dre.GetInt32(6));
-                        tablaHotel.Rows.Add(dre.GetInt32(0), dre.GetString(1), dre.GetString(2), dre.GetString(3), dre.GetInt32(4), dre.GetInt32(5), dre.GetInt32(6));
+                        hotel.Add(dr.GetInt32(0));
+                        hotel.Add(dr.GetString(1));
+                        hotel.Add(dr.GetString(2));
+                        hotel.Add(dr.GetString(3));
+                        hotel.Add(dr.GetInt32(4));
+                        hotel.Add(dr.GetInt32(5));
+                        hotel.Add(dr.GetInt32(6));
+                        tablaHotel.Rows.Add(dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetString(3), dr.GetInt32(4), dr.GetInt32(5), dr.GetInt32(6));
                     }
 
                 }
-                dre.Close();
+                dr.Close();
                 connection.Close();
             }
             catch (Exception ex)

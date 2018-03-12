@@ -21,7 +21,7 @@ namespace Pagina_Principal
         List<object> datos = new List<object>();
         DataSet datosReservas = new DataSet();
 
-        public reservasYcompras(int cedula)
+        public reservasYcompras(int cedula, string nombre)
         {
             InitializeComponent();
             idUsusario = cedula;
@@ -38,18 +38,20 @@ namespace Pagina_Principal
             dataGridView1.Columns[3].Width = 140;
             dataGridView1.Columns[4].Width = 140;
             dataGridView1.Columns[5].Width = 140;
+            dataGridView1.Columns[6].Width = 140;
 
-            dataGridView1.Columns[0].HeaderCell.Value = "Hotel";
-            dataGridView1.Columns[1].HeaderCell.Value = "Cantidad Adultos";
-            dataGridView1.Columns[2].HeaderCell.Value = "Cantidad Niños";
-            dataGridView1.Columns[3].HeaderCell.Value = "Fecha Inicio";
-            dataGridView1.Columns[4].HeaderCell.Value = "Fecha Final";
-            dataGridView1.Columns[5].HeaderCell.Value = "Costo Total";
+            dataGridView1.Columns[0].HeaderCell.Value = "Codigo Hotel";
+            dataGridView1.Columns[1].HeaderCell.Value = "Hotel";
+            dataGridView1.Columns[2].HeaderCell.Value = "Cantidad Adultos";
+            dataGridView1.Columns[3].HeaderCell.Value = "Cantidad Niños";
+            dataGridView1.Columns[4].HeaderCell.Value = "Fecha Inicio";
+            dataGridView1.Columns[5].HeaderCell.Value = "Fecha Final";
+            dataGridView1.Columns[6].HeaderCell.Value = "Costo Total";
         }
 
         public void buscarReservaHoteles()
         {
-
+            datosReservas 
         }
 
         private void InfoCarros(object formHija)
@@ -68,7 +70,32 @@ namespace Pagina_Principal
 
         public void guardarHotelCompras()
         {
+            Int32 numero = dataGridView1.GetCellCount(DataGridViewElementStates.Selected);
+            if (numero == 7)
+            {
+                int codigo = Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value);
+                informacion.realizarCompra(codigo);
+                buscarReservas();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar la toda fila para realizar la Compra.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
+        public void eliminarReserva()
+        {
+            Int32 numero = dataGridView1.GetCellCount(DataGridViewElementStates.Selected);
+            if (numero == 7)
+            {
+                int codigo = Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value);
+                informacion.eliminarReserva(codigo);
+                buscarReservas();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar la toda fila para eliminar la Reserva.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnVehiculo_Click(object sender, EventArgs e)
@@ -89,7 +116,7 @@ namespace Pagina_Principal
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            eliminarReserva();
         }
 
         private void btnComprar_Click(object sender, EventArgs e)

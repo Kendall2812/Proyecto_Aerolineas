@@ -16,7 +16,24 @@ namespace Aero_Negocio
 
         public DataSet datos(int cedula)
         {
+            infoReservas.Clear();
             infoReservas = reserva.cargarReservas(cedula);
+            return infoReservas;
+        }
+        public void realizarCompra(int codigo)
+        {
+            reserva.registrarCompra(codigo);
+        }
+
+        public void eliminarReserva(int codigo1)
+        {
+            reserva.eliminarRserva(codigo1);
+        }
+
+        public DataSet cargarDatosVuelos()
+        {
+            infoReservas.Clear();
+            infoReservas = 
             return infoReservas;
         }
     }
