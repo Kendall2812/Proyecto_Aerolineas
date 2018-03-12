@@ -48,7 +48,7 @@ namespace Pagina_Principal
             dataGridView1.Columns[0].HeaderCell.Value = "Placa";
             dataGridView1.Columns[1].HeaderCell.Value = "Marca";
             dataGridView1.Columns[2].HeaderCell.Value = "Modelo";
-            dataGridView1.Columns[3].HeaderCell.Value = "Estilo";
+            dataGridView1.Columns[3].HeaderCell.Value = "Capacidad";
             dataGridView1.Columns[4].HeaderCell.Value = "Precio";
             dataGridView1.Columns[5].HeaderCell.Value = "Cantidad";
         }

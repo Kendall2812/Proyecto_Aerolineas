@@ -58,12 +58,6 @@
             this.precio_h = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.puntuacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtgVehi = new System.Windows.Forms.DataGridView();
-            this.id_vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.esti = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.capacidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio_ve = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.spinnerHab = new System.Windows.Forms.NumericUpDown();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -78,6 +72,12 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.esti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.capacidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio_ve = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelPersonas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinerMenores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinnerAdultos)).BeginInit();
@@ -392,47 +392,6 @@
             this.dtgVehi.Size = new System.Drawing.Size(609, 185);
             this.dtgVehi.TabIndex = 61;
             // 
-            // id_vehiculo
-            // 
-            this.id_vehiculo.DataPropertyName = "id_vehiculo";
-            this.id_vehiculo.HeaderText = "PLACA";
-            this.id_vehiculo.Name = "id_vehiculo";
-            this.id_vehiculo.ReadOnly = true;
-            // 
-            // marca
-            // 
-            this.marca.DataPropertyName = "marca";
-            this.marca.HeaderText = "MARCA";
-            this.marca.Name = "marca";
-            this.marca.ReadOnly = true;
-            // 
-            // modelo
-            // 
-            this.modelo.DataPropertyName = "modelo";
-            this.modelo.HeaderText = "MODELO";
-            this.modelo.Name = "modelo";
-            this.modelo.ReadOnly = true;
-            // 
-            // esti
-            // 
-            this.esti.HeaderText = "ESTILO";
-            this.esti.Name = "esti";
-            this.esti.ReadOnly = true;
-            // 
-            // capacidad
-            // 
-            this.capacidad.DataPropertyName = "capacidad";
-            this.capacidad.HeaderText = "CAPACIDAD";
-            this.capacidad.Name = "capacidad";
-            this.capacidad.ReadOnly = true;
-            // 
-            // precio_ve
-            // 
-            this.precio_ve.DataPropertyName = "precio";
-            this.precio_ve.HeaderText = "PRECIO";
-            this.precio_ve.Name = "precio_ve";
-            this.precio_ve.ReadOnly = true;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -531,6 +490,47 @@
             this.Column11.HeaderText = "Habitaciones";
             this.Column11.Name = "Column11";
             // 
+            // id_vehiculo
+            // 
+            this.id_vehiculo.DataPropertyName = "id_vehiculo";
+            this.id_vehiculo.HeaderText = "PLACA";
+            this.id_vehiculo.Name = "id_vehiculo";
+            this.id_vehiculo.ReadOnly = true;
+            // 
+            // marca
+            // 
+            this.marca.DataPropertyName = "marca";
+            this.marca.HeaderText = "MARCA";
+            this.marca.Name = "marca";
+            this.marca.ReadOnly = true;
+            // 
+            // modelo
+            // 
+            this.modelo.DataPropertyName = "modelo";
+            this.modelo.HeaderText = "MODELO";
+            this.modelo.Name = "modelo";
+            this.modelo.ReadOnly = true;
+            // 
+            // esti
+            // 
+            this.esti.HeaderText = "CAPACIDAD";
+            this.esti.Name = "esti";
+            this.esti.ReadOnly = true;
+            // 
+            // capacidad
+            // 
+            this.capacidad.DataPropertyName = "capacidad";
+            this.capacidad.HeaderText = "CANTIDAD";
+            this.capacidad.Name = "capacidad";
+            this.capacidad.ReadOnly = true;
+            // 
+            // precio_ve
+            // 
+            this.precio_ve.DataPropertyName = "precio";
+            this.precio_ve.HeaderText = "PRECIO";
+            this.precio_ve.Name = "precio_ve";
+            this.precio_ve.ReadOnly = true;
+            // 
             // Seccion_vuelos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -561,6 +561,7 @@
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Seccion_vuelos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "seccion_vuelos";
             this.Load += new System.EventHandler(this.seccion_vuelos_Load);
             this.panelPersonas.ResumeLayout(false);
@@ -604,12 +605,6 @@
         private System.Windows.Forms.DataGridView dtgVehi;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown spinnerHab;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_vehiculo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn marca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modelo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn esti;
-        private System.Windows.Forms.DataGridViewTextBoxColumn capacidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio_ve;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombrehotl;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_pais;
@@ -629,5 +624,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_vehiculo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn esti;
+        private System.Windows.Forms.DataGridViewTextBoxColumn capacidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio_ve;
     }
 }

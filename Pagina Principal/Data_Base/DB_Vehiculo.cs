@@ -18,13 +18,13 @@ namespace Data_Base
         List<object> nombreTarifaVuelo = new List<object>();
         bool varlor = false;
 
-        public bool insertarVehiculo(Int32 placa, string marca, string modelo, string estilo, Int32 precio, Int32 cantidad)
+        public bool insertarVehiculo(Int32 placa, string marca, string modelo, int capacidad, Int32 precio, Int32 cantidad)
         {
             connection = conexion1.Conexion();
             try
             {
                 connection.Open();
-                comandos = new NpgsqlCommand("INSERT INTO vehiculos (codigo, marca, modelo, estilo, precio, cantidad) VALUES ('" + placa + "', '" + marca + "', '" + modelo + "' ,'" + estilo + "', '" + precio + "', '" + cantidad + "')", connection);
+                comandos = new NpgsqlCommand("INSERT INTO vehiculos (codigo, marca, modelo, capacidad, precio, cantidad) VALUES ('" + placa + "', '" + marca + "', '" + modelo + "' ,'" + capacidad + "', '" + precio + "', '" + cantidad + "')", connection);
                 comandos.ExecuteNonQuery();
                 varlor = true;
                 connection.Close();
@@ -38,13 +38,13 @@ namespace Data_Base
             return varlor;
         }
 
-        public bool modificarVehiculo(Int32 placa2, string marca2, string modelo2, string estilo2, Int32 precio2, Int32 cantidad2)
+        public bool modificarVehiculo(Int32 placa2, string marca2, string modelo2, int capacidad2, Int32 precio2, Int32 cantidad2)
         {
             connection = conexion1.Conexion();
             try
             {
                 connection.Open();
-                comandos = new NpgsqlCommand("UPDATE vehiculos SET codigo = '" + placa2 + "', marca = '" + marca2 + "', modelo = '" + modelo2 + "', estilo = '" + estilo2 + "', precio = '" + precio2 + "', cantidad = '" + cantidad2 + "' WHERE codigo = '" + placa2 + "'", connection);
+                comandos = new NpgsqlCommand("UPDATE vehiculos SET codigo = '" + placa2 + "', marca = '" + marca2 + "', modelo = '" + modelo2 + "', capacidad = '" + capacidad2 + "', precio = '" + precio2 + "', cantidad = '" + cantidad2 + "' WHERE codigo = '" + placa2 + "'", connection);
                 comandos.ExecuteNonQuery();
                 varlor = true;
                 connection.Close();
@@ -85,7 +85,7 @@ namespace Data_Base
             try
             {
                 connection.Open();
-                comando2 = new NpgsqlDataAdapter("SELECT codigo, marca, modelo, estilo, precio, cantidad FROM vehiculos ", connection);
+                comando2 = new NpgsqlDataAdapter("SELECT codigo, marca, modelo, capacidad, precio, cantidad FROM vehiculos ", connection);
                 comando2.Fill(cargarDatos);
                 connection.Close();
             }

@@ -13,18 +13,19 @@ namespace Aero_Negocio
         private DataGridView datosCarros = new DataGridView();
         bool respuesta = false;
 
-        public void InsertarCarro(string placa, string marca, string modelo, string estilo, string precio, string cantidad)
+        public void InsertarCarro(string placa, string marca, string modelo, string capacidad, string precio, string cantidad)
         {
+            Int32 cantidadPer = Convert.ToInt32(capacidad);
             Int32 costoPorDia = Convert.ToInt32(precio);
             Int32 cantidad1 = Convert.ToInt32(cantidad);
-            if (placa.Equals("") || marca.Equals("") || modelo.Equals("") || estilo.Equals("") || costoPorDia == 0 || cantidad1 == 0)
+            if (placa.Equals("") || marca.Equals("") || modelo.Equals("") || cantidadPer == 0 || costoPorDia == 0 || cantidad1 == 0)
             {
                 MessageBox.Show("Ningun espacio puede quedar vacio. ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
                 Int32 matricula = Convert.ToInt32(placa);
-                respuesta = carro.insertarVehiculo(matricula, marca, modelo, estilo, costoPorDia, cantidad1);
+                respuesta = carro.insertarVehiculo(matricula, marca, modelo, cantidadPer, costoPorDia, cantidad1);
                 if (respuesta == true)
                 {
                     MessageBox.Show("Se registro con exito.", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -36,18 +37,19 @@ namespace Aero_Negocio
             }
         }
 
-        public void ModificarCarro(string placa2, string marca2, string modelo2, string estilo2, string precio2, string cantidad2)
+        public void ModificarCarro(string placa2, string marca2, string modelo2, string capacidad2, string precio2, string cantidad2)
         {
+            Int32 cantidadPer2 = Convert.ToInt32(capacidad2);
             Int32 costoPorDia = Convert.ToInt32(precio2);
             Int32 cantidad1 = Convert.ToInt32(cantidad2);
-            if (placa2.Equals("") || marca2.Equals("") || modelo2.Equals("") || estilo2.Equals("") || costoPorDia == 0 || cantidad1 == 0)
+            if (placa2.Equals("") || marca2.Equals("") || modelo2.Equals("") || cantidadPer2 == 0 || costoPorDia == 0 || cantidad1 == 0)
             {
                 MessageBox.Show("No pueden pueden quedar espacios en blanco.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
                 Int32 matricula = Convert.ToInt32(placa2);
-                respuesta = carro.modificarVehiculo(matricula, marca2, modelo2, estilo2, costoPorDia, cantidad1);
+                respuesta = carro.modificarVehiculo(matricula, marca2, modelo2, cantidadPer2, costoPorDia, cantidad1);
                 if (respuesta == true)
                 {
                     MessageBox.Show("Se modifico con exito.", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);

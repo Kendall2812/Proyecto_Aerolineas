@@ -67,8 +67,8 @@ namespace Data_Base
                         hotel.Add(dre.GetString(3));
                         hotel.Add(dre.GetInt32(4));
                         hotel.Add(dre.GetInt32(5));
-                        //hotel.Add(dre.GetInt32(6));
-                        tablaHotel.Rows.Add(dre.GetInt32(0), dre.GetString(1), dre.GetString(2), dre.GetString(3), dre.GetInt32(4), dre.GetInt32(5));//, dre.GetInt32(6)
+                        hotel.Add(dre.GetInt32(6));
+                        tablaHotel.Rows.Add(dre.GetInt32(0), dre.GetString(1), dre.GetString(2), dre.GetString(3), dre.GetInt32(4), dre.GetInt32(5), dre.GetInt32(6));//, dre.GetInt32(6)
                     }
 
                 }
@@ -89,7 +89,7 @@ namespace Data_Base
             {
                 connection = conexion1.Conexion();
                 connection.Open();
-                cmd = new NpgsqlCommand("SELECT codigo,marca,modelo, estilo, cantidad, precio FROM vehiculos WHERE cantidad >= " + personas + ";", connection);
+                cmd = new NpgsqlCommand("SELECT codigo,marca,modelo, capacidad, cantidad, precio FROM vehiculos WHERE cantidad >= " + personas + ";", connection);
                 dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
