@@ -137,7 +137,7 @@ namespace Pagina_Principal
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            reservasYcompras compras = new reservasYcompras(cedu);
+            reservasYcompras compras = new reservasYcompras(cedu, nombreuser);
             compras.Show();
         }
 

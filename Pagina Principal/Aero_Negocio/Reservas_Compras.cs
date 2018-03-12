@@ -30,10 +30,10 @@ namespace Aero_Negocio
             reserva.eliminarRserva(codigo1);
         }
 
-        public DataSet cargarDatosVuelos()
+        public DataSet cargarDatosVuelos(int codigo2)
         {
             infoReservas.Clear();
-            infoReservas = 
+            //infoReservas = 
             return infoReservas;
         }
     }

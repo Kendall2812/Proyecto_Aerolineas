@@ -20,6 +20,8 @@ namespace Pagina_Principal
 
 
         int cntPersonas, cntHabi, cntAdultos, cntMenores;
+        int cedula1 = 0;
+        string nombre1 = "";
 
         public Seccion_vuelos()
         {
@@ -32,6 +34,8 @@ namespace Pagina_Principal
         {
             InitializeComponent();
             panelPersonas.Visible = true;
+            cedula1 = cedula;
+            nombre1 = nombre;
         }
 
         private void seccion_vuelos_Load(object sender, EventArgs e)
@@ -100,6 +104,13 @@ namespace Pagina_Principal
         private void button3_Click(object sender, EventArgs e)
         {
             CargarVuelo();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menu_User ver = new Menu_User(cedula1, nombre1);
+            ver.Show();
         }
 
         private void spinerMenores_ValueChanged(object sender, EventArgs e)

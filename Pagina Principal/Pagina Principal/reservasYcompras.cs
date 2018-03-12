@@ -51,7 +51,7 @@ namespace Pagina_Principal
 
         public void buscarReservaHoteles()
         {
-            datosReservas 
+            datosReservas = informacion.cargarDatosVuelos(idUsusario);
         }
 
         private void InfoCarros(object formHija)

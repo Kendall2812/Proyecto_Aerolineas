@@ -285,13 +285,14 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(1241, 15);
+            this.button4.Location = new System.Drawing.Point(1440, 13);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 28);
             this.button4.TabIndex = 55;
             this.button4.Text = "Regresar";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // pictureBox1
             // 
@@ -535,7 +536,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1706, 677);
+            this.ClientSize = new System.Drawing.Size(1734, 677);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.spinnerHab);
             this.Controls.Add(this.label7);
