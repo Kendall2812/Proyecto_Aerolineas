@@ -87,7 +87,7 @@ namespace Pagina_Principal
             if(cantidadDias!= 0 & cntHabi!=0 & cntPersonas!=0)
             {
                 string hotel = textBox1.Text;
-                MessageBox.Show("Has reservado un hotel con " + spinnerHab.Value.ToString());
+                //MessageBox.Show("Has reservado un hotel con " + spinnerHab.Value.ToString());
             }
             if (dataGridView1.SelectedRows.Count == 0)
             {
@@ -105,11 +105,26 @@ namespace Pagina_Principal
             alojamiento alo = new alojamiento();
             DateTime llegada = DateTime.Parse(dataTLlegada.Text);
             DateTime salida = DateTime.Parse(dateTPSalida.Text);
+            int cantiHabitacio = Convert.ToInt32(spinnerHab.Value);
             try
             {
-                alo.InsertarReserva("INSERT INTO reservas (cedula, niños, adultos, id_hotel, total_hotel, nombre, fecha_inicio, fecha_final, fin_paisdestino, nombre_hotel) " +
-                    "VALUES ( '" + cedu + "', '" + cntMenores + "', '" + cntAdultos + "', '" + codigo + "', '" + (spinnerHab.Value * precio) + "', '" + nombreuser + "', '" + dateTPSalida.Value + "', '" + dataTLlegada.Value + "', '" + pais + "', '" + nombre + "' )");
-                MessageBox.Show("Se ha registrado la reserva!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (cantiHabitacio == 0)
+                {
+                    MessageBox.Show("Debe seleccionar la cantida de habitaciones.", "Avertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    if (codigo == 0 || nombre.Equals("") || lugar.Equals("") || pais.Equals("") || precio == 0)
+                    {
+                        MessageBox.Show("Debe seleccionar la fila del Hotel para poder Reservarlo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        alo.InsertarReserva("INSERT INTO reservas (cedula, niños, adultos, id_hotel, total_hotel, nombre, fecha_inicio, fecha_final, fin_paisdestino, nombre_hotel) " +
+                        "VALUES ( '" + cedu + "', '" + cntMenores + "', '" + cntAdultos + "', '" + codigo + "', '" + ((cantiHabitacio * precio)* cantidadDias) + "', '" + nombreuser + "', '" + dateTPSalida.Value + "', '" + dataTLlegada.Value + "', '" + pais + "', '" + nombre + "' )");
+                        MessageBox.Show("Se ha registrado la reserva!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }                   
+                }
             }
            
             catch (Exception error)
@@ -140,6 +155,14 @@ namespace Pagina_Principal
 
         private void button1_Click(object sender, EventArgs e)
         {
+            codigo = 0;
+            nombre = "";
+            pais = "";
+            lugar = "";
+            nombreuser = "";
+            precio = 0;
+            pictureBox1.Image = null;
+
             cargarListView();
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
@@ -186,23 +209,31 @@ namespace Pagina_Principal
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            codigo = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["CODIGO"].Value.ToString());
-            nombre = dataGridView1.SelectedRows[0].Cells["NOMBRE"].Value.ToString();
-            lugar = dataGridView1.SelectedRows[0].Cells["LUGAR"].Value.ToString();
-            pais = dataGridView1.SelectedRows[0].Cells["PAIS"].Value.ToString();
-            precio = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["PRECIO"].Value.ToString());
-           
-            alojamiento alo = new alojamiento();
-            try
+            Int32 numero = dataGridView1.GetCellCount(DataGridViewElementStates.Selected);
+            if (numero == 5)
             {
-                string foto = alo.TraerInfo("SELECT foto FROM hoteles WHERE codigo = '" + dataGridView1.CurrentRow.Cells[0].Value + "'");
-                Bitmap foto2 = new Bitmap(foto);
-                pictureBox1.Image = (Image)foto2;
+                codigo = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["CODIGO"].Value.ToString());
+                nombre = dataGridView1.SelectedRows[0].Cells["NOMBRE"].Value.ToString();
+                lugar = dataGridView1.SelectedRows[0].Cells["LUGAR"].Value.ToString();
+                pais = dataGridView1.SelectedRows[0].Cells["PAIS"].Value.ToString();
+                precio = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["PRECIO"].Value.ToString());
 
+                alojamiento alo = new alojamiento();
+                try
+                {
+                    string foto = alo.TraerInfo("SELECT foto FROM hoteles WHERE codigo = '" + dataGridView1.CurrentRow.Cells[0].Value + "'");
+                    Bitmap foto2 = new Bitmap(foto);
+                    pictureBox1.Image = (Image)foto2;
+
+                }
+                catch (Exception er)
+                {
+                    MessageBox.Show(er.Message);
+                }
             }
-            catch (Exception er)
+            else
             {
-                MessageBox.Show(er.Message);
+                MessageBox.Show("Debe estar la fila selecciona para poder Reservar el Hotel.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

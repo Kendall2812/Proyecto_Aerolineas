@@ -88,7 +88,7 @@
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(4, 13);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1133, 701);
             this.panel1.TabIndex = 0;
@@ -98,7 +98,7 @@
             this.rbtLugar.AutoSize = true;
             this.rbtLugar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtLugar.Location = new System.Drawing.Point(351, 331);
-            this.rbtLugar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtLugar.Margin = new System.Windows.Forms.Padding(4);
             this.rbtLugar.Name = "rbtLugar";
             this.rbtLugar.Size = new System.Drawing.Size(66, 22);
             this.rbtLugar.TabIndex = 60;
@@ -113,7 +113,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Location = new System.Drawing.Point(789, 182);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(319, 180);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -125,7 +125,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(21, 370);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 100;
             this.dataGridView1.Size = new System.Drawing.Size(940, 312);
@@ -141,7 +141,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(942, 49);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(187, 37);
             this.button3.TabIndex = 56;
@@ -158,7 +158,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(942, 4);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(187, 37);
             this.button2.TabIndex = 55;
@@ -171,7 +171,7 @@
             this.optPrecioMenorPais.AutoSize = true;
             this.optPrecioMenorPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.optPrecioMenorPais.Location = new System.Drawing.Point(208, 331);
-            this.optPrecioMenorPais.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.optPrecioMenorPais.Margin = new System.Windows.Forms.Padding(4);
             this.optPrecioMenorPais.Name = "optPrecioMenorPais";
             this.optPrecioMenorPais.Size = new System.Drawing.Size(118, 22);
             this.optPrecioMenorPais.TabIndex = 54;
@@ -185,7 +185,7 @@
             this.optPrecioMayorPais.AutoSize = true;
             this.optPrecioMayorPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.optPrecioMayorPais.Location = new System.Drawing.Point(64, 331);
-            this.optPrecioMayorPais.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.optPrecioMayorPais.Margin = new System.Windows.Forms.Padding(4);
             this.optPrecioMayorPais.Name = "optPrecioMayorPais";
             this.optPrecioMayorPais.Size = new System.Drawing.Size(119, 22);
             this.optPrecioMayorPais.TabIndex = 53;
@@ -203,7 +203,7 @@
             this.btnReservar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReservar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReservar.Location = new System.Drawing.Point(1006, 416);
-            this.btnReservar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReservar.Margin = new System.Windows.Forms.Padding(4);
             this.btnReservar.Name = "btnReservar";
             this.btnReservar.Size = new System.Drawing.Size(102, 37);
             this.btnReservar.TabIndex = 52;
@@ -229,7 +229,7 @@
             this.panelPersonas.Controls.Add(this.spinerMenores);
             this.panelPersonas.Controls.Add(this.spinnerAdultos);
             this.panelPersonas.Location = new System.Drawing.Point(541, 182);
-            this.panelPersonas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelPersonas.Margin = new System.Windows.Forms.Padding(4);
             this.panelPersonas.Name = "panelPersonas";
             this.panelPersonas.Size = new System.Drawing.Size(151, 78);
             this.panelPersonas.TabIndex = 50;
@@ -261,7 +261,7 @@
             // 
             this.spinerMenores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.spinerMenores.Location = new System.Drawing.Point(80, 10);
-            this.spinerMenores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.spinerMenores.Margin = new System.Windows.Forms.Padding(4);
             this.spinerMenores.Name = "spinerMenores";
             this.spinerMenores.Size = new System.Drawing.Size(49, 27);
             this.spinerMenores.TabIndex = 44;
@@ -271,7 +271,7 @@
             // 
             this.spinnerAdultos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.spinnerAdultos.Location = new System.Drawing.Point(80, 46);
-            this.spinnerAdultos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.spinnerAdultos.Margin = new System.Windows.Forms.Padding(4);
             this.spinnerAdultos.Name = "spinnerAdultos";
             this.spinnerAdultos.Size = new System.Drawing.Size(49, 27);
             this.spinnerAdultos.TabIndex = 45;
@@ -290,7 +290,7 @@
             // 
             this.spinnerHab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.spinnerHab.Location = new System.Drawing.Point(400, 198);
-            this.spinnerHab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.spinnerHab.Margin = new System.Windows.Forms.Padding(4);
             this.spinnerHab.Name = "spinnerHab";
             this.spinnerHab.Size = new System.Drawing.Size(64, 27);
             this.spinnerHab.TabIndex = 11;
@@ -307,7 +307,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button1.Location = new System.Drawing.Point(64, 245);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(102, 37);
             this.button1.TabIndex = 10;
@@ -320,7 +320,7 @@
             this.dataTLlegada.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataTLlegada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dataTLlegada.Location = new System.Drawing.Point(208, 198);
-            this.dataTLlegada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataTLlegada.Margin = new System.Windows.Forms.Padding(4);
             this.dataTLlegada.Name = "dataTLlegada";
             this.dataTLlegada.Size = new System.Drawing.Size(133, 27);
             this.dataTLlegada.TabIndex = 7;
@@ -331,7 +331,7 @@
             this.dateTPSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTPSalida.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTPSalida.Location = new System.Drawing.Point(65, 198);
-            this.dateTPSalida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTPSalida.Margin = new System.Windows.Forms.Padding(4);
             this.dateTPSalida.Name = "dateTPSalida";
             this.dateTPSalida.Size = new System.Drawing.Size(133, 27);
             this.dateTPSalida.TabIndex = 6;
@@ -350,10 +350,11 @@
             // lblDias
             // 
             this.lblDias.AutoSize = true;
+            this.lblDias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDias.Location = new System.Drawing.Point(204, 162);
             this.lblDias.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDias.Name = "lblDias";
-            this.lblDias.Size = new System.Drawing.Size(40, 17);
+            this.lblDias.Size = new System.Drawing.Size(49, 20);
             this.lblDias.TabIndex = 4;
             this.lblDias.Text = "        ";
             // 
@@ -385,7 +386,7 @@
             this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(64, 114);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(399, 27);
             this.textBox1.TabIndex = 1;
@@ -409,7 +410,7 @@
             this.ClientSize = new System.Drawing.Size(1150, 727);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);

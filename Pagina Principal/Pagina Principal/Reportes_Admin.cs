@@ -125,7 +125,7 @@ namespace Pagina_Principal
             int[] pointsArray = { 2, 1, 7, 5 };
 
             // Set palette
-            this.Grafico2.Palette = ChartColorPalette.Chocolate;
+            this.Grafico2.Palette = ChartColorPalette.SeaGreen;
 
             // Set title
             this.Grafico2.Titles.Add("Animals");
@@ -144,7 +144,7 @@ namespace Pagina_Principal
             this.Grafico2.Titles.Add("Total Income");
 
             Series series = this.Grafico2.Series.Add("Total Income");
-            series.ChartType = SeriesChartType.Pie;
+            series.ChartType = SeriesChartType.Bar;  /// cambia la forma del grafico
             int num = 1000;
             string mes = "Marzo";
             series.Points.AddXY(mes, num);

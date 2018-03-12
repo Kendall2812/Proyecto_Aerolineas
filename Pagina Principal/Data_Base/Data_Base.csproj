@@ -55,6 +55,7 @@
     <Compile Include="DB_Lugar.cs" />
     <Compile Include="DB_Pais.cs" />
     <Compile Include="DB_Reportes.cs" />
+    <Compile Include="DB_Reservas.cs" />
     <Compile Include="DB_Rutas.cs" />
     <Compile Include="DB_Tarifas_Hoteles.cs" />
     <Compile Include="DB_Tarifas_Vuelos.cs" />

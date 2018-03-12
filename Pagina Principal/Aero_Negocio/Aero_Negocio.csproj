@@ -53,6 +53,7 @@
     <Compile Include="Lugares.cs" />
     <Compile Include="paises.cs" />
     <Compile Include="Reportes.cs" />
+    <Compile Include="Reservas_Compras.cs" />
     <Compile Include="Rutas.cs" />
     <Compile Include="Tarifas_Hoteles.cs" />
     <Compile Include="Tarifa_Vuelos.cs" />
