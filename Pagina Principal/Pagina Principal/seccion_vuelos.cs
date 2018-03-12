@@ -19,7 +19,7 @@ namespace Pagina_Principal
         ArrayList duracion = new ArrayList();
         DateTime hoy = DateTime.Now;
         bool busVehi;
-
+        bool busHotel;
         int cntPersonas, cntHabi, cntAdultos, cntMenores;
         int cedula1 = 0;
         string nombre1 = "";
@@ -66,7 +66,7 @@ namespace Pagina_Principal
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //cargarVehi();
+           
             if (cntPersonas > 0)
             {
                 if (!busVehi)
@@ -88,8 +88,7 @@ namespace Pagina_Principal
             }
             else
             {
-                MessageBox.Show("Debe selecionar la cantidad de personas que desea");
-                //busVehi = false;
+                MessageBox.Show("Debe selecionar la cantidad de personas que desea");            
                 dtgVehi.Rows.Clear();
             }
 
@@ -97,7 +96,32 @@ namespace Pagina_Principal
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cargarHotel();
+            dtgHotel.Rows.Clear();
+            string[] lugar = textBox2.Text.Split(',');
+            if (!lugar[0].Equals(String.Empty) && !spinnerHab.Text.Equals(0))
+            {
+                if (!busHotel)
+                {
+                    MessageBox.Show("Carga Tabla");
+                    cargarHotel();
+                    busHotel = true;
+
+                    this.button1.BackColor = Color.Red;
+
+                }
+                else
+                {
+                    MessageBox.Show("Borra Tabla");
+                    busHotel = false;
+                    this.button1.BackColor = Color.DarkGray;
+                    dtgHotel.Rows.Clear();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar el destino y cantidad de habitaciones", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                dtgHotel.Rows.Clear();
+            }
         }
 
         private void button2_MouseClick_1(object sender, MouseEventArgs e)
@@ -107,13 +131,17 @@ namespace Pagina_Principal
 
         private void spinnerHab_ValueChanged(object sender, EventArgs e)
         {
-            //cargarHotel();
+           
             cntHabi = Convert.ToInt32(spinnerHab.Value.ToString()) * 4;
             if (cntPersonas <= cntHabi)
             {
                 if (!busVehi)
                 {
                     cargarVehi();
+                }
+                else if (!busHotel)
+                {
+                    cargarHotel();
                 }
 
             }
@@ -124,7 +152,9 @@ namespace Pagina_Principal
                 dtgVehi.Rows.Clear();
                 busVehi = false;
                 this.button2.BackColor = Color.DarkGray;
-
+                dtgHotel.Rows.Clear();
+                busHotel = false;
+                this.button1.BackColor = Color.DarkGray;
 
             }
         }
@@ -141,6 +171,7 @@ namespace Pagina_Principal
             }
             else
             {
+                MessageBox.Show("Debe ingresar el destino y cantidad de habitaciones", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 dtgHotel.Rows.Clear();
             }
         }
