@@ -36,5 +36,10 @@ namespace Aero_Negocio
             //infoReservas = 
             return infoReservas;
         }
+
+        public void calificacion(int codigoHotel, int calificacion)
+        {
+            reserva.insertarCalificacion(codigoHotel, calificacion);
+        }
     }
 }

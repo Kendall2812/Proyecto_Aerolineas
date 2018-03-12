@@ -43,5 +43,12 @@ namespace Pagina_Principal
             ver.Show();
 
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 regresar = new Form1();
+            regresar.Show();
+        }
     }
 }

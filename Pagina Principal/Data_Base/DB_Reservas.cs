@@ -66,5 +66,21 @@ namespace Data_Base
                 MessageBox.Show("No se pudo conectar." + e, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public void insertarCalificacion(int codigoHotel, int calificacion)
+        {
+            try
+            {
+                connection.Open();
+                comandos = new NpgsqlCommand("INSERT INTO calificacion (id_hotel, puntuacion) VALUES ('" + codigoHotel + "', '" + calificacion + "')", connection);
+                comandos.ExecuteNonQuery();
+                MessageBox.Show("Se registro la calificacion", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("No se pudo conectar." + e, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

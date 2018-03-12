@@ -107,6 +107,8 @@ namespace Pagina_Principal
             DateTime llegada = DateTime.Parse(dataTLlegada.Text);
             DateTime salida = DateTime.Parse(dateTPSalida.Text);
             int cantiHabitacio = Convert.ToInt32(spinnerHab.Value);
+            int precioHotelMas13 = (((cantiHabitacio * precio) *13) /100)* cantidadDias;
+            int precioTotal = precio + precioHotelMas13;
             try
             {
                 if (cantiHabitacio == 0)
@@ -122,7 +124,7 @@ namespace Pagina_Principal
                     else
                     {
                         alo.InsertarReserva("INSERT INTO reservas (cedula, niños, adultos, id_hotel, total_hotel, nombre, fecha_inicio, fecha_final, fin_pais_destino, nombre_hotel,tipo_accion) " +
-                        "VALUES ( '" + cedu + "', '" + cntMenores + "', '" + cntAdultos + "', '" + codigo + "', '" + ((cantiHabitacio * precio)* cantidadDias) + "', '" + nombreuser + "', '" + dateTPSalida.Value + "', '" + dataTLlegada.Value + "', '" + pais + "', '" + nombre + "', '" + false + "')");
+                        "VALUES ( '" + cedu + "', '" + cntMenores + "', '" + cntAdultos + "', '" + codigo + "', '" + precioTotal + "', '" + nombreuser + "', '" + dateTPSalida.Value + "', '" + dataTLlegada.Value + "', '" + pais + "', '" + nombre + "', '" + false + "')");
                         MessageBox.Show("Se ha registrado la reserva!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }                   
                 }

@@ -13,18 +13,21 @@ namespace Pagina_Principal
 {
     public partial class reservasYcompras : Form
     {
-        int cedul;
-        string name;
+        //int codigoHotel = 0;
+        //string name;
         //public reservasYcompras(int cedula, string nombre)
-        int idUsusario;
+        int idUsusario = 0;
+        string nombre1 = "";
         Reservas_Compras informacion = new Reservas_Compras();
         List<object> datos = new List<object>();
         DataSet datosReservas = new DataSet();
+        //Ventana_Calificacion calificar = new Ventana_Calificacion();
 
         public reservasYcompras(int cedula, string nombre)
         {
             InitializeComponent();
             idUsusario = cedula;
+            nombre1 = nombre;
         }
 
         public void buscarReservas()
@@ -76,6 +79,9 @@ namespace Pagina_Principal
                 int codigo = Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value);
                 informacion.realizarCompra(codigo);
                 buscarReservas();
+
+                Ventana_Calificacion calificar = new Ventana_Calificacion(codigo);
+                calificar.Show();
             }
             else
             {
@@ -137,15 +143,15 @@ namespace Pagina_Principal
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Menu_User ver = new Menu_User(cedul, name);
+            Menu_User ver = new Menu_User(idUsusario, nombre1);
             ver.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Ventana_Calificacion ver = new Ventana_Calificacion();
-            ver.Show();
-        }
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    this.Hide();
+        //    Ventana_Calificacion ver = new Ventana_Calificacion();
+        //    ver.Show();
+        //}
     }
 }

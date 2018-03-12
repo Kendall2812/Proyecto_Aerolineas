@@ -7,15 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Aero_Negocio;
 
 namespace Pagina_Principal
 {
     public partial class Ventana_Calificacion : Form
     {
-        public Ventana_Calificacion()
+        int codigo = 0;
+        Reservas_Compras calificar = new Reservas_Compras();
+
+        public Ventana_Calificacion(int codigoHotel)
         {
             InitializeComponent();
-            
+            codigo = codigoHotel;
         }
 
         private void Ventana_Calificacion_Load(object sender, EventArgs e)
@@ -23,30 +27,37 @@ namespace Pagina_Principal
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void calificarHotel()
         {
-            String mensaje = "";
+            int calificacion = 0;
             if (radioButton1.Checked)
             {
-                mensaje = "1";
+                calificacion = 1;
             }
             else if (radioButton2.Checked)
             {
-                mensaje = "2";
+                calificacion = 2;
             }
             else if (radioButton3.Checked)
             {
-                mensaje = "3";
+                calificacion = 3;
             }
             else if (radioButton4.Checked)
             {
-                mensaje = "4";
+                calificacion = 4;
             }
             else if (radioButton5.Checked)
             {
-                mensaje = "5";
+                calificacion = 5;
             }
-            MessageBox.Show(mensaje);
+
+            calificar.calificacion(codigo, calificacion);
+            //MessageBox.Show(mensaje);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            calificarHotel();
             this.Hide();
         }
         
