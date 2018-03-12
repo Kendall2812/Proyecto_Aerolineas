@@ -52,10 +52,10 @@ namespace Pagina_Principal
                 }
             }
 
-            
+            //this.Grafico2.Palette = ChartColorPalette.SeaGreen;
             Grafico1.Palette = ChartColorPalette.Berry;
             Grafico1.Titles.Add("Cantidad de veces que se a reservado un Hotel").ForeColor = Color.White;
-            Series serie;
+            Series serie;           
             for (int x = 0; x < Hoteles.Count; x++)
             {
                 //titulos
