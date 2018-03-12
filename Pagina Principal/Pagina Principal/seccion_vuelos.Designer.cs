@@ -76,8 +76,8 @@
             this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.esti = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.capacidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio_ve = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.capacidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelPersonas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinerMenores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinnerAdultos)).BeginInit();
@@ -90,45 +90,43 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(457, 5);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.BackColor = System.Drawing.Color.DarkGray;
+            this.button1.Location = new System.Drawing.Point(343, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 28);
+            this.button1.Size = new System.Drawing.Size(86, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "Añadir Hotel";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button2_MouseClick_1);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(601, 5);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.BackColor = System.Drawing.Color.DarkGray;
+            this.button2.Location = new System.Drawing.Point(451, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 28);
+            this.button2.Size = new System.Drawing.Size(89, 23);
             this.button2.TabIndex = 1;
             this.button2.Text = "Añadir Vehiculo";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             this.button2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button2_MouseClick_1);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(28, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 17);
+            this.label1.Size = new System.Drawing.Size(97, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Encuentra tu vuelo";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 63);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(29, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 17);
+            this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Origen:";
             // 
@@ -136,19 +134,17 @@
             // 
             this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox1.Location = new System.Drawing.Point(101, 54);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Location = new System.Drawing.Point(76, 44);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(244, 22);
+            this.textBox1.Size = new System.Drawing.Size(184, 20);
             this.textBox1.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(371, 58);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(278, 47);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 17);
+            this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Destino:";
             // 
@@ -156,57 +152,51 @@
             // 
             this.textBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.textBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox2.Location = new System.Drawing.Point(440, 54);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.Location = new System.Drawing.Point(330, 44);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(263, 22);
+            this.textBox2.Size = new System.Drawing.Size(198, 20);
             this.textBox2.TabIndex = 6;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(43, 113);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePicker1.Location = new System.Drawing.Point(32, 92);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(125, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(95, 20);
             this.dateTimePicker1.TabIndex = 7;
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(177, 113);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePicker2.Location = new System.Drawing.Point(133, 92);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(125, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(95, 20);
             this.dateTimePicker2.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(39, 94);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(29, 76);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 17);
+            this.label4.Size = new System.Drawing.Size(45, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "Fechas:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(173, 94);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(130, 76);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 17);
+            this.label5.Size = new System.Drawing.Size(31, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "Dias:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(375, 86);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(281, 70);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 17);
+            this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 11;
             this.label6.Text = "Pasajeros:";
             // 
@@ -216,68 +206,61 @@
             this.panelPersonas.Controls.Add(this.label21);
             this.panelPersonas.Controls.Add(this.spinerMenores);
             this.panelPersonas.Controls.Add(this.spinnerAdultos);
-            this.panelPersonas.Location = new System.Drawing.Point(457, 86);
-            this.panelPersonas.Margin = new System.Windows.Forms.Padding(4);
+            this.panelPersonas.Location = new System.Drawing.Point(343, 70);
             this.panelPersonas.Name = "panelPersonas";
-            this.panelPersonas.Size = new System.Drawing.Size(151, 74);
+            this.panelPersonas.Size = new System.Drawing.Size(113, 60);
             this.panelPersonas.TabIndex = 53;
             this.panelPersonas.Visible = false;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(4, 46);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Location = new System.Drawing.Point(3, 37);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(59, 17);
+            this.label23.Size = new System.Drawing.Size(45, 13);
             this.label23.TabIndex = 42;
             this.label23.Text = "Adultos:";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(4, 9);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Location = new System.Drawing.Point(3, 7);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(48, 17);
+            this.label21.Size = new System.Drawing.Size(37, 13);
             this.label21.TabIndex = 46;
             this.label21.Text = "Niños:";
             // 
             // spinerMenores
             // 
-            this.spinerMenores.Location = new System.Drawing.Point(80, 10);
-            this.spinerMenores.Margin = new System.Windows.Forms.Padding(4);
+            this.spinerMenores.Location = new System.Drawing.Point(60, 8);
             this.spinerMenores.Name = "spinerMenores";
             this.spinerMenores.ReadOnly = true;
-            this.spinerMenores.Size = new System.Drawing.Size(49, 22);
+            this.spinerMenores.Size = new System.Drawing.Size(37, 20);
             this.spinerMenores.TabIndex = 44;
             this.spinerMenores.ValueChanged += new System.EventHandler(this.spinerMenores_ValueChanged);
             // 
             // spinnerAdultos
             // 
-            this.spinnerAdultos.Location = new System.Drawing.Point(80, 46);
-            this.spinnerAdultos.Margin = new System.Windows.Forms.Padding(4);
+            this.spinnerAdultos.Location = new System.Drawing.Point(60, 37);
             this.spinnerAdultos.Name = "spinnerAdultos";
             this.spinnerAdultos.ReadOnly = true;
-            this.spinnerAdultos.Size = new System.Drawing.Size(49, 22);
+            this.spinnerAdultos.Size = new System.Drawing.Size(37, 20);
             this.spinnerAdultos.TabIndex = 45;
             this.spinnerAdultos.ValueChanged += new System.EventHandler(this.spinnerAdultos_ValueChanged);
             // 
             // labelCantidadDias
             // 
             this.labelCantidadDias.AutoSize = true;
-            this.labelCantidadDias.Location = new System.Drawing.Point(585, 150);
-            this.labelCantidadDias.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCantidadDias.Location = new System.Drawing.Point(439, 122);
             this.labelCantidadDias.Name = "labelCantidadDias";
-            this.labelCantidadDias.Size = new System.Drawing.Size(0, 17);
+            this.labelCantidadDias.Size = new System.Drawing.Size(0, 13);
             this.labelCantidadDias.TabIndex = 52;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(41, 151);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Location = new System.Drawing.Point(31, 123);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 28);
+            this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 54;
             this.button3.Text = "Buscar";
             this.button3.UseVisualStyleBackColor = true;
@@ -285,10 +268,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(1440, 13);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Location = new System.Drawing.Point(1080, 11);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 28);
+            this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 55;
             this.button4.Text = "Regresar";
             this.button4.UseVisualStyleBackColor = true;
@@ -296,10 +278,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(848, 379);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(636, 308);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(187, 114);
+            this.pictureBox1.Size = new System.Drawing.Size(140, 93);
             this.pictureBox1.TabIndex = 58;
             this.pictureBox1.TabStop = false;
             // 
@@ -317,11 +298,10 @@
             this.ha,
             this.precio_h,
             this.puntuacion});
-            this.dtgHotel.Location = new System.Drawing.Point(17, 379);
-            this.dtgHotel.Margin = new System.Windows.Forms.Padding(4);
+            this.dtgHotel.Location = new System.Drawing.Point(13, 308);
             this.dtgHotel.Name = "dtgHotel";
             this.dtgHotel.ReadOnly = true;
-            this.dtgHotel.Size = new System.Drawing.Size(823, 244);
+            this.dtgHotel.Size = new System.Drawing.Size(617, 198);
             this.dtgHotel.TabIndex = 60;
             // 
             // id
@@ -383,32 +363,29 @@
             this.marca,
             this.modelo,
             this.esti,
-            this.capacidad,
-            this.precio_ve});
-            this.dtgVehi.Location = new System.Drawing.Point(1043, 379);
-            this.dtgVehi.Margin = new System.Windows.Forms.Padding(4);
+            this.precio_ve,
+            this.capacidad});
+            this.dtgVehi.Location = new System.Drawing.Point(782, 308);
             this.dtgVehi.Name = "dtgVehi";
             this.dtgVehi.ReadOnly = true;
-            this.dtgVehi.Size = new System.Drawing.Size(609, 185);
+            this.dtgVehi.Size = new System.Drawing.Size(461, 150);
             this.dtgVehi.TabIndex = 61;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(628, 105);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(471, 85);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 17);
+            this.label7.Size = new System.Drawing.Size(69, 13);
             this.label7.TabIndex = 62;
             this.label7.Text = "Habitaciones";
             // 
             // spinnerHab
             // 
-            this.spinnerHab.Location = new System.Drawing.Point(728, 102);
-            this.spinnerHab.Margin = new System.Windows.Forms.Padding(4);
+            this.spinnerHab.Location = new System.Drawing.Point(546, 83);
             this.spinnerHab.Name = "spinnerHab";
             this.spinnerHab.ReadOnly = true;
-            this.spinnerHab.Size = new System.Drawing.Size(55, 22);
+            this.spinnerHab.Size = new System.Drawing.Size(41, 20);
             this.spinnerHab.TabIndex = 63;
             this.spinnerHab.ValueChanged += new System.EventHandler(this.spinnerHab_ValueChanged);
             // 
@@ -429,10 +406,9 @@
             this.Column9,
             this.Column10,
             this.Column11});
-            this.dataGridView1.Location = new System.Drawing.Point(16, 187);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 152);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1524, 185);
+            this.dataGridView1.Size = new System.Drawing.Size(1143, 150);
             this.dataGridView1.TabIndex = 64;
             // 
             // Column1
@@ -517,13 +493,6 @@
             this.esti.Name = "esti";
             this.esti.ReadOnly = true;
             // 
-            // capacidad
-            // 
-            this.capacidad.DataPropertyName = "capacidad";
-            this.capacidad.HeaderText = "CANTIDAD";
-            this.capacidad.Name = "capacidad";
-            this.capacidad.ReadOnly = true;
-            // 
             // precio_ve
             // 
             this.precio_ve.DataPropertyName = "precio";
@@ -531,12 +500,19 @@
             this.precio_ve.Name = "precio_ve";
             this.precio_ve.ReadOnly = true;
             // 
+            // capacidad
+            // 
+            this.capacidad.DataPropertyName = "capacidad";
+            this.capacidad.HeaderText = "CANTIDAD";
+            this.capacidad.Name = "capacidad";
+            this.capacidad.ReadOnly = true;
+            // 
             // Seccion_vuelos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1734, 677);
+            this.ClientSize = new System.Drawing.Size(1267, 550);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.spinnerHab);
             this.Controls.Add(this.label7);
@@ -559,7 +535,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Seccion_vuelos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "seccion_vuelos";
@@ -628,7 +603,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn modelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn esti;
-        private System.Windows.Forms.DataGridViewTextBoxColumn capacidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio_ve;
+        private System.Windows.Forms.DataGridViewTextBoxColumn capacidad;
     }
 }

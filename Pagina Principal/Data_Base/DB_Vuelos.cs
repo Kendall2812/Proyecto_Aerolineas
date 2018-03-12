@@ -89,7 +89,7 @@ namespace Data_Base
             {
                 connection = conexion1.Conexion();
                 connection.Open();
-                cmd = new NpgsqlCommand("SELECT codigo,marca,modelo, capacidad, cantidad, precio FROM vehiculos WHERE cantidad >= " + personas + ";", connection);
+                cmd = new NpgsqlCommand("SELECT codigo,marca,modelo, capacidad, precio, cantidad FROM vehiculos WHERE capacidad >= " + personas + ";", connection);
                 dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
@@ -101,7 +101,7 @@ namespace Data_Base
                         vehiculos.Add(dr.GetString(3));
                         vehiculos.Add(dr.GetInt32(4));
                         vehiculos.Add(dr.GetInt32(5));
-                        tablaVehi.Rows.Add(dr.GetString(0), dr.GetString(1), dr.GetString(2), dr.GetString(3), dr.GetInt32(4), dr.GetInt32(5));
+                        tablaVehi.Rows.Add(dr.GetString(0), dr.GetString(1), dr.GetString(2), dr.GetInt32(3), dr.GetInt32(4), dr.GetInt32(5));
                     }
                 }
                 dr.Close();

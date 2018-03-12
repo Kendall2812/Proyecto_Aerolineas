@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using Data_Base;
 using System.Collections;
 using Aero_Negocio;
+using System.Drawing;
 
 namespace Pagina_Principal
 {
@@ -17,7 +18,7 @@ namespace Pagina_Principal
         ArrayList precios = new ArrayList();
         ArrayList duracion = new ArrayList();
         DateTime hoy = DateTime.Now;
-
+        bool busVehi;
 
         int cntPersonas, cntHabi, cntAdultos, cntMenores;
         int cedula1 = 0;
@@ -65,7 +66,32 @@ namespace Pagina_Principal
 
         private void button2_Click(object sender, EventArgs e)
         {
-            cargarVehi();
+            //cargarVehi();
+            if (cntPersonas > 0)
+            {
+                if (!busVehi)
+                {
+                    MessageBox.Show("Carga Tabla");
+                    cargarVehi();
+                    busVehi = true;
+
+                    this.button2.BackColor = Color.Red;
+
+                }
+                else
+                {
+                    MessageBox.Show("Borra Tabla");
+                    busVehi = false;
+                    this.button2.BackColor = Color.DarkGray;
+                    dtgVehi.Rows.Clear();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe selecionar la cantidad de personas que desea");
+                //busVehi = false;
+                dtgVehi.Rows.Clear();
+            }
 
         }
 
@@ -83,6 +109,24 @@ namespace Pagina_Principal
         {
             //cargarHotel();
             cntHabi = Convert.ToInt32(spinnerHab.Value.ToString()) * 4;
+            if (cntPersonas <= cntHabi)
+            {
+                if (!busVehi)
+                {
+                    cargarVehi();
+                }
+
+            }
+            else
+            {
+                spinerMenores.Value = 0;
+                spinnerAdultos.Value = 0;
+                dtgVehi.Rows.Clear();
+                busVehi = false;
+                this.button2.BackColor = Color.DarkGray;
+
+
+            }
         }
 
         public void cargarHotel()
@@ -177,7 +221,7 @@ namespace Pagina_Principal
         public void cargarVehi()
         {
             dtgVehi.Rows.Clear();
-            if (!spinnerHab.Value.Equals(0) )
+            if (cntPersonas!=0)
             {
                 DB_Vuelos vue = new DB_Vuelos();
                 vehiculos = vue.CargarVehi(cntPersonas, dtgVehi);
