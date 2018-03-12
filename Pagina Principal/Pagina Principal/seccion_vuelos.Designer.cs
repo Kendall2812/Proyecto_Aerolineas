@@ -78,6 +78,7 @@
             this.esti = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio_ve = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capacidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnReserva = new System.Windows.Forms.Button();
             this.panelPersonas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinerMenores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinnerAdultos)).BeginInit();
@@ -278,9 +279,13 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Location = new System.Drawing.Point(636, 308);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(140, 93);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 58;
             this.pictureBox1.TabStop = false;
             // 
@@ -303,6 +308,7 @@
             this.dtgHotel.ReadOnly = true;
             this.dtgHotel.Size = new System.Drawing.Size(617, 198);
             this.dtgHotel.TabIndex = 60;
+            this.dtgHotel.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgHotel_CellClick);
             // 
             // id
             // 
@@ -370,6 +376,7 @@
             this.dtgVehi.ReadOnly = true;
             this.dtgVehi.Size = new System.Drawing.Size(461, 150);
             this.dtgVehi.TabIndex = 61;
+            this.dtgVehi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgVehi_CellClick);
             // 
             // label7
             // 
@@ -410,6 +417,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1143, 150);
             this.dataGridView1.TabIndex = 64;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // Column1
             // 
@@ -507,12 +515,23 @@
             this.capacidad.Name = "capacidad";
             this.capacidad.ReadOnly = true;
             // 
+            // btnReserva
+            // 
+            this.btnReserva.Location = new System.Drawing.Point(676, 511);
+            this.btnReserva.Name = "btnReserva";
+            this.btnReserva.Size = new System.Drawing.Size(75, 23);
+            this.btnReserva.TabIndex = 65;
+            this.btnReserva.Text = "RESERVAR";
+            this.btnReserva.UseVisualStyleBackColor = true;
+            this.btnReserva.Click += new System.EventHandler(this.btnReserva_Click);
+            // 
             // Seccion_vuelos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1267, 550);
+            this.Controls.Add(this.btnReserva);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.spinnerHab);
             this.Controls.Add(this.label7);
@@ -605,5 +624,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn esti;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio_ve;
         private System.Windows.Forms.DataGridViewTextBoxColumn capacidad;
+        private System.Windows.Forms.Button btnReserva;
     }
 }
