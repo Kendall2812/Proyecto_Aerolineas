@@ -13,6 +13,9 @@ namespace Pagina_Principal
 {
     public partial class reservasYcompras : Form
     {
+        int cedul;
+        string name;
+        public reservasYcompras(int cedula, string nombre)
         int idUsusario;
         Reservas_Compras informacion = new Reservas_Compras();
         List<object> datos = new List<object>();
@@ -92,6 +95,30 @@ namespace Pagina_Principal
         private void btnComprar_Click(object sender, EventArgs e)
         {
             guardarHotelCompras();
+            cedul = cedula;
+            name = nombre;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 ver = new Form1();
+            ver.Show();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menu_User ver = new Menu_User(cedul, name);
+            ver.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Ventana_Calificacion ver = new Ventana_Calificacion();
+            ver.Show();
         }
     }
 }

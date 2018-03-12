@@ -42,7 +42,7 @@ namespace Pagina_Principal
                         //vetana usuario
                         ExtraerNombre();
                         this.Hide();
-                        Form2 ver = new Form2(usuario, nombre);
+                        Menu_User ver = new Menu_User(usuario, nombre);
                         ver.Show();
                     }
                     else

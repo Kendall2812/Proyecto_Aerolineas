@@ -80,6 +80,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1309, 36);
             this.panel1.TabIndex = 6;
+            this.button1.Location = new System.Drawing.Point(34, 323);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(78, 34);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "COMPRAR";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -92,6 +99,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "X";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnEliminar
             // 
@@ -172,6 +180,13 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1064, 258);
             this.dataGridView1.TabIndex = 12;
+            this.button3.Location = new System.Drawing.Point(516, 16);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(89, 23);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Cerrar Sesion";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // reservasYcompras
             // 

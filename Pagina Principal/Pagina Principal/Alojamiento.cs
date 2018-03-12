@@ -87,7 +87,7 @@ namespace Pagina_Principal
             if(cantidadDias!= 0 & cntHabi!=0 & cntPersonas!=0)
             {
                 string hotel = textBox1.Text;
-                //MessageBox.Show("Has reservado un hotel con " + spinnerHab.Value.ToString());
+                MessageBox.Show("Has reservado un hotel con " + spinnerHab.Value.ToString());
             }
             if (dataGridView1.SelectedRows.Count == 0)
             {
@@ -136,7 +136,7 @@ namespace Pagina_Principal
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            reservasYcompras compras = new reservasYcompras(cedu);
+            reservasYcompras compras = new reservasYcompras(cedu, nombreuser);
             compras.Show();
         }
 

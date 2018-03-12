@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Pagina_Principal
@@ -16,7 +13,7 @@ namespace Pagina_Principal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form2(147, "Kevin")); //Form1()  int cedula, string nombre  147,"Kevin"
+            Application.Run(new Seccion_vuelos()); //Form1()  int cedula, string nombre  147,"Kevin"
         }
     }
 }
