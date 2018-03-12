@@ -15,7 +15,7 @@ namespace Pagina_Principal
     {
         int cedul;
         string name;
-        public reservasYcompras(int cedula, string nombre)
+        //public reservasYcompras(int cedula, string nombre)
         int idUsusario;
         Reservas_Compras informacion = new Reservas_Compras();
         List<object> datos = new List<object>();
@@ -95,8 +95,8 @@ namespace Pagina_Principal
         private void btnComprar_Click(object sender, EventArgs e)
         {
             guardarHotelCompras();
-            cedul = cedula;
-            name = nombre;
+            //cedul = cedula;
+            //name = nombre;
         }
 
         private void button3_Click(object sender, EventArgs e)
