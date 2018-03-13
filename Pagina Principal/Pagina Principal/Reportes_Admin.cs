@@ -18,6 +18,9 @@ namespace Pagina_Principal
         List<object> hotelRepetido = new List<object>();//contiene las veces que han reservado el hotel
         List<object> Hoteles = new List<object>();//contiene los nombres de los hoteles
 
+        List<object> segundoReporte = new List<object>();//contiene los nombres de los hoteles
+        List<object> grafica2 = new List<object>();//contiene los nombres de los hoteles
+
         public Reportes_Admin()
         {
             InitializeComponent();
@@ -28,6 +31,8 @@ namespace Pagina_Principal
         /// </summary>
         public void Reporte1()
         {
+            nombresHoteles.Clear();
+
             int contador1 = 0;
 
             this.Grafico1.Series.Clear();
@@ -73,36 +78,63 @@ namespace Pagina_Principal
             }
             Grafico1.Series["Cantidad de veces que se a reservado un Hotel"].IsValueShownAsLabel = true;
 
-            //int num = 1000;
-            //string mes = "Marzo";
-            //series.Points.AddXY(mes, num);
-            //series.Points.AddXY("October", 300);
-            //series.Points.AddXY("November", 800);
-            //series.Points.AddXY("December", 200);
-            //series.Points.AddXY("January", 600);
-            //Grafico2.Series["Total Income"].IsValueShownAsLabel = true;
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////
 
         public void reporte2()
         {
-            //ejemplo
+            nombresHoteles.Clear();
+            grafica2.Clear();
+            segundoReporte.Clear();
+            int numero = 0;
+            int contador2 = 0;
+            string nombre = "";
+            int items = 0;
+
+            segundoReporte = reports.SegundoReporte();//tiene los hoteles con la cantidad de personas
+
             this.Grafico2.Series.Clear();
 
             this.Grafico2.Titles.Clear();
-            this.Grafico2.Titles.Add("Total Income");
+            this.Grafico2.Titles.Add("Cantidad de personas que han estado por Hotel");
 
-            Series series = this.Grafico2.Series.Add("Total Income");
+            Series series = this.Grafico2.Series.Add("Cantidad de personas que han estado por Hotel");
             series.ChartType = SeriesChartType.Pie;  /// cambia la forma del grafico
-            int num = 1000;
-            string mes = "Marzo";
-            series.Points.AddXY(mes, num);
-            series.Points.AddXY("October", 300);
-            series.Points.AddXY("November", 800);
-            series.Points.AddXY("December", 200);
-            series.Points.AddXY("January", 600);
-            Grafico2.Series["Total Income"].IsValueShownAsLabel = true;
+
+            for (int r=0; r < segundoReporte.Count; r = r+4)
+            {
+                nombresHoteles.Add(segundoReporte[r]);
+            }
+
+            for (int x = 0; x < nombresHoteles.Count; x++)
+            {
+                contador2 = 0;
+                for (int y = 0; y < segundoReporte.Count; y++)
+                {
+                    if (nombresHoteles[x].Equals(segundoReporte[y]))
+                    {
+                        nombre = segundoReporte[y].ToString();
+                        items = segundoReporte.IndexOf(nombre);
+                        numero = Convert.ToInt32(segundoReporte[items + 1]);
+                        contador2 += numero;
+                        segundoReporte.RemoveAt(items);//borra el nombre del hotel
+                    }
+                }
+                if (contador2 != 0)
+                {
+                    grafica2.Add(nombresHoteles[x]);
+                    grafica2.Add(contador2);
+                }
+            }
+
+            for (int t = 0; t < grafica2.Count; t++)
+            {
+                series.Points.AddXY(grafica2[t], grafica2[t + 1]);
+                t += 1;
+            }
+            Grafico2.Series["Cantidad de personas que han estado por Hotel"].IsValueShownAsLabel = true;
+            segundoReporte.Clear();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -116,7 +148,7 @@ namespace Pagina_Principal
         {
             if (tabControl1.SelectedIndex == 1)
             {
-                reporte2();//SplineChartExample();
+                reporte2();
             }
         }        
     }

@@ -28,15 +28,15 @@ namespace Pagina_Principal
         string nombrev, lugarv, paisv, escalasvue, paisOri, paisDes, duracionvuelo;
         int codigoh, precioh, preciovue;
         int preciov, cantidaHabitaciones, cantidadDias, codigov;
-        public Seccion_vuelos()
-        {
-            InitializeComponent();
-            panelPersonas.Visible = true;
-            this.CenterToScreen();
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgHotel.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgVehi.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        }
+        //public Seccion_vuelos()
+        //{
+        //    InitializeComponent();
+        //    panelPersonas.Visible = true;
+        //    this.CenterToScreen();
+        //    dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        //    dtgHotel.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        //    dtgVehi.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        //}
         //comentar
 
         public Seccion_vuelos(int cedula, string nombre)
