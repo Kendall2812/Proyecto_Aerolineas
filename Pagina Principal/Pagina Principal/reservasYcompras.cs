@@ -43,13 +43,14 @@ namespace Pagina_Principal
             dataGridView1.Columns[5].Width = 140;
             dataGridView1.Columns[6].Width = 140;
 
-            dataGridView1.Columns[0].HeaderCell.Value = "Codigo Hotel";
+            dataGridView1.Columns[0].HeaderCell.Value = "Codigo Reserva";
             dataGridView1.Columns[1].HeaderCell.Value = "Hotel";
             dataGridView1.Columns[2].HeaderCell.Value = "Cantidad Adultos";
             dataGridView1.Columns[3].HeaderCell.Value = "Cantidad Niños";
             dataGridView1.Columns[4].HeaderCell.Value = "Fecha Inicio";
             dataGridView1.Columns[5].HeaderCell.Value = "Fecha Final";
-            dataGridView1.Columns[6].HeaderCell.Value = "Costo Total";
+            dataGridView1.Columns[6].HeaderCell.Value = "Cantidad Habitaciones";
+            dataGridView1.Columns[7].HeaderCell.Value = "Costo Total";
         }
 
         public void buscarReservaHoteles()
@@ -74,11 +75,15 @@ namespace Pagina_Principal
         public void guardarHotelCompras()
         {
             Int32 numero = dataGridView1.GetCellCount(DataGridViewElementStates.Selected);
-            if (numero == 7)
+            if (numero == 8)
             {
                 int codigo = Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value);
+                int canti_Habita = Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[6].Value);
+                //guardar
                 informacion.realizarCompra(codigo);
                 buscarReservas();
+                //modifica la cantidad de habitaciones en hoteles
+                informacion.restarHabitaciones(codigo, canti_Habita);
 
                 Ventana_Calificacion calificar = new Ventana_Calificacion(codigo);
                 calificar.Show();
@@ -92,7 +97,7 @@ namespace Pagina_Principal
         public void eliminarReserva()
         {
             Int32 numero = dataGridView1.GetCellCount(DataGridViewElementStates.Selected);
-            if (numero == 7)
+            if (numero == 8)
             {
                 int codigo = Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value);
                 informacion.eliminarReserva(codigo);

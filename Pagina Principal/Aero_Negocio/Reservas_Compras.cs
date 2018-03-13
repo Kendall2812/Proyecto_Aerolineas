@@ -41,5 +41,10 @@ namespace Aero_Negocio
         {
             reserva.insertarCalificacion(codigoHotel, calificacion);
         }
+
+        public void restarHabitaciones(int codigo_reserva, int cantiHabit)
+        {
+            reserva.restarHabitacion_Hotel(codigo_reserva, cantiHabit);
+        }
     }
 }

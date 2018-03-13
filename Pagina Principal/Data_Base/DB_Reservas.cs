@@ -22,7 +22,7 @@ namespace Data_Base
             try
             {
                 connection.Open();
-                comando2 = new NpgsqlDataAdapter("SELECT re.id_compras_reservas, ho.nombre, re.adultos, re.niños, re.fecha_inicio, re.fecha_final, re.total_hotel "
+                comando2 = new NpgsqlDataAdapter("SELECT re.id_compras_reservas, ho.nombre, re.adultos, re.niños, re.fecha_inicio, re.fecha_final, re.canti_habitaciones, re.total_hotel "
                     + " FROM reservas AS re JOIN hoteles AS ho ON re.id_hotel = ho.codigo \n"
                     + " WHERE re.cedula = '" + cedula + "' AND re.tipo_accion = false ", connection);
                 comando2.Fill(infoReservas);
@@ -76,6 +76,43 @@ namespace Data_Base
                 comandos.ExecuteNonQuery();
                 MessageBox.Show("Se registro la calificacion", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 connection.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("No se pudo conectar." + e, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void restarHabitacion_Hotel(int codigo_reserva, int cantiHabit)
+        {
+            Int32 habitaciones = 0;
+            Int32 codigo_Hotel3 = 0;
+            //List<object> datos = new List<object>();
+            try
+            {
+                connection.Open();
+                comandos = new NpgsqlCommand("SELECT re.id_hotel, ho.habitaciones FROM reservas AS re JOIN hoteles AS ho ON re.id_hotel = ho.codigo "
+                                            + " WHERE re.id_compras_reservas = '" + codigo_reserva + "'", connection);
+                NpgsqlDataReader dr = comandos.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                         codigo_Hotel3 = dr.GetInt32(0);
+                         habitaciones = dr.GetInt32(1);
+                    }
+                }
+                connection.Close();
+
+                if (habitaciones != 0)
+                {
+                    int resta = habitaciones - cantiHabit;
+
+                    connection.Open();
+                    comandos = new NpgsqlCommand("UPDATE hoteles SET habitaciones = '" + resta + "' WHERE codigo = '" + codigo_Hotel3 + "'", connection);
+                    comandos.ExecuteNonQuery();
+                    connection.Close();
+                }
             }
             catch (Exception e)
             {
