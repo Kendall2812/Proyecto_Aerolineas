@@ -97,12 +97,11 @@ namespace Pagina_Principal
             else
             {
                 Reservar();
-
                 //Close();
             }
         }
         public void Reservar()
-        {
+        {//este metodo lo que hace es capturar la informacion de la pantanlla para guardarla en la tabla de las reservas.
             alojamiento alo = new alojamiento();
             DateTime llegada = DateTime.Parse(dataTLlegada.Text);
             DateTime salida = DateTime.Parse(dateTPSalida.Text);
@@ -211,7 +210,7 @@ namespace Pagina_Principal
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+        {// este evento lo que hace es mostrar la imagen del hotel en pantalla
             Int32 numero = dataGridView1.GetCellCount(DataGridViewElementStates.Selected);
             if (numero == 5)
             {
@@ -258,7 +257,7 @@ namespace Pagina_Principal
 
 
         public void cargarListView()
-        {
+        {//este metodo lo que hace es mostrar la informacion de los hoteles y mostralos en el datagridview
             dataGridView1.Rows.Clear();
             dato = "";
             dato = textBox1.Text;

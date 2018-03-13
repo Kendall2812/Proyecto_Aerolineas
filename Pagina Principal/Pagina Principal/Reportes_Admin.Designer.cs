@@ -137,8 +137,6 @@
             // 
             // Grafico1
             // 
-            this.Grafico1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.Grafico1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.HorizontalCenter;
             chartArea1.Name = "ChartArea1";
             this.Grafico1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";

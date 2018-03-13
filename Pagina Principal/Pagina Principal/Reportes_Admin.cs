@@ -14,33 +14,47 @@ namespace Pagina_Principal
     public partial class Reportes_Admin : Form
     {
         Reportes reports = new Reportes();
-        List<object> nombresHoteles = new List<object>();//Contiene todos los nombres de los hoteles
-        List<int> hotelRepetido = new List<int>();//contiene las veces que han reservado el hotel
-        List<object> Hoteles = new List<object>();
+        List<object> nombresHoteles = new List<object>();//contiene las veces que se repite el nombre de un hotel
+        List<object> hotelRepetido = new List<object>();//contiene las veces que han reservado el hotel
+        List<object> Hoteles = new List<object>();//contiene los nombres de los hoteles
 
         public Reportes_Admin()
         {
             InitializeComponent();
-            reporte1();
+            Reporte1();
         }
-
-        public void reporte1()
+        /// <summary>
+        /// Forma dos para hacer los reportes
+        /// </summary>
+        public void Reporte1()
         {
-            int contador = 0;
-            nombresHoteles = reports.PrimerReporte();
+            int contador1 = 0;
+
+            this.Grafico1.Series.Clear();
+
+            this.Grafico1.Titles.Clear();
+            this.Grafico1.Titles.Add("Cantidad de veces que se a reservado un Hotel");
+
+            Series series = this.Grafico1.Series.Add("Cantidad de veces que se a reservado un Hotel");
+            series.ChartType = SeriesChartType.Pie;  /// cambia la forma del grafico
+
+            nombresHoteles = reports.PrimerReporte();//tiene los nombre de los hoteles 
+
             for (int x = 0; x < nombresHoteles.Count; x++)
             {
-                contador = 0;
+                contador1 = 0;
                 for (int y = 0; y < nombresHoteles.Count; y++)
                 {
                     if (nombresHoteles[x].Equals(nombresHoteles[y]))
                     {
-                        contador += 1;
+                        contador1 += 1;
                     }
                 }
-                hotelRepetido.Add(contador);
-                contador = 0;
-                Hoteles.Add(nombresHoteles[x]);
+
+                hotelRepetido.Add(nombresHoteles[x]);
+                hotelRepetido.Add(contador1);
+                contador1 = 0;
+
                 string nombre = Convert.ToString(nombresHoteles[x]);
 
                 foreach (string c in nombresHoteles.ToList())//este foreach recorre la lista para eliminar el hotel que ya se conto
@@ -51,47 +65,42 @@ namespace Pagina_Principal
                     }
                 }
             }
-
-            //this.Grafico2.Palette = ChartColorPalette.SeaGreen;
-            Grafico1.Palette = ChartColorPalette.Berry;
-            Grafico1.Titles.Add("Cantidad de veces que se a reservado un Hotel").ForeColor = Color.White;
-            Series serie;           
-            for (int x = 0; x < Hoteles.Count; x++)
+            for(int t = 0; t < hotelRepetido.Count; t++)
             {
-                //titulos
-                serie = Grafico1.Series.Add(Convert.ToString(Hoteles[x]));
-                //cantidades
-                serie.Label = hotelRepetido[x].ToString();
-                //serie.ChartType = new SeriesChartType();
-
-                serie.LabelForeColor = Color.Red;
-                serie.Points.Add(hotelRepetido[x]);
+                series.Points.AddXY(hotelRepetido[t], hotelRepetido[t+1]);
+                t += 1;
             }
-            hotelRepetido.Clear();
-            Hoteles.Clear();
-            nombresHoteles.Clear();
-            
 
+            Grafico1.Series["Cantidad de veces que se a reservado un Hotel"].IsValueShownAsLabel = true;
 
+            //int num = 1000;
+            //string mes = "Marzo";
+            //series.Points.AddXY(mes, num);
+            //series.Points.AddXY("October", 300);
+            //series.Points.AddXY("November", 800);
+            //series.Points.AddXY("December", 200);
+            //series.Points.AddXY("January", 600);
+            //Grafico2.Series["Total Income"].IsValueShownAsLabel = true;
+        }
 
-            //Los vectores con los datos
-            //string[] series = { "Eduardo", "Jorge", "Jason", "Andres" };
-            //int[] puntos = { 50, 10, 70, 100 };
+        public void SplineChartExample()
+        {
+            //ejemplo
+            this.Grafico2.Series.Clear();
 
-            ////cambiar de color las barras
-            //Grafico1.Palette = ChartColorPalette.SeaGreen;
+            this.Grafico2.Titles.Clear();
+            this.Grafico2.Titles.Add("Total Income");
 
-            //Grafico1.Titles.Add("Edades");
-
-            //for (int x = 0; x < series.Length; x++)
-            //{
-            //    //titulos
-            //    Series serie = Grafico1.Series.Add(series[x]);
-            //    //cantidades
-            //    serie.Label = puntos[x].ToString();
-
-            //    serie.Points.Add(puntos[x]);
-            //}
+            Series series = this.Grafico2.Series.Add("Total Income");
+            series.ChartType = SeriesChartType.Pie;  /// cambia la forma del grafico
+            int num = 1000;
+            string mes = "Marzo";
+            series.Points.AddXY(mes, num);
+            series.Points.AddXY("October", 300);
+            series.Points.AddXY("November", 800);
+            series.Points.AddXY("December", 200);
+            series.Points.AddXY("January", 600);
+            Grafico2.Series["Total Income"].IsValueShownAsLabel = true;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -103,59 +112,62 @@ namespace Pagina_Principal
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabControl1.SelectedIndex == 0)
+            if (tabControl1.SelectedIndex == 1)
             {
-                BarExample(); //Show bar chart
+                //BarExample(); //Show bar chart
                 SplineChartExample();//SplineChartExample();
             }
         }
 
-//////// Prueba de graficos
+        //Los vectores con los datos
+        //string[] series = { "Eduardo", "Jorge", "Jason", "Andres" };
+        //int[] puntos = { 50, 10, 70, 100 };
+
+        ////cambiar de color las barras
+        //Grafico1.Palette = ChartColorPalette.SeaGreen;
+
+        //Grafico1.Titles.Add("Edades");
+
+        //for (int x = 0; x < series.Length; x++)
+        //{
+        //    //titulos
+        //    Series serie = Grafico1.Series.Add(series[x]);
+        //    //cantidades
+        //    serie.Label = puntos[x].ToString();
+
+        //    serie.Points.Add(puntos[x]);
+        //}
+        //}
+
+
+
+        //////// Prueba de graficos
         //private void Form1_Load(object sender, EventArgs e)
         //{
         //    BarExample(); //Show bar chart
         //    SplineChartExample();//SplineChartExample();
         //}
-        public void BarExample()
-        {
-            this.Grafico2.Series.Clear();
+        //public void BarExample()
+        //{
+        //    this.Grafico2.Series.Clear();
 
-            // Data arrays
-            string[] seriesArray = { "Cat", "Dog", "Bird", "Monkey" };
-            int[] pointsArray = { 2, 1, 7, 5 };
+        //    // Data arrays
+        //    string[] seriesArray = { "Cat", "Dog", "Bird", "Monkey" };
+        //    int[] pointsArray = { 2, 1, 7, 5 };
 
-            // Set palette
-            this.Grafico2.Palette = ChartColorPalette.SeaGreen;
+        //    // Set palette
+        //    this.Grafico2.Palette = ChartColorPalette.SeaGreen;
 
-            // Set title
-            this.Grafico2.Titles.Add("Animals");
+        //    // Set title
+        //    this.Grafico2.Titles.Add("Animals");
 
-            // Add series.
-            for (int i = 0; i < seriesArray.Length; i++)
-            {
-                Series series = this.Grafico2.Series.Add(seriesArray[i]);
-                series.Points.Add(pointsArray[i]);
-            }
-        }
-        private void SplineChartExample()
-        {
-            this.Grafico2.Series.Clear();
-
-            this.Grafico2.Titles.Add("Total Income");
-
-            Series series = this.Grafico2.Series.Add("Total Income");
-            series.ChartType = SeriesChartType.Bar;  /// cambia la forma del grafico
-            int num = 1000;
-            string mes = "Marzo";
-            series.Points.AddXY(mes, num);
-            series.Points.AddXY("October", 300);
-            series.Points.AddXY("November", 800);
-            series.Points.AddXY("December", 200);
-            series.Points.AddXY("January", 600);
-            Grafico2.Series["Total Income"].IsValueShownAsLabel = true;
-            //series.Points.AddXY("February", 400);
-            // series.Points.AddXY("scc", 700);
-
-        }
+        //    // Add series.
+        //    for (int i = 0; i < seriesArray.Length; i++)
+        //    {
+        //        Series series = this.Grafico2.Series.Add(seriesArray[i]);
+        //        series.Points.Add(pointsArray[i]);
+        //    }
+        //}
+        
     }
 }
