@@ -14,6 +14,12 @@ namespace Data_Base
         static NpgsqlCommand comandos;
         Conexio_BaseDatos conexion1 = new Conexio_BaseDatos();
         NpgsqlDataAdapter comando2 = new NpgsqlDataAdapter();
+        NpgsqlDataAdapter comando3 = new NpgsqlDataAdapter();
+        DataSet infoVuelos = new DataSet();
+        NpgsqlDataAdapter comando4 = new NpgsqlDataAdapter();
+        DataSet infoVehi = new DataSet();
+        NpgsqlDataAdapter comando5 = new NpgsqlDataAdapter();
+        DataSet infoHotel = new DataSet();
 
         public DataSet cargarReservas(int cedula)
         {//este metodo lo que hace es cargar las reservas del usuario
@@ -117,6 +123,95 @@ namespace Data_Base
             {
                 MessageBox.Show("No se pudo conectar." + e, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        public void restarVehiculos(int codigo_reserva)
+        {///este metodo los que hace es resta la cantidad de habitaciones en los hoteles 
+            Int32 cantidad = 0;
+            string codigo_ve="";
+            try
+            {
+                connection.Open();
+                comandos = new NpgsqlCommand("SELECT re.vehiculo, ve.cantidad FROM reservas AS re JOIN vehiculos AS ve ON re.vehiculo = Cast(ve.codigo as integer) "
+                                            + " WHERE re.id_compras_reservas = '" + codigo_reserva + "'", connection);
+                NpgsqlDataReader dr = comandos.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        codigo_ve = dr.GetString(0);
+                        cantidad = dr.GetInt32(1);
+                    }
+                }
+                connection.Close();
+
+                if (cantidad != 0)
+                {
+                    int resta = cantidad - 1;
+
+                    connection.Open();
+                    comandos = new NpgsqlCommand("UPDATE vehiculos SET cantidad = '" + resta + "' WHERE codigo = '" + codigo_ve + "'", connection);
+                    comandos.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("No se pudo conectar." + e, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public DataSet cargarVuelos(int cedula)
+        {//este metodo lo que hace es cargar los vuelos del usuario
+            infoVuelos.Clear();
+            connection = conexion1.Conexion();
+            try
+            {
+                connection.Open();
+                comando3 = new NpgsqlDataAdapter("SELECT id_compras_reservas,ini_pais_origen, fin_pais_destino, escalas, vehiculo, total_vuelo, total_vehículo, total_hotel, total_compra, niños, adultos, id_hotel, fecha_inicio, fecha_final, nombre_hotel, duracion_vuelo, canti_habitaciones " +
+                    "FROM reservas WHERE cedula= '" + cedula+ "'", connection);
+                comando3.Fill(infoVuelos);
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("No se pudo conectar." + e, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return infoVuelos;
+        }
+        public DataSet cargarvehiculos(string id_vehi)
+        {//este metodo lo que hace es cargar los vehiculos del usuario
+            infoVehi.Clear();
+            connection = conexion1.Conexion();
+            try
+            {
+                connection.Open();
+                comando4 = new NpgsqlDataAdapter("SELECT codigo, marca, modelo, precio, cantidad, capacidad FROM vehiculos WHERE codigo= '" + id_vehi + "'", connection);
+                comando4.Fill(infoVehi);
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("No se pudo conectar." + e, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return infoVehi;
+        }
+        public DataSet cargarhotel(int id_ho)
+        {//este metodo lo que hace es cargar los hoteles del usuario
+            infoHotel.Clear();
+            connection = conexion1.Conexion();
+            try
+            {
+                connection.Open();
+                comando5 = new NpgsqlDataAdapter("SELECT ho.codigo, ho.nombre, ho.lugar, pa.nombre, ta.precio ,ho.habitaciones FROM hoteles AS ho JOIN lugares AS lu ON ho.lugar = lu.nombre JOIN paises AS pa ON pa.codigo = lu.codigo_pais JOIN tarifas_hoteles AS ta ON ta.codigo = ho.codigotarifahotel WHERE ho.codigo= '" + id_ho + "'", connection);
+                comando5.Fill(infoHotel);
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("No se pudo conectar." + e, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return infoHotel;
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Aero_Negocio
         DB_Reservas reserva = new DB_Reservas();
         List<object> informacion = new List<object>();
         DataSet infoReservas = new DataSet();
+        DataSet infoRvuelos = new DataSet();
 
         public DataSet datos(int cedula)
         {
@@ -29,12 +30,16 @@ namespace Aero_Negocio
         {
             reserva.eliminarRserva(codigo1);
         }
-
-        public DataSet cargarDatosVuelos(int codigo2)
+        public void eliminarReservaVuelo(int codigo1)
         {
-            infoReservas.Clear();
-            //infoReservas = 
-            return infoReservas;
+            reserva.eliminarRserva(codigo1);
+        }
+
+        public DataSet cargarDatosVuelos(int cedula)
+        {
+            infoRvuelos.Clear();
+            infoRvuelos = reserva.cargarVuelos(cedula);
+            return infoRvuelos;
         }
 
         public void calificacion(int codigoHotel, int calificacion)
@@ -45,6 +50,11 @@ namespace Aero_Negocio
         public void restarHabitaciones(int codigo_reserva, int cantiHabit)
         {
             reserva.restarHabitacion_Hotel(codigo_reserva, cantiHabit);
+        }
+
+        public void restarVehiculos(int codigo_reserva)
+        {
+            reserva.restarVehiculos(codigo_reserva);
         }
     }
 }
