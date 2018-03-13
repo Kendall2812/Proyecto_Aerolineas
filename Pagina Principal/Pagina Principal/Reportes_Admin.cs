@@ -191,15 +191,23 @@ namespace Pagina_Principal
 
             if (tabControl1.SelectedIndex == 1)
             {
-                Reporte1();
+                Reporte2();
             }
             if (tabControl1.SelectedIndex == 2)
             {
                 tercerReporte();
             }
-            if (tabControl1.SelectedIndex == 5)
+            if (tabControl1.SelectedIndex == 3)
+            {
+                Reporte4_5();
+            }
+            if (tabControl1.SelectedIndex == 4)
             {
                 sextoReporte();
+            }
+            if (tabControl1.SelectedIndex == 5)
+            {
+                //reporte 7
             }
             
         }   

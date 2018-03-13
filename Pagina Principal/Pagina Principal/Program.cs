@@ -13,7 +13,7 @@ namespace Pagina_Principal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Reportes_Admin()); //Form1()  int cedula, string nombre  147,"Kevin"
+            Application.Run(new Form1()); //Form1()  int cedula, string nombre  147,"Kevin"
         }
     }
 }

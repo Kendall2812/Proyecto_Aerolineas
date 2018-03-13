@@ -169,7 +169,7 @@ namespace Data_Base
             {
                 connection.Open();
                 comando3 = new NpgsqlDataAdapter("SELECT id_compras_reservas,ini_pais_origen, fin_pais_destino, escalas, vehiculo, total_vuelo, total_vehículo, total_hotel, total_compra, niños, adultos, id_hotel, fecha_inicio, fecha_final, nombre_hotel, duracion_vuelo, canti_habitaciones " +
-                    "FROM reservas WHERE cedula= '" + cedula+ "'", connection);
+                    "FROM reservas WHERE cedula= '" + cedula+ "' AND tipo_accion = false ", connection);
                 comando3.Fill(infoVuelos);
                 connection.Close();
             }
