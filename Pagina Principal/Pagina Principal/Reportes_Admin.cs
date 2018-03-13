@@ -187,7 +187,7 @@ namespace Pagina_Principal
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {            
             if (tabControl1.SelectedIndex == 1)
             {
                 Reporte2();
@@ -203,7 +203,7 @@ namespace Pagina_Principal
             }
             if (tabControl1.SelectedIndex == 5)
             {
-                //reporte 7
+                Reporte7();
             }
             
         }   
@@ -240,6 +240,22 @@ namespace Pagina_Principal
                 i++;
             }
             Grafico6.Series["Marcas de los vehículos más rentados"].IsValueShownAsLabel = true;
+        }
+        public void Reporte7()
+        {
+            DB_Reportes repor = new DB_Reportes();
+            ArrayList reporte7 = repor.setimoreporte();
+            this.Grafico7.Series.Clear();
+            this.Grafico7.Titles.Clear();
+            this.Grafico7.Titles.Add("Nombres de los países en que se ha hecho escala");
+            Series Grafico = this.Grafico7.Series.Add("Nombres de los países en que se ha hecho escala");
+            Grafico.ChartType = SeriesChartType.Pie;
+            for (int i = 0; i < reporte7.Count; i++)
+            {
+                Grafico.Points.AddXY(reporte7[i], reporte7[i + 1]);
+                i++;
+            }
+            Grafico7.Series["Nombres de los países en que se ha hecho escala"].IsValueShownAsLabel = true;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

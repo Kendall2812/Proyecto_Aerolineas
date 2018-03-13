@@ -149,5 +149,29 @@ namespace Data_Base
                 return sextoreporte;
             }
         }
+        public ArrayList setimoreporte()
+        {
+            ArrayList reporte7 = new ArrayList();
+            connection = conexion1.Conexion();
+            connection.Open();
+            NpgsqlCommand cmd = new NpgsqlCommand(" SELECT split_part(c.escalas , ',',1),COUNT(c.escalas)FROM reservas AS c WHERE c.escalas <> 'Directo' AND c.escalas <> '' GROUP By c.escalas", connection);
+            NpgsqlDataReader reader = cmd.ExecuteReader();
+            try
+            {
+                while (reader.Read())
+                {
+                    reporte7.Add(reader.GetString(0));
+                    reporte7.Add(reader.GetInt32(1));
+                }
+                connection.Close();
+                return reporte7;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error no se pudo conectar a la base de datos. " + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                connection.Close();
+                return reporte7;
+            }
+        }
     }
 }
