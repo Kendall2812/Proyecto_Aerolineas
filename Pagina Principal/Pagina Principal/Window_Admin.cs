@@ -236,7 +236,7 @@ namespace Pagina_Principal
             panelLed.Visible = false;
             panelLed2.Visible = false;
             panelLed3.Visible = true;
-            panelLed3.Width = btnReportes.Width;
+            panelLed3.Width = btnReportes.Width; 
             panelLed3.Top = btnReportes.Top;
         }
 
