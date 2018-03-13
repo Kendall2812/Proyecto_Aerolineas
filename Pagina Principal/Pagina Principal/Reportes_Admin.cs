@@ -165,15 +165,6 @@ namespace Pagina_Principal
                 Series series = this.Grafico4y5.Series.Add("Cantidad de Adultos y Niños que han viajado por Rango de Fechas.");
                 series.ChartType = SeriesChartType.Pie;  /// cambia la forma del grafico
 
-                for (int t = 0; t < tercerReporte1.Count; t++)
-                {
-                    series.Points.AddXY(tercerReporte1[t], tercerReporte1[t + 1]);
-                    t += 1;
-                }
-                Grafico4y5.Series["Cantidad de Adultos y Niños que han viajado por Rango de Fechas."].IsValueShownAsLabel = true;
-                tercerReporte1.Clear();
-            }
-        }
             for (int t = 0; t < grafica2.Count; t++)
             {
                 series.Points.AddXY(grafica2[t], grafica2[t + 1]);
@@ -185,7 +176,10 @@ namespace Pagina_Principal
 
         ///////////////////////////////////////////////////////////////////////////////////////
 
+        public void Reporte3()
+        {
 
+        }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
