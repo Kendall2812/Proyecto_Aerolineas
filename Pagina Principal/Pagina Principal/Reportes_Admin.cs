@@ -82,7 +82,7 @@ namespace Pagina_Principal
 
         ///////////////////////////////////////////////////////////////////////////////////////
 
-        public void reporte2()
+        public void Reporte2()
         {
             nombresHoteles.Clear();
             grafica2.Clear();
@@ -137,6 +137,13 @@ namespace Pagina_Principal
             segundoReporte.Clear();
         }
 
+        ///////////////////////////////////////////////////////////////////////////////////////
+
+        public void Reporte3()
+        {
+
+        }
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -148,7 +155,12 @@ namespace Pagina_Principal
         {
             if (tabControl1.SelectedIndex == 1)
             {
-                reporte2();
+                Reporte2();
+            }
+
+            if (tabControl1.SelectedIndex == 2)
+            {
+                Reporte3();
             }
         }        
     }

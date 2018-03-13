@@ -143,7 +143,6 @@
             this.Grafico1.Legends.Add(legend1);
             this.Grafico1.Location = new System.Drawing.Point(124, 44);
             this.Grafico1.Name = "Grafico1";
-            this.Grafico1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
             this.Grafico1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Grafico1.Size = new System.Drawing.Size(1002, 509);
             this.Grafico1.TabIndex = 0;
