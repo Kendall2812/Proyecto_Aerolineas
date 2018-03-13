@@ -16,7 +16,7 @@ namespace Data_Base
         NpgsqlDataAdapter comando2 = new NpgsqlDataAdapter();
 
         public DataSet cargarReservas(int cedula)
-        {
+        {//este metodo lo que hace es cargar las reservas del usuario
             infoReservas.Clear();
             connection = conexion1.Conexion();
             try
@@ -36,7 +36,7 @@ namespace Data_Base
         }
 
         public void registrarCompra(int codigo)
-        {
+        {//este metodo lo que hace pasar el estado de la reserva false a true que es cuando esta comprado
             try
             {
                 connection.Open();
@@ -52,7 +52,7 @@ namespace Data_Base
         }
 
         public void eliminarRserva(int codigo1)
-        {
+        {//este metodo borra las reservas del usuario 
             try
             {
                 connection.Open();
@@ -68,7 +68,7 @@ namespace Data_Base
         }
 
         public void insertarCalificacion(int codigoHotel, int calificacion)
-        {
+        {//este metodo lo que hace es guardar la calificacion de que el usuario le da a los hoteles 
             try
             {
                 connection.Open();
@@ -84,10 +84,9 @@ namespace Data_Base
         }
 
         public void restarHabitacion_Hotel(int codigo_reserva, int cantiHabit)
-        {
+        {///este metodo los que hace es resta la cantidad de habitaciones en los hoteles 
             Int32 habitaciones = 0;
             Int32 codigo_Hotel3 = 0;
-            //List<object> datos = new List<object>();
             try
             {
                 connection.Open();
