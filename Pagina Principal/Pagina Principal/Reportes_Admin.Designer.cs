@@ -46,9 +46,6 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -59,13 +56,14 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.Grafico3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.Grafico4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.Grafico5 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label1 = new System.Windows.Forms.Label();
+            this.FechaRango = new System.Windows.Forms.DateTimePicker();
+            this.Grafico4y5 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.Grafico6 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.Grafico7 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -75,9 +73,7 @@
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grafico3)).BeginInit();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grafico4)).BeginInit();
-            this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grafico5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grafico4y5)).BeginInit();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grafico6)).BeginInit();
             this.tabPage7.SuspendLayout();
@@ -113,10 +109,9 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
-            this.tabControl1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(12, 42);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -128,10 +123,10 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Silver;
             this.tabPage1.Controls.Add(this.Grafico1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 33);
+            this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1251, 587);
+            this.tabPage1.Size = new System.Drawing.Size(1251, 589);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Reporte 1";
             // 
@@ -155,10 +150,10 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Silver;
             this.tabPage2.Controls.Add(this.Grafico2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 33);
+            this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1251, 587);
+            this.tabPage2.Size = new System.Drawing.Size(1251, 589);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Reporte 2";
             // 
@@ -168,7 +163,7 @@
             this.Grafico2.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.Grafico2.Legends.Add(legend2);
-            this.Grafico2.Location = new System.Drawing.Point(225, 35);
+            this.Grafico2.Location = new System.Drawing.Point(143, 40);
             this.Grafico2.Name = "Grafico2";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
@@ -183,9 +178,9 @@
             // 
             this.tabPage3.BackColor = System.Drawing.Color.Silver;
             this.tabPage3.Controls.Add(this.Grafico3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 33);
+            this.tabPage3.Location = new System.Drawing.Point(4, 31);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1251, 587);
+            this.tabPage3.Size = new System.Drawing.Size(1251, 589);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Reporte 3";
             // 
@@ -195,7 +190,7 @@
             this.Grafico3.ChartAreas.Add(chartArea3);
             legend3.Name = "Legend1";
             this.Grafico3.Legends.Add(legend3);
-            this.Grafico3.Location = new System.Drawing.Point(225, 35);
+            this.Grafico3.Location = new System.Drawing.Point(132, 41);
             this.Grafico3.Name = "Grafico3";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
@@ -208,77 +203,71 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.Silver;
-            this.tabPage4.Controls.Add(this.Grafico4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 33);
+            this.tabPage4.Controls.Add(this.btnBuscar);
+            this.tabPage4.Controls.Add(this.label1);
+            this.tabPage4.Controls.Add(this.FechaRango);
+            this.tabPage4.Controls.Add(this.Grafico4y5);
+            this.tabPage4.Location = new System.Drawing.Point(4, 31);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1251, 587);
+            this.tabPage4.Size = new System.Drawing.Size(1251, 589);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Reporte 4";
+            this.tabPage4.Text = "Reporte 4 y 5";
             // 
-            // Grafico4
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 22);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Seleccionar Fecha";
+            // 
+            // FechaRango
+            // 
+            this.FechaRango.CalendarFont = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaRango.Location = new System.Drawing.Point(7, 36);
+            this.FechaRango.Name = "FechaRango";
+            this.FechaRango.Size = new System.Drawing.Size(263, 27);
+            this.FechaRango.TabIndex = 3;
+            // 
+            // Grafico4y5
             // 
             chartArea4.Name = "ChartArea1";
-            this.Grafico4.ChartAreas.Add(chartArea4);
+            this.Grafico4y5.ChartAreas.Add(chartArea4);
             legend4.Name = "Legend1";
-            this.Grafico4.Legends.Add(legend4);
-            this.Grafico4.Location = new System.Drawing.Point(225, 35);
-            this.Grafico4.Name = "Grafico4";
+            this.Grafico4y5.Legends.Add(legend4);
+            this.Grafico4y5.Location = new System.Drawing.Point(228, 69);
+            this.Grafico4y5.Name = "Grafico4y5";
             series3.ChartArea = "ChartArea1";
             series3.Legend = "Legend1";
             series3.Name = "Series1";
-            this.Grafico4.Series.Add(series3);
-            this.Grafico4.Size = new System.Drawing.Size(1002, 509);
-            this.Grafico4.TabIndex = 0;
-            this.Grafico4.Text = "chart4";
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.BackColor = System.Drawing.Color.Silver;
-            this.tabPage5.Controls.Add(this.Grafico5);
-            this.tabPage5.Location = new System.Drawing.Point(4, 33);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1251, 587);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Reporte 5";
-            // 
-            // Grafico5
-            // 
-            chartArea5.Name = "ChartArea1";
-            this.Grafico5.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.Grafico5.Legends.Add(legend5);
-            this.Grafico5.Location = new System.Drawing.Point(225, 35);
-            this.Grafico5.Name = "Grafico5";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.Grafico5.Series.Add(series4);
-            this.Grafico5.Size = new System.Drawing.Size(1002, 509);
-            this.Grafico5.TabIndex = 0;
-            this.Grafico5.Text = "chart5";
+            this.Grafico4y5.Series.Add(series3);
+            this.Grafico4y5.Size = new System.Drawing.Size(1002, 509);
+            this.Grafico4y5.TabIndex = 0;
+            this.Grafico4y5.Text = "chart4";
             // 
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.Color.Silver;
             this.tabPage6.Controls.Add(this.Grafico6);
-            this.tabPage6.Location = new System.Drawing.Point(4, 33);
+            this.tabPage6.Location = new System.Drawing.Point(4, 31);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1251, 587);
+            this.tabPage6.Size = new System.Drawing.Size(1251, 589);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Reporte 6";
             // 
             // Grafico6
             // 
-            chartArea6.Name = "ChartArea1";
-            this.Grafico6.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.Grafico6.Legends.Add(legend6);
+            chartArea5.Name = "ChartArea1";
+            this.Grafico6.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.Grafico6.Legends.Add(legend5);
             this.Grafico6.Location = new System.Drawing.Point(225, 35);
             this.Grafico6.Name = "Grafico6";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.Grafico6.Series.Add(series5);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.Grafico6.Series.Add(series4);
             this.Grafico6.Size = new System.Drawing.Size(1002, 509);
             this.Grafico6.TabIndex = 0;
             this.Grafico6.Text = "chart6";
@@ -287,27 +276,42 @@
             // 
             this.tabPage7.BackColor = System.Drawing.Color.Silver;
             this.tabPage7.Controls.Add(this.Grafico7);
-            this.tabPage7.Location = new System.Drawing.Point(4, 33);
+            this.tabPage7.Location = new System.Drawing.Point(4, 31);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1251, 587);
+            this.tabPage7.Size = new System.Drawing.Size(1251, 589);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Reporte 7";
             // 
             // Grafico7
             // 
-            chartArea7.Name = "ChartArea1";
-            this.Grafico7.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.Grafico7.Legends.Add(legend7);
+            chartArea6.Name = "ChartArea1";
+            this.Grafico7.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.Grafico7.Legends.Add(legend6);
             this.Grafico7.Location = new System.Drawing.Point(225, 35);
             this.Grafico7.Name = "Grafico7";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.Grafico7.Series.Add(series6);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.Grafico7.Series.Add(series5);
             this.Grafico7.Size = new System.Drawing.Size(1002, 509);
             this.Grafico7.TabIndex = 0;
             this.Grafico7.Text = "chart7";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.Yellow;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow;
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Location = new System.Drawing.Point(7, 104);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(102, 37);
+            this.btnBuscar.TabIndex = 13;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // Reportes_Admin
             // 
@@ -330,9 +334,8 @@
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Grafico3)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Grafico4)).EndInit();
-            this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Grafico5)).EndInit();
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grafico4y5)).EndInit();
             this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Grafico6)).EndInit();
             this.tabPage7.ResumeLayout(false);
@@ -353,12 +356,13 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataVisualization.Charting.Chart Grafico3;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.DataVisualization.Charting.Chart Grafico4;
-        private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.DataVisualization.Charting.Chart Grafico5;
+        private System.Windows.Forms.DataVisualization.Charting.Chart Grafico4y5;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.DataVisualization.Charting.Chart Grafico6;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.DataVisualization.Charting.Chart Grafico7;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker FechaRango;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
