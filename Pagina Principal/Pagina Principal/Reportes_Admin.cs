@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Forms;
 using Aero_Negocio;
+using System.Collections;
+using Data_Base;
 
 namespace Pagina_Principal
 {
@@ -166,6 +168,28 @@ namespace Pagina_Principal
             {
                 Reporte4_5();
             }
+            if (tabControl1.SelectedIndex == 2)
+            {
+                tercerReporte();
+            }
+            
+        }   
+        
+        public void tercerReporte()
+        {
+            DB_Reportes repor = new DB_Reportes();
+            ArrayList reporte3 = repor.Tercerreporte();
+            this.Grafico3.Series.Clear();
+            this.Grafico3.Titles.Clear();
+            this.Grafico3.Titles.Add("Porcentaje de visitas por pais");
+            Series Grafico = this.Grafico3.Series.Add("Porcentaje de visitas por pais");
+            Grafico.ChartType = SeriesChartType.Pie;
+            for (int i = 0; i < reporte3.Count; i++)
+            {
+                Grafico.Points.AddXY(reporte3[i], reporte3[i + 1]);
+                i++;
+            }
+            Grafico3.Series["Porcentaje de visitas por pais"].IsValueShownAsLabel = true;
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
+using System.Collections;
 
 namespace Data_Base
 {
@@ -93,6 +94,31 @@ namespace Data_Base
                 MessageBox.Show("Error no se pudo conectar a la base de datos. " + e, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return tercerReporte;
+        }
+        public ArrayList Tercerreporte()
+        {
+            ArrayList tercerReporte = new ArrayList();
+            tercerReporte.Clear();
+            connection = conexion1.Conexion();
+            connection.Open();
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT p.nombre,(COUNT(c.cedula)*100 / (SELECT COUNT(*) FROM reservas))AS promedio FROM reservas AS c JOIN paises as p on p.nombre = c.fin_pais_destino GROUP BY p.nombre", connection);
+            NpgsqlDataReader reader = cmd.ExecuteReader();
+            try
+            {
+                while (reader.Read())
+                {
+                    tercerReporte.Add(reader.GetString(0));
+                    tercerReporte.Add(reader.GetInt32(1));
+                }
+                connection.Close();
+                return tercerReporte;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error no se pudo conectar a la base de datos. " + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                connection.Close();
+                return tercerReporte;
+            }
         }
     }
 }
