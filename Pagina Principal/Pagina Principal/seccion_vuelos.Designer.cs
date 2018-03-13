@@ -35,8 +35,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtSalida = new System.Windows.Forms.DateTimePicker();
+            this.dtLlegada = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -58,6 +58,12 @@
             this.precio_h = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.puntuacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtgVehi = new System.Windows.Forms.DataGridView();
+            this.id_vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.esti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio_ve = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.capacidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.spinnerHab = new System.Windows.Forms.NumericUpDown();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -72,12 +78,6 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.esti = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio_ve = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.capacidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnReserva = new System.Windows.Forms.Button();
             this.panelPersonas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinerMenores)).BeginInit();
@@ -158,21 +158,22 @@
             this.textBox2.Size = new System.Drawing.Size(198, 20);
             this.textBox2.TabIndex = 6;
             // 
-            // dateTimePicker1
+            // dtSalida
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(32, 92);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(95, 20);
-            this.dateTimePicker1.TabIndex = 7;
+            this.dtSalida.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtSalida.Location = new System.Drawing.Point(32, 92);
+            this.dtSalida.Name = "dtSalida";
+            this.dtSalida.Size = new System.Drawing.Size(95, 20);
+            this.dtSalida.TabIndex = 7;
             // 
-            // dateTimePicker2
+            // dtLlegada
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(133, 92);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(95, 20);
-            this.dateTimePicker2.TabIndex = 8;
+            this.dtLlegada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtLlegada.Location = new System.Drawing.Point(133, 92);
+            this.dtLlegada.Name = "dtLlegada";
+            this.dtLlegada.Size = new System.Drawing.Size(95, 20);
+            this.dtLlegada.TabIndex = 8;
+            this.dtLlegada.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // label4
             // 
@@ -378,6 +379,47 @@
             this.dtgVehi.TabIndex = 61;
             this.dtgVehi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgVehi_CellClick);
             // 
+            // id_vehiculo
+            // 
+            this.id_vehiculo.DataPropertyName = "id_vehiculo";
+            this.id_vehiculo.HeaderText = "PLACA";
+            this.id_vehiculo.Name = "id_vehiculo";
+            this.id_vehiculo.ReadOnly = true;
+            // 
+            // marca
+            // 
+            this.marca.DataPropertyName = "marca";
+            this.marca.HeaderText = "MARCA";
+            this.marca.Name = "marca";
+            this.marca.ReadOnly = true;
+            // 
+            // modelo
+            // 
+            this.modelo.DataPropertyName = "modelo";
+            this.modelo.HeaderText = "MODELO";
+            this.modelo.Name = "modelo";
+            this.modelo.ReadOnly = true;
+            // 
+            // esti
+            // 
+            this.esti.HeaderText = "CAPACIDAD";
+            this.esti.Name = "esti";
+            this.esti.ReadOnly = true;
+            // 
+            // precio_ve
+            // 
+            this.precio_ve.DataPropertyName = "precio";
+            this.precio_ve.HeaderText = "PRECIO";
+            this.precio_ve.Name = "precio_ve";
+            this.precio_ve.ReadOnly = true;
+            // 
+            // capacidad
+            // 
+            this.capacidad.DataPropertyName = "capacidad";
+            this.capacidad.HeaderText = "CANTIDAD";
+            this.capacidad.Name = "capacidad";
+            this.capacidad.ReadOnly = true;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -474,47 +516,6 @@
             this.Column11.HeaderText = "Habitaciones";
             this.Column11.Name = "Column11";
             // 
-            // id_vehiculo
-            // 
-            this.id_vehiculo.DataPropertyName = "id_vehiculo";
-            this.id_vehiculo.HeaderText = "PLACA";
-            this.id_vehiculo.Name = "id_vehiculo";
-            this.id_vehiculo.ReadOnly = true;
-            // 
-            // marca
-            // 
-            this.marca.DataPropertyName = "marca";
-            this.marca.HeaderText = "MARCA";
-            this.marca.Name = "marca";
-            this.marca.ReadOnly = true;
-            // 
-            // modelo
-            // 
-            this.modelo.DataPropertyName = "modelo";
-            this.modelo.HeaderText = "MODELO";
-            this.modelo.Name = "modelo";
-            this.modelo.ReadOnly = true;
-            // 
-            // esti
-            // 
-            this.esti.HeaderText = "CAPACIDAD";
-            this.esti.Name = "esti";
-            this.esti.ReadOnly = true;
-            // 
-            // precio_ve
-            // 
-            this.precio_ve.DataPropertyName = "precio";
-            this.precio_ve.HeaderText = "PRECIO";
-            this.precio_ve.Name = "precio_ve";
-            this.precio_ve.ReadOnly = true;
-            // 
-            // capacidad
-            // 
-            this.capacidad.DataPropertyName = "capacidad";
-            this.capacidad.HeaderText = "CANTIDAD";
-            this.capacidad.Name = "capacidad";
-            this.capacidad.ReadOnly = true;
-            // 
             // btnReserva
             // 
             this.btnReserva.Location = new System.Drawing.Point(676, 511);
@@ -545,8 +546,8 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtLlegada);
+            this.Controls.Add(this.dtSalida);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
@@ -581,8 +582,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtSalida;
+        private System.Windows.Forms.DateTimePicker dtLlegada;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;

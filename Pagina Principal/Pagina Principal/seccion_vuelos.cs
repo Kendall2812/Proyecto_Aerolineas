@@ -23,20 +23,21 @@ namespace Pagina_Principal
         int cntPersonas, cntHabi, cntAdultos, cntMenores;
         int cedula1 = 0;
         string nombre1 = "";
-        bool accion;
+        bool accion = false;
         string nombreh, lugarh, paish;
-        string nombrev, lugarv, paisv, codigov, escalasvue,paisOri, paisDes;
-        int codigoh,precioh, preciovue;
-        int preciov;
-        //public Seccion_vuelos()
-        //{
-        //    InitializeComponent();
-        //    panelPersonas.Visible = true;
-        //    this.CenterToScreen();
-        //    dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        //    dtgHotel.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        //    dtgVehi.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        //}
+        string nombrev, lugarv, paisv, codigov, escalasvue, paisOri, paisDes, duracionvuelo;
+        int codigoh, precioh, preciovue;
+        int preciov, cantidaHabitaciones, cantidadDias;
+        public Seccion_vuelos()
+        {
+            InitializeComponent();
+            panelPersonas.Visible = true;
+            this.CenterToScreen();
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgHotel.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgVehi.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+        //comentar
 
         public Seccion_vuelos(int cedula, string nombre)
         {
@@ -75,9 +76,19 @@ namespace Pagina_Principal
             }
         }
 
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            label5.Text = "";
+            DateTime llegada = DateTime.Parse(dtLlegada.Text);
+            DateTime salida = DateTime.Parse(dtSalida.Text);
+            TimeSpan dias = llegada - salida;
+            cantidadDias = dias.Days;
+            label5.Text += "Total Dias " + cantidadDias.ToString();
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
-           
+
             if (cntPersonas > 0)
             {
                 if (!busVehi)
@@ -99,7 +110,7 @@ namespace Pagina_Principal
             }
             else
             {
-                MessageBox.Show("Debe selecionar la cantidad de personas que desea");            
+                MessageBox.Show("Debe selecionar la cantidad de personas que desea");
                 dtgVehi.Rows.Clear();
             }
 
@@ -142,7 +153,7 @@ namespace Pagina_Principal
 
         private void spinnerHab_ValueChanged(object sender, EventArgs e)
         {
-           
+
             cntHabi = Convert.ToInt32(spinnerHab.Value.ToString()) * 4;
             if (cntPersonas <= cntHabi)
             {
@@ -189,18 +200,23 @@ namespace Pagina_Principal
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Int32 numero = dtgVehi.GetCellCount(DataGridViewElementStates.Selected);
+            Int32 numero = dataGridView1.GetCellCount(DataGridViewElementStates.Selected);
             if (numero == 11)
             {
-                paisOri = dataGridView1.SelectedRows[0].Cells["Pais Origen Seleccionado"].Value.ToString();
-                paisDes = dataGridView1.SelectedRows[0].Cells["Pais Destino Seleccionado"].Value.ToString();
-                escalasvue= dataGridView1.SelectedRows[0].Cells["Tiene Escalas o es Directo"].Value.ToString();
-                preciovue= Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["precio"].Value.ToString());
-
+                paisOri = dataGridView1.SelectedRows[0].Cells["Column1"].Value.ToString();
+                paisDes = dataGridView1.SelectedRows[0].Cells["Column2"].Value.ToString();
+                escalasvue = dataGridView1.SelectedRows[0].Cells["Column3"].Value.ToString();
+                preciovue = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Column7"].Value.ToString());
+                duracionvuelo = dataGridView1.SelectedRows[0].Cells["Column8"].Value.ToString();
+                cantidaHabitaciones= Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Column11"].Value.ToString());
+                if (duracionvuelo.Equals("0"))
+                {
+                    duracionvuelo = dataGridView1.SelectedRows[0].Cells["Column9"].Value.ToString();
+                }
             }
             else
             {
-                MessageBox.Show("Debe estar la fila selecciona para poder Reservar el Vehiculo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe estar la fila selecciona para poder Reservar el Vuelo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -221,9 +237,9 @@ namespace Pagina_Principal
             Int32 numero = dtgVehi.GetCellCount(DataGridViewElementStates.Selected);
             if (numero == 6)
             {
-                codigov = dtgVehi.SelectedRows[0].Cells["CODIGO"].Value.ToString();
-                preciov = Convert.ToInt32(dtgVehi.SelectedRows[0].Cells["PRECIO"].Value.ToString());
-               
+                codigov = dtgVehi.SelectedRows[0].Cells["id_vehiculo"].Value.ToString();
+                preciov = Convert.ToInt32(dtgVehi.SelectedRows[0].Cells["precio_ve"].Value.ToString());
+
             }
             else
             {
@@ -235,7 +251,7 @@ namespace Pagina_Principal
         {
             if (dataGridView1.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Seleccione un Hotel!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Seleccione un vuelo!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -251,11 +267,11 @@ namespace Pagina_Principal
             Int32 numero = dtgHotel.GetCellCount(DataGridViewElementStates.Selected);
             if (numero == 7)
             {
-                codigoh = Convert.ToInt32(dtgHotel.SelectedRows[0].Cells["CODIGO"].Value.ToString());
-                nombreh = dtgHotel.SelectedRows[0].Cells["NOMBRE"].Value.ToString();
-                lugarh = dtgHotel.SelectedRows[0].Cells["LUGAR"].Value.ToString();
-                paish = dtgHotel.SelectedRows[0].Cells["PAIS"].Value.ToString();
-                precioh = Convert.ToInt32(dtgHotel.SelectedRows[0].Cells["PRECIO"].Value.ToString());
+                codigoh = Convert.ToInt32(dtgHotel.SelectedRows[0].Cells["id"].Value.ToString());
+                nombreh = dtgHotel.SelectedRows[0].Cells["nombrehotl"].Value.ToString();
+                lugarh = dtgHotel.SelectedRows[0].Cells["lugar"].Value.ToString();
+                paish = dtgHotel.SelectedRows[0].Cells["nombre_pais"].Value.ToString();
+                precioh = Convert.ToInt32(dtgHotel.SelectedRows[0].Cells["precio_h"].Value.ToString());
 
                 alojamiento alo = new alojamiento();
                 try
@@ -307,13 +323,17 @@ namespace Pagina_Principal
                 {
                     MessageBox.Show("Los paises deben ser diferentes", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else if (dateTimePicker1.Value.ToString() == dateTimePicker2.Value.ToString())
+                else if (dtSalida.Value.ToString() == dtLlegada.Value.ToString())
                 {
                     MessageBox.Show("Debe seleecionar una Fecha", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (Convert.ToDateTime(dateTimePicker1.Value.ToShortDateString()) < Convert.ToDateTime(ho) || Convert.ToDateTime(dateTimePicker2.Value.ToShortDateString()) < Convert.ToDateTime(ho))
+                else if (Convert.ToDateTime(dtSalida.Value.ToShortDateString()) < Convert.ToDateTime(ho) || Convert.ToDateTime(dtLlegada.Value.ToShortDateString()) < Convert.ToDateTime(ho))
                 {
                     MessageBox.Show("Debe ingresar la fecha actual o una fecha posterior", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (cntPersonas == 0)
+                {
+                    MessageBox.Show("Debe ingresar la cantidad de personas", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -340,7 +360,7 @@ namespace Pagina_Principal
         public void cargarVehi()
         {
             dtgVehi.Rows.Clear();
-            if (cntPersonas!=0)
+            if (cntPersonas != 0)
             {
                 DB_Vuelos vue = new DB_Vuelos();
                 vehiculos = vue.CargarVehi(cntPersonas, dtgVehi);
@@ -356,20 +376,22 @@ namespace Pagina_Principal
             int preciovehi = (preciov * 13) / 100;
             int totalvehi = preciovehi + preciov;
 
-            int precioho= (precioh * 13) / 100;
-            int totalhotel = precioho + precioh;
+            int precioho = (precioh * 13) / 100;
+            int totalhotel =(precioho + precioh);
 
             int preciovu = (preciovue * 13) / 100;
             int totalpreciovue = preciovue + preciovu;
 
             int totalcompra = totalvehi + totalhotel + totalpreciovue;
 
-            string sql = "INSERT INTO public.reservas(ini_pais_origen, fin_pais_destino, escalas, vehiculo, total_vuelo ," +
-                " total_vehículo, total_hotel, total_compra, nombre, cedula, niños, adultos, id_hotel, fecha_inicio, fecha_final, " +
-                "nombre_hotel, tipo_accion, id_compras_reservas) VALUES('"+paisOri+"', '"+paisDes+ "', '" + escalasvue + "', '" + codigov + "', '"+ totalpreciovue+"', '"+ totalvehi+"', '"+ totalhotel+"', '"+ totalcompra+"', '" + nombre1 + "', '" + cedula1+"'," +
-                "'"+Convert.ToInt32(spinerMenores.Value.ToString())+ "','" + Convert.ToInt32(spinnerAdultos.Value.ToString()) 
-                + "' , '"+codigoh+ "', '"+ Convert.ToDateTime(dateTimePicker1.Value.ToShortDateString()) + "', '" + Convert.ToDateTime(dateTimePicker2.Value.ToShortDateString()) + "', '" + nombreh + "', '" + accion + "','"+ 1+"'); ";
-            alo.InsertarReserva(sql);
+            //string sql = "INSERT INTO reservas(ini_pais_origen, fin_pais_destino, escalas, vehiculo, total_vuelo ," +
+            //    " total_vehículo, total_hotel, total_compra, nombre, cedula, niños, adultos, id_hotel, fecha_inicio, fecha_final, " +
+            //    "nombre_hotel, tipo_accion,duracion_vuelo) VALUES('" + paisOri + "', '" + paisDes + "', '" + escalasvue + "', '" + codigov + "', '" + totalpreciovue + "', '" + totalvehi + "', '" + totalhotel + "', '" + totalcompra + "', '" + nombre1 + "', '" + cedula1 + "','" + Convert.ToInt32(spinerMenores.Value.ToString()) + "','" + Convert.ToInt32(spinnerAdultos.Value.ToString())
+            //    + "' , '" + codigoh + "', '" + Convert.ToDateTime(dateTimePicker1.Value.ToShortDateString()) + "', '" + Convert.ToDateTime(dateTimePicker2.Value.ToShortDateString()) + "', '" + nombreh + "', '" + accion + "', '" + duracionvuelo + "'); ";
+
+            string sql2= "INSERT INTO reservas(ini_pais_origen, fin_pais_destino, escalas, vehiculo, total_vuelo , total_vehículo , total_hotel, total_compra, nombre, cedula, niños, adultos, id_hotel, fecha_inicio, fecha_final, nombre_hotel, tipo_accion,duracion_vuelo, canti_habitaciones)" +
+                "VALUES('" + paisOri + "', '" + paisDes + "', '" + escalasvue + "', '" + codigov + "', '" + totalpreciovue + "', '" + totalvehi + "', '" + totalhotel + "',  '" + totalcompra + "', '" + nombre1 + "', '" + cedula1 + "', '" + Convert.ToInt32(spinerMenores.Value.ToString()) + "', '" + Convert.ToInt32(spinnerAdultos.Value.ToString())+ "' , '" + codigoh + "',  '" + Convert.ToDateTime(dtLlegada.Value.ToShortDateString()) + "', '" + Convert.ToDateTime(dtLlegada.Value.ToShortDateString()) + "', '" + nombreh + "', '" + accion + "', '" + duracionvuelo + "', '" + cantidaHabitaciones + "'); ";
+            alo.InsertarReserva(sql2);
         }
 
     }
