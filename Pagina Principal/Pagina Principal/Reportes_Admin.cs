@@ -174,18 +174,6 @@ namespace Pagina_Principal
                 tercerReporte1.Clear();
             }
         }
-            for (int t = 0; t < grafica2.Count; t++)
-            {
-                series.Points.AddXY(grafica2[t], grafica2[t + 1]);
-                t += 1;
-            }
-            Grafico2.Series["Cantidad de personas que han estado por Hotel"].IsValueShownAsLabel = true;
-            segundoReporte.Clear();
-        }
-
-        ///////////////////////////////////////////////////////////////////////////////////////
-
-
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -203,7 +191,7 @@ namespace Pagina_Principal
 
             if (tabControl1.SelectedIndex == 1)
             {
-                Reporte2();
+                Reporte3();
             }
             if (tabControl1.SelectedIndex == 2)
             {
@@ -231,28 +219,6 @@ namespace Pagina_Principal
                 i++;
             }
             Grafico3.Series["Porcentaje de visitas por pais"].IsValueShownAsLabel = true;
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            Reporte4_5();
-        }
-
-        public void sextoReporte()
-        {
-            DB_Reportes repor = new DB_Reportes();
-            ArrayList reporte6 = repor.sextoreporte();
-            this.Grafico6.Series.Clear();
-            this.Grafico6.Titles.Clear();
-            this.Grafico6.Titles.Add("Marcas de los vehículos más rentados");
-            Series Grafico = this.Grafico6.Series.Add("Marcas de los vehículos más rentados");
-            Grafico.ChartType = SeriesChartType.Pie;
-            for (int i = 0; i < reporte6.Count; i++)
-            {
-                Grafico.Points.AddXY(reporte6[i], reporte6[i + 1]);
-                i++;
-            }
-            Grafico6.Series["Marcas de los vehículos más rentados"].IsValueShownAsLabel = true;
         }
     }
 }
