@@ -21,6 +21,8 @@ namespace Pagina_Principal
         List<object> segundoReporte = new List<object>();//contiene los nombres de los hoteles
         List<object> grafica2 = new List<object>();//contiene los nombres de los hoteles
 
+        List<object> tercerReporte = new List<object>();//contiene los nombres de los hoteles
+
         public Reportes_Admin()
         {
             InitializeComponent();
@@ -87,10 +89,10 @@ namespace Pagina_Principal
             nombresHoteles.Clear();
             grafica2.Clear();
             segundoReporte.Clear();
-            int numero = 0;
-            int contador2 = 0;
-            string nombre = "";
-            int items = 0;
+            //int numero = 0;
+            //int contador2 = 0;
+            //string nombre = "";
+            //int items = 0;
 
             segundoReporte = reports.SegundoReporte();//tiene los hoteles con la cantidad de personas
 
@@ -102,46 +104,48 @@ namespace Pagina_Principal
             Series series = this.Grafico2.Series.Add("Cantidad de personas que han estado por Hotel");
             series.ChartType = SeriesChartType.Pie;  /// cambia la forma del grafico
 
-            for (int r=0; r < segundoReporte.Count; r = r+4)
+            for (int t = 0; t < segundoReporte.Count; t++)
             {
-                nombresHoteles.Add(segundoReporte[r]);
-            }
-
-            for (int x = 0; x < nombresHoteles.Count; x++)
-            {
-                contador2 = 0;
-                for (int y = 0; y < segundoReporte.Count; y++)
-                {
-                    if (nombresHoteles[x].Equals(segundoReporte[y]))
-                    {
-                        nombre = segundoReporte[y].ToString();
-                        items = segundoReporte.IndexOf(nombre);
-                        numero = Convert.ToInt32(segundoReporte[items + 1]);
-                        contador2 += numero;
-                        segundoReporte.RemoveAt(items);//borra el nombre del hotel
-                    }
-                }
-                if (contador2 != 0)
-                {
-                    grafica2.Add(nombresHoteles[x]);
-                    grafica2.Add(contador2);
-                }
-            }
-
-            for (int t = 0; t < grafica2.Count; t++)
-            {
-                series.Points.AddXY(grafica2[t], grafica2[t + 1]);
+                series.Points.AddXY(segundoReporte[t], segundoReporte[t + 1]);
                 t += 1;
             }
             Grafico2.Series["Cantidad de personas que han estado por Hotel"].IsValueShownAsLabel = true;
             segundoReporte.Clear();
+
+            //for (int r=0; r < segundoReporte.Count; r = r+4)
+            //{
+            //    nombresHoteles.Add(segundoReporte[r]);
+            //}
+
+            //for (int x = 0; x < nombresHoteles.Count; x++)
+            //{
+            //    contador2 = 0;
+            //    for (int y = 0; y < segundoReporte.Count; y++)
+            //    {
+            //        if (nombresHoteles[x].Equals(segundoReporte[y]))
+            //        {
+            //            nombre = segundoReporte[y].ToString();
+            //            items = segundoReporte.IndexOf(nombre);
+            //            numero = Convert.ToInt32(segundoReporte[items + 1]);
+            //            contador2 += numero;
+            //            segundoReporte.RemoveAt(items);//borra el nombre del hotel
+            //        }
+            //    }
+            //    if (contador2 != 0)
+            //    {
+            //        grafica2.Add(nombresHoteles[x]);
+            //        grafica2.Add(contador2);
+            //    }
+            //}
+
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////
 
-        public void Reporte3()
+        public void Reporte4_5()
         {
-
+            string fecha = FechaRango.Value.Date.ToString("dd/MM/yyyy");
+            tercerReporte = reports.TercerReporte(fecha);
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -158,10 +162,10 @@ namespace Pagina_Principal
                 Reporte2();
             }
 
-            if (tabControl1.SelectedIndex == 2)
+            if (tabControl1.SelectedIndex == 3)
             {
-                Reporte3();
+                Reporte4_5();
             }
-        }        
+        }
     }
 }

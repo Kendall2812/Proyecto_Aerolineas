@@ -11,6 +11,7 @@ namespace Data_Base
     {
         List<object> nombre = new List<object>();
         List<object> segundoReporte = new List<object>();
+        List<object> tercerReporte = new List<object>();
         static NpgsqlConnection connection;
         static NpgsqlCommand comandos;
         Conexio_BaseDatos conexion1 = new Conexio_BaseDatos();
@@ -22,7 +23,7 @@ namespace Data_Base
             try
             {
                 connection.Open();
-                comandos = new NpgsqlCommand("Select nombre_hotel FROM reservas;", connection);
+                comandos = new NpgsqlCommand("Select nombre_hotel FROM reservas WHERE tipo_accion = true;", connection);
                 NpgsqlDataReader dr = comandos.ExecuteReader();
                 if (dr.HasRows)
                 {
@@ -46,9 +47,9 @@ namespace Data_Base
 
             connection = conexion1.Conexion();
             try
-            {
-                connection.Open();
-                comandos = new NpgsqlCommand("SELECT ho.nombre, (re.niños + re.adultos) FROM reservas AS re JOIN hoteles AS ho ON re.id_hotel = ho.codigo AND re.tipo_accion = true", connection);
+            {///SELECT ho.nombre, (re.niños + re.adultos) FROM reservas AS re JOIN hoteles AS ho ON re.id_hotel = ho.codigo AND re.tipo_accion = true
+                connection.Open(); /// 
+                comandos = new NpgsqlCommand("SELECT ho.nombre, SUM(re.niños + re.adultos) FROM reservas AS re JOIN hoteles AS ho ON re.id_hotel = ho.codigo AND re.tipo_accion = true GROUP BY ho.nombre;", connection);
                 NpgsqlDataReader dr = comandos.ExecuteReader();
                 if (dr.HasRows)
                 {
@@ -65,6 +66,33 @@ namespace Data_Base
                 MessageBox.Show("Error no se pudo conectar a la base de datos. " + e, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return segundoReporte;
+        }
+
+        public List<object> TercerReporte(string fechaRango)
+        {
+            connection = conexion1.Conexion();
+            try
+            {
+                connection.Open();
+                comandos = new NpgsqlCommand("SELECT SUM(adultos) AS adultos, SUM(niños) AS niños FROM reservas WHERE '"+ fechaRango + "' BETWEEN fecha_inicio AND fecha_final", connection);
+                NpgsqlDataReader dr = comandos.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        tercerReporte.Add("Adultos");
+                        tercerReporte.Add(dr.GetInt32(0));//adultos
+                        tercerReporte.Add("Niños");
+                        tercerReporte.Add(dr.GetInt32(1));//niños
+                    }
+                }
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error no se pudo conectar a la base de datos. " + e, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return tercerReporte;
         }
     }
 }

@@ -12,6 +12,7 @@ namespace Aero_Negocio
         DB_Reportes reporte = new DB_Reportes();
         List<object> Hoteles = new List<object>();
         List<object> segundoReporte = new List<object>();
+        List<object> tercerReporte = new List<object>();
 
         public List<object> PrimerReporte()
         {
@@ -23,6 +24,12 @@ namespace Aero_Negocio
         {
             segundoReporte = reporte.SegundoReporte();
             return segundoReporte;
+        }
+
+        public List<object> TercerReporte(string fechaRango)
+        {
+            tercerReporte = reporte.TercerReporte(fechaRango);
+            return tercerReporte;
         }
     }
 }
