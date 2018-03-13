@@ -64,13 +64,13 @@ namespace Pagina_Principal
                         nombresHoteles.Remove(nombre);
                     }
                 }
+                x = 0;
             }
             for(int t = 0; t < hotelRepetido.Count; t++)
             {
                 series.Points.AddXY(hotelRepetido[t], hotelRepetido[t+1]);
                 t += 1;
             }
-
             Grafico1.Series["Cantidad de veces que se a reservado un Hotel"].IsValueShownAsLabel = true;
 
             //int num = 1000;
@@ -83,7 +83,9 @@ namespace Pagina_Principal
             //Grafico2.Series["Total Income"].IsValueShownAsLabel = true;
         }
 
-        public void SplineChartExample()
+        ///////////////////////////////////////////////////////////////////////////////////////
+
+        public void reporte2()
         {
             //ejemplo
             this.Grafico2.Series.Clear();
@@ -114,60 +116,8 @@ namespace Pagina_Principal
         {
             if (tabControl1.SelectedIndex == 1)
             {
-                //BarExample(); //Show bar chart
-                SplineChartExample();//SplineChartExample();
+                reporte2();//SplineChartExample();
             }
-        }
-
-        //Los vectores con los datos
-        //string[] series = { "Eduardo", "Jorge", "Jason", "Andres" };
-        //int[] puntos = { 50, 10, 70, 100 };
-
-        ////cambiar de color las barras
-        //Grafico1.Palette = ChartColorPalette.SeaGreen;
-
-        //Grafico1.Titles.Add("Edades");
-
-        //for (int x = 0; x < series.Length; x++)
-        //{
-        //    //titulos
-        //    Series serie = Grafico1.Series.Add(series[x]);
-        //    //cantidades
-        //    serie.Label = puntos[x].ToString();
-
-        //    serie.Points.Add(puntos[x]);
-        //}
-        //}
-
-
-
-        //////// Prueba de graficos
-        //private void Form1_Load(object sender, EventArgs e)
-        //{
-        //    BarExample(); //Show bar chart
-        //    SplineChartExample();//SplineChartExample();
-        //}
-        //public void BarExample()
-        //{
-        //    this.Grafico2.Series.Clear();
-
-        //    // Data arrays
-        //    string[] seriesArray = { "Cat", "Dog", "Bird", "Monkey" };
-        //    int[] pointsArray = { 2, 1, 7, 5 };
-
-        //    // Set palette
-        //    this.Grafico2.Palette = ChartColorPalette.SeaGreen;
-
-        //    // Set title
-        //    this.Grafico2.Titles.Add("Animals");
-
-        //    // Add series.
-        //    for (int i = 0; i < seriesArray.Length; i++)
-        //    {
-        //        Series series = this.Grafico2.Series.Add(seriesArray[i]);
-        //        series.Points.Add(pointsArray[i]);
-        //    }
-        //}
-        
+        }        
     }
 }
