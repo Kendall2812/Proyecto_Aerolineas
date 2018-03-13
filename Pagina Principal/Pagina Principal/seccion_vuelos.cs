@@ -374,10 +374,10 @@ namespace Pagina_Principal
         {
             alojamiento alo = new alojamiento();
             int preciovehi = (preciov * 13) / 100;
-            int totalvehi = preciovehi + preciov;
+            int totalvehi = (preciovehi + preciov)*cantidadDias;
 
             int precioho = (precioh * 13) / 100;
-            int totalhotel =(precioho + precioh);
+            int totalhotel =(precioho + precioh)*cantidadDias;
 
             int preciovu = (preciovue * 13) / 100;
             int totalpreciovue = preciovue + preciovu;
