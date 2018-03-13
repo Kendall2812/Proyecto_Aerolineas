@@ -141,10 +141,7 @@ namespace Pagina_Principal
 
         ///////////////////////////////////////////////////////////////////////////////////////
 
-        public void Reporte3()
-        {
 
-        }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -155,18 +152,22 @@ namespace Pagina_Principal
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (tabControl1.SelectedIndex == 0)
+            {
+                Reporte1();
+            }
+
             if (tabControl1.SelectedIndex == 1)
             {
                 Reporte2();
             }
-
-            if (tabControl1.SelectedIndex == 2)
-            {
-                Reporte3();
-            }
             if (tabControl1.SelectedIndex == 2)
             {
                 tercerReporte();
+            }
+            if (tabControl1.SelectedIndex == 5)
+            {
+                sextoReporte();
             }
             
         }   
@@ -186,6 +187,23 @@ namespace Pagina_Principal
                 i++;
             }
             Grafico3.Series["Porcentaje de visitas por pais"].IsValueShownAsLabel = true;
+        }
+
+        public void sextoReporte()
+        {
+            DB_Reportes repor = new DB_Reportes();
+            ArrayList reporte6 = repor.sextoreporte();
+            this.Grafico6.Series.Clear();
+            this.Grafico6.Titles.Clear();
+            this.Grafico6.Titles.Add("Marcas de los vehículos más rentados");
+            Series Grafico = this.Grafico6.Series.Add("Marcas de los vehículos más rentados");
+            Grafico.ChartType = SeriesChartType.Pie;
+            for (int i = 0; i < reporte6.Count; i++)
+            {
+                Grafico.Points.AddXY(reporte6[i], reporte6[i + 1]);
+                i++;
+            }
+            Grafico6.Series["Marcas de los vehículos más rentados"].IsValueShownAsLabel = true;
         }
     }
 }
