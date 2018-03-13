@@ -78,7 +78,7 @@ namespace Pagina_Principal
                 case "AGREGAR":
 
                     dataGridView1.Rows.Clear();
-                    aero.MostrarDatosCombo(lo);
+                    //aero.MostrarDatosCombo(lo);
                     eventoMouse = "Agre";
                     //dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].ReadOnly = false;
                     dataGridView1.CellValueChanged += new DataGridViewCellEventHandler(dataGridView1_CellValueChanged);             
