@@ -25,9 +25,9 @@ namespace Pagina_Principal
         string nombre1 = "";
         bool accion = false;
         string nombreh, lugarh, paish;
-        string nombrev, lugarv, paisv, codigov, escalasvue, paisOri, paisDes, duracionvuelo;
+        string nombrev, lugarv, paisv, escalasvue, paisOri, paisDes, duracionvuelo;
         int codigoh, precioh, preciovue;
-        int preciov, cantidaHabitaciones, cantidadDias;
+        int preciov, cantidaHabitaciones, cantidadDias, codigov;
         public Seccion_vuelos()
         {
             InitializeComponent();
@@ -237,7 +237,7 @@ namespace Pagina_Principal
             Int32 numero = dtgVehi.GetCellCount(DataGridViewElementStates.Selected);
             if (numero == 6)
             {
-                codigov = dtgVehi.SelectedRows[0].Cells["id_vehiculo"].Value.ToString();
+                codigov = Convert.ToInt32(dtgVehi.SelectedRows[0].Cells["id_vehiculo"].Value.ToString());
                 preciov = Convert.ToInt32(dtgVehi.SelectedRows[0].Cells["precio_ve"].Value.ToString());
 
             }
@@ -384,14 +384,9 @@ namespace Pagina_Principal
 
             int totalcompra = totalvehi + totalhotel + totalpreciovue;
 
-            //string sql = "INSERT INTO reservas(ini_pais_origen, fin_pais_destino, escalas, vehiculo, total_vuelo ," +
-            //    " total_vehículo, total_hotel, total_compra, nombre, cedula, niños, adultos, id_hotel, fecha_inicio, fecha_final, " +
-            //    "nombre_hotel, tipo_accion,duracion_vuelo) VALUES('" + paisOri + "', '" + paisDes + "', '" + escalasvue + "', '" + codigov + "', '" + totalpreciovue + "', '" + totalvehi + "', '" + totalhotel + "', '" + totalcompra + "', '" + nombre1 + "', '" + cedula1 + "','" + Convert.ToInt32(spinerMenores.Value.ToString()) + "','" + Convert.ToInt32(spinnerAdultos.Value.ToString())
-            //    + "' , '" + codigoh + "', '" + Convert.ToDateTime(dateTimePicker1.Value.ToShortDateString()) + "', '" + Convert.ToDateTime(dateTimePicker2.Value.ToShortDateString()) + "', '" + nombreh + "', '" + accion + "', '" + duracionvuelo + "'); ";
-
-            string sql2= "INSERT INTO reservas(ini_pais_origen, fin_pais_destino, escalas, vehiculo, total_vuelo, total_vehículo, total_hotel, total_compra, nombre, cedula, niños, adultos, id_hotel, fecha_inicio, fecha_final, nombre_hotel, tipo_accion,duracion_vuelo, canti_habitaciones)" +
-                "VALUES('" + paisOri + "', '" + paisDes + "', '" + escalasvue + "', '" + codigov + "', '" + totalpreciovue + "', '" + totalvehi + "', '" + totalhotel + "',  '" + totalcompra + "', '" + nombre1 + "', '" + cedula1 + "', '" + Convert.ToInt32(spinerMenores.Value.ToString()) + "', '" + Convert.ToInt32(spinnerAdultos.Value.ToString())+ "' , '" + codigoh + "',  '" + Convert.ToDateTime(dtLlegada.Value.ToShortDateString()) + "', '" + Convert.ToDateTime(dtLlegada.Value.ToShortDateString()) + "', '" + nombreh + "', '" + accion + "', '" + duracionvuelo + "', '" + cantidaHabitaciones + "'); ";
-            alo.InsertarReserva(sql2);
+            alo.InsertarReserva("INSERT INTO reservas(ini_pais_origen, fin_pais_destino, escalas, vehiculo, total_vuelo , total_vehículo , total_hotel, total_compra, nombre, cedula, niños, adultos, id_hotel, fecha_inicio, fecha_final, nombre_hotel, tipo_accion,duracion_vuelo, canti_habitaciones)" +
+                "VALUES('" + paisOri + "', '" + paisDes + "', '" + escalasvue + "', '" + codigov + "', '" + totalpreciovue + "', '" + totalvehi + "', '" + totalhotel + "',  '" + totalcompra + "', '" + nombre1 + "', '" + cedula1 + "', '" + Convert.ToInt32(spinerMenores.Value.ToString()) + "', '" + Convert.ToInt32(spinnerAdultos.Value.ToString()) + "' , '" + codigoh + "',  '" + dtLlegada.Text + "', '" + dtLlegada.Text + "', '" + nombreh + "', '" + accion + "', '" + duracionvuelo + "', '" + cantidaHabitaciones + "')");
+            MessageBox.Show("Se ha registrado la reserva!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
     }
