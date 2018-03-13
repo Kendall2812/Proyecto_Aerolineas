@@ -87,6 +87,10 @@ namespace Data_Base
                         tercerReporte.Add(dr.GetInt32(1));//niños
                     }
                 }
+                else
+                {
+                    MessageBox.Show("No se encontro con ningun resultado con la fecha selecciona ", "Arvertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
                 connection.Close();
             }
             catch (Exception e)

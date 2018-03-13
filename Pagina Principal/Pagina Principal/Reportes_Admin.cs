@@ -146,7 +146,11 @@ namespace Pagina_Principal
 
         public void Reporte4_5()
         {
-            string fecha = FechaRango.Value.Date.ToString("dd/MM/yyyy");
+            string dia = FechaRango.Value.Date.ToString("dd");
+            string mes = FechaRango.Value.Date.ToString("MM");
+            string año = FechaRango.Value.Date.ToString("yyyy");
+            string fecha= dia+"/"+mes+"/"+año;
+
             if (fecha.Equals(""))
             {
                 MessageBox.Show("Debe seleccionar una Fecha para realizar la busqueda.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -184,11 +188,6 @@ namespace Pagina_Principal
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabControl1.SelectedIndex == 0)
-            {
-                Reporte1();
-            }
-
             if (tabControl1.SelectedIndex == 1)
             {
                 Reporte2();
@@ -197,10 +196,7 @@ namespace Pagina_Principal
             {
                 tercerReporte();
             }
-            if (tabControl1.SelectedIndex == 3)
-            {
-                Reporte4_5();
-            }
+
             if (tabControl1.SelectedIndex == 4)
             {
                 sextoReporte();
@@ -246,5 +242,9 @@ namespace Pagina_Principal
             Grafico6.Series["Marcas de los vehículos más rentados"].IsValueShownAsLabel = true;
         }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Reporte4_5();
+        }
     }
 }
