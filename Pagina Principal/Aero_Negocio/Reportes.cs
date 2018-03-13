@@ -11,11 +11,18 @@ namespace Aero_Negocio
     {
         DB_Reportes reporte = new DB_Reportes();
         List<object> Hoteles = new List<object>();
+        List<object> segundoReporte = new List<object>();
 
         public List<object> PrimerReporte()
         {
             Hoteles = reporte.hoteles();
             return Hoteles;
+        }
+
+        public List<object> SegundoReporte()
+        {
+            segundoReporte = reporte.SegundoReporte();
+            return segundoReporte;
         }
     }
 }
