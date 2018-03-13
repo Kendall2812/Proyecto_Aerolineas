@@ -23,7 +23,7 @@ namespace Pagina_Principal
         List<object> segundoReporte = new List<object>();//contiene los nombres de los hoteles
         List<object> grafica2 = new List<object>();//contiene los nombres de los hoteles
 
-        List<object> tercerReporte = new List<object>();//contiene los nombres de los hoteles
+        List<object> tercerReporte1 = new List<object>();
 
         public Reportes_Admin()
         {
@@ -147,7 +147,32 @@ namespace Pagina_Principal
         public void Reporte4_5()
         {
             string fecha = FechaRango.Value.Date.ToString("dd/MM/yyyy");
-            tercerReporte = reports.TercerReporte(fecha);
+            if (fecha.Equals(""))
+            {
+                MessageBox.Show("Debe seleccionar una Fecha para realizar la busqueda.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                tercerReporte1.Clear();
+
+                tercerReporte1 = reports.TercerReporte(fecha);
+
+                this.Grafico4y5.Series.Clear();
+
+                this.Grafico4y5.Titles.Clear();
+                this.Grafico4y5.Titles.Add("Cantidad de Adultos y Niños que han viajado por Rango de Fechas.");
+
+                Series series = this.Grafico4y5.Series.Add("Cantidad de Adultos y Niños que han viajado por Rango de Fechas.");
+                series.ChartType = SeriesChartType.Pie;  /// cambia la forma del grafico
+
+                for (int t = 0; t < tercerReporte1.Count; t++)
+                {
+                    series.Points.AddXY(tercerReporte1[t], tercerReporte1[t + 1]);
+                    t += 1;
+                }
+                Grafico4y5.Series["Cantidad de Adultos y Niños que han viajado por Rango de Fechas."].IsValueShownAsLabel = true;
+                tercerReporte1.Clear();
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -164,10 +189,6 @@ namespace Pagina_Principal
                 Reporte2();
             }
 
-            if (tabControl1.SelectedIndex == 3)
-            {
-                Reporte4_5();
-            }
             if (tabControl1.SelectedIndex == 2)
             {
                 tercerReporte();
@@ -190,6 +211,11 @@ namespace Pagina_Principal
                 i++;
             }
             Grafico3.Series["Porcentaje de visitas por pais"].IsValueShownAsLabel = true;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Reporte4_5();
         }
     }
 }
